@@ -2,7 +2,7 @@
 
 1. **Install PostgreSQL** and create a database for your app:
 	```bash
-	createdb nextjs-application-template
+	createdb wfd-app-dev
 	```
 
 2. **Install dependencies:**
