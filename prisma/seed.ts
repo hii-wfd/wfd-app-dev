@@ -1,5 +1,6 @@
 import { PrismaPg } from '@prisma/adapter-pg';
-import { PrismaClient, Role, Condition } from '@prisma/client';
+import { PrismaClient } from '../src/generated/prisma/client';
+import { Role, Condition } from '../src/generated/prisma/enums';
 import { hash } from 'bcrypt';
 import * as config from '../config/settings.development.json';
 
