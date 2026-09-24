@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation';
-import { Role } from '@prisma/client';
+import { Role } from '@/generated/prisma/enums';
 
 /**
  * Redirects to the login page if the user is not logged in.
