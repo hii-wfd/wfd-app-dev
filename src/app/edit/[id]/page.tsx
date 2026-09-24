@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { Stuff } from '@prisma/client';
+import { Stuff } from '@/generated/prisma/client';
 import { loggedInProtectedPage } from '@/lib/page-protection';
 import { prisma } from '@/lib/prisma';
 import { auth } from '@/lib/auth';

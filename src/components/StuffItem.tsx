@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from 'react-bootstrap';
-import { Stuff } from '@prisma/client';
+import { Stuff } from '@/generated/prisma/client';
 import Link from 'next/link';
 import { Trash } from 'react-bootstrap-icons';
 import { deleteStuff } from '@/lib/dbActions';

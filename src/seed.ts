@@ -1,5 +1,5 @@
 import { prisma } from './lib/prisma';
-import { Role, Condition } from '@prisma/client';
+import { Role, Condition } from './generated/prisma/enums';
 import { hash } from 'bcrypt';
 import * as config from '../config/settings.development.json';
 
