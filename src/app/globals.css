@@ -1,5 +1,9 @@
 @import '../components/Footer.css';
 
+:root {
+  --bs-body-font-family: var(--font-urbanist), sans-serif;
+}
+
 html,
 body {
   --bs-light-rgb: 236, 236, 236;
@@ -7,7 +11,7 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family:'Urbanist', sans-serif;
+  font-family: var(--font-urbanist), sans-serif;
 }
 .wrapper {
   box-sizing: border-box;

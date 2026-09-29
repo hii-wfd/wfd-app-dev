@@ -5,7 +5,6 @@
   margin-top: auto;                     /* pins footer to bottom in a flex-column body */
   background: var(--brand-dark-blue);
   color: rgb(var(--white));
-  font-family: var(--font);
 }
 .hii-footer *,
 .hii-footer *::before,
