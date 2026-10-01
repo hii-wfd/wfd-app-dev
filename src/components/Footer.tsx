@@ -29,11 +29,12 @@ const LinkList = ({ items }: { items: LinkItem[] }) => (
 );
 
 const Footer = () => (
+  // We add urbanist.variable here to unlock --font-urbanist inside this subtree
   <footer className="hii-footer mt-auto">
     <div className="hii-footer__inner">
       <div className="hii-footer__top">
         <div className="hii-brand">
-          <img src={"./logo-full.svg"} alt="HII" width={188} height={84} />
+          <img src={"/logo-full.svg"} alt="HII" width={188} height={84} />
           <p className="hii-tagline">Delivering the Advantage.</p>
         </div>
 
@@ -48,7 +49,7 @@ const Footer = () => (
           </div>
 
           <div className="hii-col">
-            <p className="hii-label hii-label--lg hii-label--gap-top">Connect</p>
+            <p className="hii-label hii-label--lg">Connect</p>
             <LinkList items={connect} />
           </div>
 
