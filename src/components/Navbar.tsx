@@ -14,8 +14,8 @@ const NavBar: React.FC = () => {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="/">
-          <img src={"/hii-basic-logo.svg"} alt="HII" height={54} />
+        <Navbar.Brand href="/" aria-label="HII">
+          <img src="/hii-basic-logo.svg" alt="HII" height={54} />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
