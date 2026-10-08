@@ -1,0 +1,24 @@
+.deep-sea-title {
+    color: var(--deep-sea);
+}
+
+.deep-sea-text {
+    color: var(--deep-sea);
+}
+
+.sky-blue-link {
+    color: var(--sky-blue);
+}
+
+.sky-blue-color {
+    color: var(--sky-blue);
+}
+
+.sky-blue-link:hover {
+    color: var(--changing-sea);
+}
+
+.section-spacing {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}

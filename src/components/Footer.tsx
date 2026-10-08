@@ -6,11 +6,11 @@ type LinkItem = { label: string; href: string };
 const business: LinkItem[] = [
   { label: 'Mission Technologies', href: 'https://www.hii.com/mission-technologies' },
 ];
-const connect: LinkItem[] = [
-  { label: 'Contact', href: '/contact' }, //CHANGE THIS PLEASE
+const connect = [
+  { name: 'WFDHawaii@hii.com' }, //CHANGE THIS PLEASE
 ];
 const addresses = [
-  { name: 'Mission Technologies', l1: 'Change Me', l2: 'Honolulu, HI' },
+  { name: 'Mission Technologies', l1: 'Honlulu, HI' },
 ];
 const socials = [
   { label: 'linkedin', href: 'https://www.linkedin.com/company/wearehii', Icon: FaLinkedin },
@@ -50,7 +50,13 @@ const Footer = () => (
 
           <div className="hii-col">
             <p className="hii-label hii-label--lg">Connect</p>
-            <LinkList items={connect} />
+            <div className="hii-addresses">
+              {connect.map((c) => (
+                <div key={c.name}>
+                  <p className="hii-address">{c.name}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="hii-col hii-col--wide">
@@ -59,7 +65,6 @@ const Footer = () => (
               {addresses.map((a) => (
                 <div key={a.name}>
                   <p className="hii-address">{a.l1}</p>
-                  <p className="hii-address">{a.l2}</p>
                 </div>
               ))}
             </div>
