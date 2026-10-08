@@ -26,7 +26,7 @@ const Home = () => (
               JOIN OUR TEAM!
             </h1>
             <p className="lead fs-4">
-              HII's Mission Technologies division is  seeking local college students to apply for our internship program located in Honolulu!
+              HII&apos;s Mission Technologies division is  seeking local college students to apply for our internship program located in Honolulu!
             </p>
           </Col>
         </Row>
@@ -86,7 +86,7 @@ const Home = () => (
             </p>
               
             <p className="lead">
-              Don’t miss out on this rare opportunity to make a difference and build your future!
+              Don&apos;t miss out on this rare opportunity to make a difference and build your future!
             </p>
           </Col>
         </Row>
@@ -111,8 +111,8 @@ const Home = () => (
 
             <p className="lead">
               Step into the world of intelligence and make a real impact supporting the Department of Defense in the Indo-Pacific region. 
-              Over eight exciting weeks, you’ll dive into expert-led briefings, sharpen essential skills, and tackle hands-on projects that put you at the center of the action. 
-              The experience culminates in a dynamic capstone project where you and your team will apply everything you’ve learned.
+              Over eight exciting weeks, you&apos;ll dive into expert-led briefings, sharpen essential skills, and tackle hands-on projects that put you at the center of the action. 
+              The experience culminates in a dynamic capstone project where you and your team will apply everything you&apos;ve learned.
             </p>
           </Col>
         </Row>
@@ -129,7 +129,7 @@ const Home = () => (
             </h2>
 
             <p className="lead deep-sea-text">
-              HII's Mission Technologies Division provides innovative solutions for national security and defense, 
+              HII Mission Technologies Division provides innovative solutions for national security and defense, 
               specializing in AI, cybersecurity, unmanned systems, and advanced technologies. Their cutting-edge capabilities help 
               government and military clients tackle evolving global threats. Focused on collaboration and innovation, HII transforms 
               complex challenges into mission-ready solutions.
@@ -379,7 +379,7 @@ const Home = () => (
         <div className="d-flex align-items-center gap-3 fw-bold p-4 bg-light rounded shadow-sm">
           <span className="fs-4">✓</span>
           <p className="mb-0 deep-sea-text fs-5">
-            Actively pursuing a bachelor's degree.
+            Actively pursuing a bachelor&apos;s degree.
           </p>
         </div>
       </Col>
