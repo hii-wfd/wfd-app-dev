@@ -415,18 +415,33 @@ const Home = () => (
           Join Our Mailing List
         </h2>
 
-        <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSeoPsT4NDqSX_ywhbw-R-kbwmORkwoOVO3WHNucIc4JGd4iiQ/viewform"
-          className="btn btn-lg text-white my-4"
-          style={{
-            backgroundColor: "var(--sky-blue)",
-            borderColor: "var(--sky-blue)",
-          }}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          CLICK HERE
-        </a>
+        <div className="d-flex justify-content-center gap-3">
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSeoPsT4NDqSX_ywhbw-R-kbwmORkwoOVO3WHNucIc4JGd4iiQ/viewform"
+            className="btn btn-lg text-white"
+            style={{
+              backgroundColor: "var(--sky-blue)",
+              borderColor: "var(--sky-blue)",
+            }}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            INTERN
+          </a>
+
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSeoPsT4NDqSX_ywhbw-R-kbwmORkwoOVO3WHNucIc4JGd4iiQ/viewform"
+            className="btn btn-lg text-white"
+            style={{
+              backgroundColor: "var(--sky-blue)",
+              borderColor: "var(--sky-blue)",
+            }}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            PARTNER
+          </a>
+        </div>
       </Col>
     </Row>
   </Container>
