@@ -12,7 +12,7 @@ const NavBar: React.FC = () => {
   const currentUser = session?.user?.email;
   const role = session?.user?.role;
   return (
-    <Navbar bg="transparent" expand="lg">
+    <Navbar expand="lg" className="hii-navbar">
       <Container>
         <Navbar.Brand href="/" aria-label="HII">
           <img src="/hii-basic-logo.svg" alt="HII" height={54} />

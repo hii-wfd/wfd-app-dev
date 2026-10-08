@@ -1,9 +1,11 @@
+/* FOOTER CSS*/
+
 .hii-footer {
-  --brand-dark-blue: #003b4d;
+  --deep-sea: #003b4d;
   --white: 255, 255, 255;               /* TODO: verify neutral-white-500 (likely pure white) */
 
   margin-top: auto;                     /* pins footer to bottom in a flex-column body */
-  background: var(--brand-dark-blue);
+  background: var(--deep-sea);
   color: rgb(var(--white));
 }
 .hii-footer *,
@@ -40,13 +42,13 @@
 .hii-stack { display: flex; flex-direction: column; gap: 32px; }
 
 .hii-label {
-  font-size: 12px; line-height: 16px;       /* TODO body-2xs */
+  font-size: 16px; line-height: 60px;       
   text-transform: uppercase; color: rgba(var(--white), 0.5);
 }
-.hii-label--lg { margin-bottom: 24px; }
-.hii-label--sm { margin-bottom: 12px; }
-.hii-label--xs { margin-bottom: 4px; }
-.hii-label--gap-top { margin-top: 32px; }
+.hii-label--lg { margin-bottom: 30px; }
+.hii-label--sm { margin-bottom: 20px; }
+.hii-label--xs { margin-bottom: 10px; }
+.hii-label--gap-top { margin-top: 36px; }
 
 .hii-links { display: flex; flex-direction: column; gap: 12px; }
 .hii-link {
@@ -80,3 +82,14 @@
 .hii-social__icon { width: 20px; height: 20px; }
 
 .hii-copy { font-size: 12px; line-height: 16px; color: rgba(var(--white), 0.6); }  /* TODO body-2xs */
+
+/* NavBar CSS*/
+.hii-navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: transparent !important;
+}
+

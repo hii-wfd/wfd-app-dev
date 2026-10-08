@@ -1,7 +1,14 @@
-@import '../components/Footer.css';
+@import '../components/Components.css';
+@import './style.css';
 
 :root {
   --bs-body-font-family: var(--font-urbanist), sans-serif;
+  --deep-sea: #003b4d;
+  --sky-blue: #75abd1;
+  --changing-sea: #509ca2;
+  --steel: #5b6670;
+  --charcoal-gray: #24272a;
+  --passion: #e87722;
 }
 
 html,
