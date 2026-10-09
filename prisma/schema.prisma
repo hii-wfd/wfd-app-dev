@@ -4,11 +4,11 @@
 // Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
+
 generator client {
   provider = "prisma-client"
   output   = "../src/generated/prisma"
 }
-
 
 datasource db {
   provider = "postgresql"
@@ -17,13 +17,22 @@ datasource db {
 enum Role {
   USER
   ADMIN
+  INTERN
+  MISSION_PARTNER
 }
 
 model User {
-  id       Int    @id @default(autoincrement())
-  email    String @unique
-  password String
-  role     Role   @default(USER)
+  id             Int      @id @default(autoincrement())
+  email          String   @unique
+  password       String?
+  role           Role     @default(USER)
+  entraSubjectId String?  @unique
+
+  createdAt      DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+
+  sessions       Session[]
+  loginAttempts  LoginAttempt[]
 }
 
 enum Condition {
@@ -39,4 +48,31 @@ model Stuff {
   quantity  Int
   condition Condition @default(good)
   owner     String
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  userId       Int
+  sessionToken String   @unique
+  expiresAt    DateTime
+  createdAt    DateTime @default(now())
+
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model LoginAttempt {
+  id          String   @id @default(cuid())
+  userId      Int?
+  email       String?
+  successful  Boolean
+  ipAddress   String?
+  attemptedAt DateTime @default(now())
+
+  user        User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([email, attemptedAt])
+  @@index([userId, attemptedAt])
+  @@index([ipAddress, attemptedAt])
 }
