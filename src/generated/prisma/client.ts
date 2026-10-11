@@ -51,3 +51,13 @@ export type User = Prisma.UserModel
  * 
  */
 export type Stuff = Prisma.StuffModel
+/**
+ * Model Session
+ * 
+ */
+export type Session = Prisma.SessionModel
+/**
+ * Model LoginAttempt
+ * 
+ */
+export type LoginAttempt = Prisma.LoginAttemptModel
