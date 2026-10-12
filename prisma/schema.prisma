@@ -76,3 +76,17 @@ model LoginAttempt {
   @@index([userId, attemptedAt])
   @@index([ipAddress, attemptedAt])
 }
+
+model storedFile {
+  id          Int       @id @default(autoincrement())
+  //owner_id  Int?  //which user created the file
+  name        String
+  url         String    @unique
+  pathname    String
+  contentType String?
+  //access    List?  //which user(s) can access the file
+  size        Int
+  createdAt   DateTime  @default(now())
+  deletedAt   DateTime?
+}
+
