@@ -37,3 +37,8 @@ export type Session = Prisma.SessionModel
  * 
  */
 export type LoginAttempt = Prisma.LoginAttemptModel
+/**
+ * Model storedFile
+ * 
+ */
+export type storedFile = Prisma.storedFileModel

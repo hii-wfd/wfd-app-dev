@@ -4,7 +4,6 @@
 // Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
-
 generator client {
   provider = "prisma-client"
   output   = "../src/generated/prisma"
@@ -22,17 +21,17 @@ enum Role {
 }
 
 model User {
-  id             Int      @id @default(autoincrement())
-  email          String   @unique
+  id             Int     @id @default(autoincrement())
+  email          String  @unique
   password       String?
-  role           Role     @default(USER)
-  entraSubjectId String?  @unique
+  role           Role    @default(USER)
+  entraSubjectId String? @unique
 
-  createdAt      DateTime @default(now())
+  createdAt DateTime @default(now())
   updatedAt DateTime @default(now()) @updatedAt
 
-  sessions       Session[]
-  loginAttempts  LoginAttempt[]
+  sessions      Session[]
+  loginAttempts LoginAttempt[]
 }
 
 enum Condition {
@@ -57,7 +56,7 @@ model Session {
   expiresAt    DateTime
   createdAt    DateTime @default(now())
 
-  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([userId])
 }
@@ -70,9 +69,22 @@ model LoginAttempt {
   ipAddress   String?
   attemptedAt DateTime @default(now())
 
-  user        User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
 
   @@index([email, attemptedAt])
   @@index([userId, attemptedAt])
   @@index([ipAddress, attemptedAt])
+}
+
+model storedFile {
+  id          Int       @id @default(autoincrement())
+  //owner_id  Int?  //which user created the file
+  name        String
+  url         String    @unique
+  pathname    String
+  contentType String?
+  //access    List?  //which user(s) can access the file
+  size        Int
+  createdAt   DateTime  @default(now())
+  deletedAt   DateTime?
 }
