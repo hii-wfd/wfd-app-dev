@@ -71,3 +71,7 @@ export type InternProfile = Prisma.InternProfileModel
  * 
  */
 export type MissionPartnerProfile = Prisma.MissionPartnerProfileModel
+ * Model storedFile
+ * 
+ */
+export type storedFile = Prisma.storedFileModel

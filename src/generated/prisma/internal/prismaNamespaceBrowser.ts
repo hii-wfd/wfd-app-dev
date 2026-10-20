@@ -57,6 +57,7 @@ export const ModelName = {
   LoginAttempt: 'LoginAttempt',
   InternProfile: 'InternProfile',
   MissionPartnerProfile: 'MissionPartnerProfile'
+  storedFile: 'storedFile'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -154,6 +155,18 @@ export const MissionPartnerProfileScalarFieldEnum = {
 } as const
 
 export type MissionPartnerProfileScalarFieldEnum = (typeof MissionPartnerProfileScalarFieldEnum)[keyof typeof MissionPartnerProfileScalarFieldEnum]
+export const StoredFileScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  url: 'url',
+  pathname: 'pathname',
+  contentType: 'contentType',
+  size: 'size',
+  createdAt: 'createdAt',
+  deletedAt: 'deletedAt'
+} as const
+
+export type StoredFileScalarFieldEnum = (typeof StoredFileScalarFieldEnum)[keyof typeof StoredFileScalarFieldEnum]
 
 
 export const SortOrder = {

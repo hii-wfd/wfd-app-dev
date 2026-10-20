@@ -403,6 +403,7 @@ export const ModelName = {
   LoginAttempt: 'LoginAttempt',
   InternProfile: 'InternProfile',
   MissionPartnerProfile: 'MissionPartnerProfile'
+  storedFile: 'storedFile'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -419,6 +420,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
   }
   meta: {
     modelProps: "user" | "stuff" | "session" | "loginAttempt" | "internProfile" | "missionPartnerProfile"
+    modelProps: "user" | "stuff" | "session" | "loginAttempt" | "storedFile"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -863,6 +865,77 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         count: {
           args: Prisma.MissionPartnerProfileCountArgs<ExtArgs>
           result: runtime.Types.Utils.Optional<Prisma.MissionPartnerProfileCountAggregateOutputType> | number
+    storedFile: {
+      payload: Prisma.$storedFilePayload<ExtArgs>
+      fields: Prisma.storedFileFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.storedFileFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$storedFilePayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.storedFileFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$storedFilePayload>
+        }
+        findFirst: {
+          args: Prisma.storedFileFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$storedFilePayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.storedFileFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$storedFilePayload>
+        }
+        findMany: {
+          args: Prisma.storedFileFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$storedFilePayload>[]
+        }
+        create: {
+          args: Prisma.storedFileCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$storedFilePayload>
+        }
+        createMany: {
+          args: Prisma.storedFileCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.storedFileCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$storedFilePayload>[]
+        }
+        delete: {
+          args: Prisma.storedFileDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$storedFilePayload>
+        }
+        update: {
+          args: Prisma.storedFileUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$storedFilePayload>
+        }
+        deleteMany: {
+          args: Prisma.storedFileDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.storedFileUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.storedFileUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$storedFilePayload>[]
+        }
+        upsert: {
+          args: Prisma.storedFileUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$storedFilePayload>
+        }
+        aggregate: {
+          args: Prisma.StoredFileAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateStoredFile>
+        }
+        groupBy: {
+          args: Prisma.storedFileGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.StoredFileGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.storedFileCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.StoredFileCountAggregateOutputType> | number
         }
       }
     }
@@ -984,6 +1057,18 @@ export const MissionPartnerProfileScalarFieldEnum = {
 } as const
 
 export type MissionPartnerProfileScalarFieldEnum = (typeof MissionPartnerProfileScalarFieldEnum)[keyof typeof MissionPartnerProfileScalarFieldEnum]
+export const StoredFileScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  url: 'url',
+  pathname: 'pathname',
+  contentType: 'contentType',
+  size: 'size',
+  createdAt: 'createdAt',
+  deletedAt: 'deletedAt'
+} as const
+
+export type StoredFileScalarFieldEnum = (typeof StoredFileScalarFieldEnum)[keyof typeof StoredFileScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -1263,6 +1348,7 @@ export type GlobalOmitConfig = {
   loginAttempt?: Prisma.LoginAttemptOmit
   internProfile?: Prisma.InternProfileOmit
   missionPartnerProfile?: Prisma.MissionPartnerProfileOmit
+  storedFile?: Prisma.storedFileOmit
 }
 
 /* Types for Logging */

@@ -4,6 +4,10 @@ import {
   FaChartLine,
   FaBrain,
   FaShieldAlt,
+  FaDollarSign,
+  FaMapMarkerAlt,
+  FaSearch,
+  FaClock,
 } from "react-icons/fa";
 
 /** The Home page. */
@@ -75,7 +79,7 @@ const Home = () => (
               OUR PROGRAM
             </h2>
 
-            <p className="lead">
+            <p className="lead ">
               The HII internship program features specializations in the fields of IT, Data Science, Intelligence, and Cyber.
             </p>
 
@@ -153,7 +157,7 @@ const Home = () => (
       </Container>
     </section>
 
-    {/* Intern Testimonies */}
+{/* Intern Testimonies */}
 <section className="section-spacing">
   <Container>
     {/* Section Title */}
@@ -302,61 +306,81 @@ const Home = () => (
   </Container>
 </section>
 
-    {/* FAQ + Requirements */}
+    {/* FAQs */}
     <section className="section-spacing">
       <Container>
         <div className="text-center mb-5">
           <h2 className="display-5 fw-bold deep-sea-text">FAQs</h2>
           <p className="lead deep-sea-text">
-            Frequently asked questions about the program
+            Frequently Asked Questions about the Program
           </p>
         </div>
         <Row className="align-items-center gx-5 deep-sea-title justify-content-center">
-          {/* FAQ */}
-          <Col lg={6}>
-            <div className="mb-4">
-              <h3 className="h5 fw-bold">
-                Is it paid?
-              </h3>
-              <p className="deep-sea-text">
-                Yes! Interns are paid on a competitive pay scale based on their experience and education.
-              </p>
-            </div>
 
-            <div className="mb-4">
-              <h3 className="h5 fw-bold">
-                Where are we located?
-              </h3>
-              <p>
-                The primary location of work takes place at our corporate office in the heart of Downtown Honolulu. There may be opportunities to work at various onsite client locations. 
-              </p>
+          <Col md={6}>
+            <div className="d-flex align-items-center gap-4 mb-4">
+              <FaDollarSign size={60} className="deep-sea-text flex-shrink-0"/>
+              <div>
+                <h3 className="h5 fw-bold">
+                  Is it paid?
+                </h3>
+                <p className="deep-sea-text">
+                  Yes! Interns are paid on a competitive pay scale based on their experience and education.
+                </p>
+              </div>
+            </div>
+          </Col>
+
+          <Col md={6}>
+            <div className="d-flex align-items-center gap-4 mb-4">
+              <FaClock size={60} className="deep-sea-text flex-shrink-0"/>
+              <div>
+                <h3 className="h5 deep-sea-title fw-bold">
+                  What are the hours?
+                </h3>
+                <p>
+                  Hours are flexible to fit around your school schedules! 
+                </p>
+              </div>
             </div>
 
           </Col>
+        </Row>
+
+        <Row className="align-items-center gx-5 deep-sea-title justify-content-center">
+          <Col lg={6}>
+            <div className="d-flex align-items-center gap-4 mb-4">
+              <FaMapMarkerAlt size={60} className="deep-sea-text flex-shrink-0"/>
+              <div>
+                <h3 className="h5 fw-bold">
+                  Where are we located?
+                </h3>
+                <p>
+                  The primary location of work takes place at our corporate office in the heart of Downtown Honolulu. There may be opportunities to work at various onsite client locations. 
+                </p>
+              </div>
+            </div>
+          </Col>
 
           <Col lg={6}>
-            <div className="mb-4">
-              <h3 className="h5 deep-sea-title fw-bold">
-                What are the hours?
-              </h3>
-              <p>
-                Hours are flexible to fit around your school schedules! 
-              </p>
-            </div>
-
-            <div className="mb-4">
-              <h3 className="h5 deep-sea-title fw-bold">
-                Do I need a clearance to start?
-              </h3>
-              <p>
-                No! Government security clearances are not required to start. However, you must be eligible to obtain and maintain one.  
-              </p>
+            <div className="d-flex align-items-center gap-4 mb-4">
+              <FaSearch size={60} className="deep-sea-text flex-shrink-0"/>
+              <div>
+                <h3 className="h5 deep-sea-title fw-bold">
+                  Do I need a clearance to start?
+                </h3>
+                <p>
+                  No! Government security clearances are not required to start. However, you must be eligible to obtain and maintain one.  
+                </p>
+              </div>
             </div>
           </Col>
         </Row>
       </Container>
     </section>
+  
 
+{/* Requirements */}
 <section className="section-spacing">
   <Container>
     <div className="text-center mb-5">
@@ -405,32 +429,121 @@ const Home = () => (
   </Container>
 </section>
 
-    {/* Mailing List */}
+    {/* Our Partners */}
+    <section className="section-spacing">
+      <Container>
+        <div className="text-center mb-5">
+          <h2 className="display-5 fw-bold deep-sea-text">
+            OUR MISSION PARTNERS
+          </h2>
+        </div>
+        <Row className="align-items-center gx-5 deep-sea-title justify-content-center">
+
+          <Col className="text-center" md={6}>
+            <div className="d-flex flex-column align-items-center gap-4 mb-4">
+              <img src="/kapu-black.png" alt="Kapu Solutions Logo" className="img-fluid" style={{width: "100%", height: "150px", objectFit: "contain",}}/>
+              <h3 className="h5 fw-bold">
+                <a href="https://kapusolutions.com/" target="_blank" rel="noopener noreferrer" className="deep-sea-title">
+                  Kapu Solutions
+                </a>
+              </h3>
+                <p className="deep-sea-text">
+                </p>
+            </div>
+          </Col>
+
+          <Col className="text-center" md={6}>
+            <div className="d-flex flex-column align-items-center gap-4 mb-4" >
+              <img src="/mc3-tech.png" alt="MC3 Technologies Logo" className="img-fluid" style={{width: "100%", height: "150px", objectFit: "contain",}}/>
+                <h3 className="h5 deep-sea-title fw-bold">
+                  <a href="https://michael-cardenas-5pp8.squarespace.com/team" target="_blank" rel="noopener noreferrer" className="deep-sea-title">
+                    MC3 Technologies
+                  </a>
+                </h3>
+                <p>
+
+                </p>
+            </div>
+
+          </Col>
+        </Row>
+
+        <Row className="align-items-center gx-5 deep-sea-title justify-content-center">
+          <Col className="text-center" lg={6}>
+            <div className="d-flex flex-column align-items-center gap-4 mb-4">
+              <img src="/pacific-economics.png" alt="PacEcon Logo" className="img-fluid" style={{width: "100%", height: "150px", objectFit: "contain",}}/>
+                <h3 className="h5 fw-bold">
+                  <a href="https://pac-econ.com/" target="_blank" rel="noopener noreferrer" className="deep-sea-title">
+                  PacEcon
+                  </a>
+                </h3>
+                <p>
+
+                </p>
+            </div>
+          </Col>
+
+          <Col className="text-center" lg={6}>
+            <div className="d-flex flex-column align-items-center gap-4 mb-4">
+              <img src="/HawaiiP3I-logo.png" alt="P3I Logo" className="img-fluid" style={{width: "100%", height: "150px", objectFit: "contain",}}/>
+                <h3 className="h5 deep-sea-title fw-bold">
+                  <a href="https://hawaiip3i.org/" target="_blank" rel="noopener noreferrer" className="deep-sea-title">
+                    P3I
+                  </a>
+                </h3>
+                <p>
+
+                </p>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+    </section>
+    
 {/* Mailing List */}
 <section className="section-spacing">
   <Container>
     <Row className="justify-content-center">
       <Col md={8} lg={6} className="text-center">
-        <h2 className="display-5 fw-bold deep-sea-text">
-          Join Our Mailing List
+        <h2 className="display-5 fw-bold deep-sea-text mb-4">
+          JOIN OUR MAILING LIST!
         </h2>
+        <p className="lead deep-sea-text">
+          Stay updated on the latest news, events, and opportunities!
+        </p>
 
-        <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSeoPsT4NDqSX_ywhbw-R-kbwmORkwoOVO3WHNucIc4JGd4iiQ/viewform"
-          className="btn btn-lg text-white my-4"
-          style={{
-            backgroundColor: "var(--sky-blue)",
-            borderColor: "var(--sky-blue)",
-          }}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          CLICK HERE
-        </a>
+        <div className="d-flex justify-content-center gap-3">
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSeoPsT4NDqSX_ywhbw-R-kbwmORkwoOVO3WHNucIc4JGd4iiQ/viewform"
+            className="btn btn-lg text-white"
+            style={{
+              backgroundColor: "var(--sky-blue)",
+              borderColor: "var(--sky-blue)",
+            }}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            INTERN
+          </a>
+
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSeoPsT4NDqSX_ywhbw-R-kbwmORkwoOVO3WHNucIc4JGd4iiQ/viewform"
+            className="btn btn-lg text-white"
+            style={{
+              backgroundColor: "var(--sky-blue)",
+              borderColor: "var(--sky-blue)",
+            }}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            PARTNER
+          </a>
+        </div>
       </Col>
     </Row>
   </Container>
 </section>
+
   </main>
 );
 
