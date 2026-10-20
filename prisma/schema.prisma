@@ -21,11 +21,13 @@ enum Role {
 }
 
 model User {
-  id             Int     @id @default(autoincrement())
-  email          String  @unique
-  password       String?
-  role           Role    @default(USER)
-  entraSubjectId String? @unique
+  id                    Int                    @id @default(autoincrement())
+  email                 String                 @unique
+  password              String?
+  role                  Role                   @default(USER)
+  entraSubjectId        String?                @unique
+  internProfile         InternProfile?
+  missionPartnerProfile MissionPartnerProfile?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now()) @updatedAt
@@ -76,14 +78,46 @@ model LoginAttempt {
   @@index([ipAddress, attemptedAt])
 }
 
+model InternProfile {
+  id             Int       @id @default(autoincrement())
+  userId         Int       @unique
+  firstName      String
+  lastName       String
+  school         String?
+  major          String?
+  graduationDate DateTime?
+  skills         String[]
+  interests      String[]
+  status         String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model MissionPartnerProfile {
+  id               Int      @id @default(autoincrement())
+  userId           Int      @unique
+  organizationName String
+  contactName      String?
+  contactEmail     String?
+  missionArea      String?
+  description      String?
+  skillsNeeded     String[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
 model storedFile {
   id          Int       @id @default(autoincrement())
-  //owner_id  Int?  //which user created the file
   name        String
   url         String    @unique
   pathname    String
   contentType String?
-  //access    List?  //which user(s) can access the file
   size        Int
   createdAt   DateTime  @default(now())
   deletedAt   DateTime?
