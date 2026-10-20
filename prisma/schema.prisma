@@ -4,7 +4,6 @@
 // Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
-
 generator client {
   provider = "prisma-client"
   output   = "../src/generated/prisma"
@@ -22,17 +21,19 @@ enum Role {
 }
 
 model User {
-  id             Int      @id @default(autoincrement())
-  email          String   @unique
-  password       String?
-  role           Role     @default(USER)
-  entraSubjectId String?  @unique
+  id                    Int                    @id @default(autoincrement())
+  email                 String                 @unique
+  password              String?
+  role                  Role                   @default(USER)
+  entraSubjectId        String?                @unique
+  internProfile         InternProfile?
+  missionPartnerProfile MissionPartnerProfile?
 
-  createdAt      DateTime @default(now())
+  createdAt DateTime @default(now())
   updatedAt DateTime @default(now()) @updatedAt
 
-  sessions       Session[]
-  loginAttempts  LoginAttempt[]
+  sessions      Session[]
+  loginAttempts LoginAttempt[]
 }
 
 enum Condition {
@@ -57,7 +58,7 @@ model Session {
   expiresAt    DateTime
   createdAt    DateTime @default(now())
 
-  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([userId])
 }
@@ -70,9 +71,43 @@ model LoginAttempt {
   ipAddress   String?
   attemptedAt DateTime @default(now())
 
-  user        User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
 
   @@index([email, attemptedAt])
   @@index([userId, attemptedAt])
   @@index([ipAddress, attemptedAt])
+}
+
+model InternProfile {
+  id             Int       @id @default(autoincrement())
+  userId         Int       @unique
+  firstName      String
+  lastName       String
+  school         String?
+  major          String?
+  graduationDate DateTime?
+  skills         String[]
+  interests      String[]
+  status         String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model MissionPartnerProfile {
+  id               Int      @id @default(autoincrement())
+  userId           Int      @unique
+  organizationName String
+  contactName      String?
+  contactEmail     String?
+  missionArea      String?
+  description      String?
+  skillsNeeded     String[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }

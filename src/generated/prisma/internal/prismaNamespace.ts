@@ -400,7 +400,9 @@ export const ModelName = {
   User: 'User',
   Stuff: 'Stuff',
   Session: 'Session',
-  LoginAttempt: 'LoginAttempt'
+  LoginAttempt: 'LoginAttempt',
+  InternProfile: 'InternProfile',
+  MissionPartnerProfile: 'MissionPartnerProfile'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -416,7 +418,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "stuff" | "session" | "loginAttempt"
+    modelProps: "user" | "stuff" | "session" | "loginAttempt" | "internProfile" | "missionPartnerProfile"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -716,6 +718,154 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    InternProfile: {
+      payload: Prisma.$InternProfilePayload<ExtArgs>
+      fields: Prisma.InternProfileFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.InternProfileFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InternProfilePayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.InternProfileFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InternProfilePayload>
+        }
+        findFirst: {
+          args: Prisma.InternProfileFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InternProfilePayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.InternProfileFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InternProfilePayload>
+        }
+        findMany: {
+          args: Prisma.InternProfileFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InternProfilePayload>[]
+        }
+        create: {
+          args: Prisma.InternProfileCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InternProfilePayload>
+        }
+        createMany: {
+          args: Prisma.InternProfileCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.InternProfileCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InternProfilePayload>[]
+        }
+        delete: {
+          args: Prisma.InternProfileDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InternProfilePayload>
+        }
+        update: {
+          args: Prisma.InternProfileUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InternProfilePayload>
+        }
+        deleteMany: {
+          args: Prisma.InternProfileDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.InternProfileUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.InternProfileUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InternProfilePayload>[]
+        }
+        upsert: {
+          args: Prisma.InternProfileUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InternProfilePayload>
+        }
+        aggregate: {
+          args: Prisma.InternProfileAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateInternProfile>
+        }
+        groupBy: {
+          args: Prisma.InternProfileGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.InternProfileGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.InternProfileCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.InternProfileCountAggregateOutputType> | number
+        }
+      }
+    }
+    MissionPartnerProfile: {
+      payload: Prisma.$MissionPartnerProfilePayload<ExtArgs>
+      fields: Prisma.MissionPartnerProfileFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.MissionPartnerProfileFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MissionPartnerProfilePayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.MissionPartnerProfileFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MissionPartnerProfilePayload>
+        }
+        findFirst: {
+          args: Prisma.MissionPartnerProfileFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MissionPartnerProfilePayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.MissionPartnerProfileFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MissionPartnerProfilePayload>
+        }
+        findMany: {
+          args: Prisma.MissionPartnerProfileFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MissionPartnerProfilePayload>[]
+        }
+        create: {
+          args: Prisma.MissionPartnerProfileCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MissionPartnerProfilePayload>
+        }
+        createMany: {
+          args: Prisma.MissionPartnerProfileCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.MissionPartnerProfileCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MissionPartnerProfilePayload>[]
+        }
+        delete: {
+          args: Prisma.MissionPartnerProfileDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MissionPartnerProfilePayload>
+        }
+        update: {
+          args: Prisma.MissionPartnerProfileUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MissionPartnerProfilePayload>
+        }
+        deleteMany: {
+          args: Prisma.MissionPartnerProfileDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.MissionPartnerProfileUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.MissionPartnerProfileUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MissionPartnerProfilePayload>[]
+        }
+        upsert: {
+          args: Prisma.MissionPartnerProfileUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MissionPartnerProfilePayload>
+        }
+        aggregate: {
+          args: Prisma.MissionPartnerProfileAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateMissionPartnerProfile>
+        }
+        groupBy: {
+          args: Prisma.MissionPartnerProfileGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.MissionPartnerProfileGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.MissionPartnerProfileCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.MissionPartnerProfileCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -800,6 +950,40 @@ export const LoginAttemptScalarFieldEnum = {
 } as const
 
 export type LoginAttemptScalarFieldEnum = (typeof LoginAttemptScalarFieldEnum)[keyof typeof LoginAttemptScalarFieldEnum]
+
+
+export const InternProfileScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  firstName: 'firstName',
+  lastName: 'lastName',
+  school: 'school',
+  major: 'major',
+  graduationDate: 'graduationDate',
+  skills: 'skills',
+  interests: 'interests',
+  status: 'status',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type InternProfileScalarFieldEnum = (typeof InternProfileScalarFieldEnum)[keyof typeof InternProfileScalarFieldEnum]
+
+
+export const MissionPartnerProfileScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  organizationName: 'organizationName',
+  contactName: 'contactName',
+  contactEmail: 'contactEmail',
+  missionArea: 'missionArea',
+  description: 'description',
+  skillsNeeded: 'skillsNeeded',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type MissionPartnerProfileScalarFieldEnum = (typeof MissionPartnerProfileScalarFieldEnum)[keyof typeof MissionPartnerProfileScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -1077,6 +1261,8 @@ export type GlobalOmitConfig = {
   stuff?: Prisma.StuffOmit
   session?: Prisma.SessionOmit
   loginAttempt?: Prisma.LoginAttemptOmit
+  internProfile?: Prisma.InternProfileOmit
+  missionPartnerProfile?: Prisma.MissionPartnerProfileOmit
 }
 
 /* Types for Logging */

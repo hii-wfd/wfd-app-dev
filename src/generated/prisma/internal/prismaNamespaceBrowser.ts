@@ -54,7 +54,9 @@ export const ModelName = {
   User: 'User',
   Stuff: 'Stuff',
   Session: 'Session',
-  LoginAttempt: 'LoginAttempt'
+  LoginAttempt: 'LoginAttempt',
+  InternProfile: 'InternProfile',
+  MissionPartnerProfile: 'MissionPartnerProfile'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -118,6 +120,40 @@ export const LoginAttemptScalarFieldEnum = {
 } as const
 
 export type LoginAttemptScalarFieldEnum = (typeof LoginAttemptScalarFieldEnum)[keyof typeof LoginAttemptScalarFieldEnum]
+
+
+export const InternProfileScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  firstName: 'firstName',
+  lastName: 'lastName',
+  school: 'school',
+  major: 'major',
+  graduationDate: 'graduationDate',
+  skills: 'skills',
+  interests: 'interests',
+  status: 'status',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type InternProfileScalarFieldEnum = (typeof InternProfileScalarFieldEnum)[keyof typeof InternProfileScalarFieldEnum]
+
+
+export const MissionPartnerProfileScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  organizationName: 'organizationName',
+  contactName: 'contactName',
+  contactEmail: 'contactEmail',
+  missionArea: 'missionArea',
+  description: 'description',
+  skillsNeeded: 'skillsNeeded',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type MissionPartnerProfileScalarFieldEnum = (typeof MissionPartnerProfileScalarFieldEnum)[keyof typeof MissionPartnerProfileScalarFieldEnum]
 
 
 export const SortOrder = {

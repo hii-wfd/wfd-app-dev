@@ -37,3 +37,13 @@ export type Session = Prisma.SessionModel
  * 
  */
 export type LoginAttempt = Prisma.LoginAttemptModel
+/**
+ * Model InternProfile
+ * 
+ */
+export type InternProfile = Prisma.InternProfileModel
+/**
+ * Model MissionPartnerProfile
+ * 
+ */
+export type MissionPartnerProfile = Prisma.MissionPartnerProfileModel
