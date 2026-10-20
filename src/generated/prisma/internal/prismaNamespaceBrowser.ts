@@ -56,7 +56,7 @@ export const ModelName = {
   Session: 'Session',
   LoginAttempt: 'LoginAttempt',
   InternProfile: 'InternProfile',
-  MissionPartnerProfile: 'MissionPartnerProfile'
+  MissionPartnerProfile: 'MissionPartnerProfile',
   storedFile: 'storedFile'
 } as const
 
@@ -155,6 +155,8 @@ export const MissionPartnerProfileScalarFieldEnum = {
 } as const
 
 export type MissionPartnerProfileScalarFieldEnum = (typeof MissionPartnerProfileScalarFieldEnum)[keyof typeof MissionPartnerProfileScalarFieldEnum]
+
+
 export const StoredFileScalarFieldEnum = {
   id: 'id',
   name: 'name',

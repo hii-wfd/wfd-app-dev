@@ -402,7 +402,7 @@ export const ModelName = {
   Session: 'Session',
   LoginAttempt: 'LoginAttempt',
   InternProfile: 'InternProfile',
-  MissionPartnerProfile: 'MissionPartnerProfile'
+  MissionPartnerProfile: 'MissionPartnerProfile',
   storedFile: 'storedFile'
 } as const
 
@@ -419,8 +419,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "stuff" | "session" | "loginAttempt" | "internProfile" | "missionPartnerProfile"
-    modelProps: "user" | "stuff" | "session" | "loginAttempt" | "storedFile"
+    modelProps: "user" | "stuff" | "session" | "loginAttempt" | "internProfile" | "missionPartnerProfile" | "storedFile"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -865,6 +864,9 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         count: {
           args: Prisma.MissionPartnerProfileCountArgs<ExtArgs>
           result: runtime.Types.Utils.Optional<Prisma.MissionPartnerProfileCountAggregateOutputType> | number
+        }
+      }
+    }
     storedFile: {
       payload: Prisma.$storedFilePayload<ExtArgs>
       fields: Prisma.storedFileFieldRefs
@@ -1057,6 +1059,8 @@ export const MissionPartnerProfileScalarFieldEnum = {
 } as const
 
 export type MissionPartnerProfileScalarFieldEnum = (typeof MissionPartnerProfileScalarFieldEnum)[keyof typeof MissionPartnerProfileScalarFieldEnum]
+
+
 export const StoredFileScalarFieldEnum = {
   id: 'id',
   name: 'name',

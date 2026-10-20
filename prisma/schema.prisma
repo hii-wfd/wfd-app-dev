@@ -111,3 +111,14 @@ model MissionPartnerProfile {
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
+
+model storedFile {
+  id          Int       @id @default(autoincrement())
+  name        String
+  url         String    @unique
+  pathname    String
+  contentType String?
+  size        Int
+  createdAt   DateTime  @default(now())
+  deletedAt   DateTime?
+}
