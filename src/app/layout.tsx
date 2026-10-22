@@ -13,7 +13,7 @@ const urbanist = Urbanist({
 });
 
 export const metadata: Metadata = {
-  title: "Workforce Development App Prototype",
+  title: "Workforce Development Portal",
   description: "Created by the WFD team to test out new ideas and concepts for the WFD app.",
 };
 
