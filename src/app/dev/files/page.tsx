@@ -1,12 +1,16 @@
+import { after } from "next/server";
 import { notFound } from "next/navigation";
 import FileUploader from "@/components/FileUploader";
-import { listActiveFiles, listDeletedFiles } from "@/lib/fileQueries";
+import { listActiveFiles, listDeletedFiles, msRemaining } from "@/lib/fileQueries";
 import { softDeleteFile, restoreFile, purgeFile } from "@/lib/fileActions";
+import { purgeExpiredFiles} from '@/lib/filePurge';
 
 export const dynamic = "force-dynamic"; // always read live data, never prerender
 
 export default async function DevFilesPage() {
   if (process.env.ENABLE_DEV_TOOLS !== "true") notFound();
+
+  after(() => purgeExpiredFiles()); // runs after the response is sent, temporary
 
   const [active, deleted] = await Promise.all([listActiveFiles(), listDeletedFiles()]);
 
@@ -38,6 +42,11 @@ export default async function DevFilesPage() {
             <form action={restoreFile.bind(null, f.id)}>
               <button className="btn btn-sm btn-outline-success">Restore</button>
             </form>
+            <span className="text-muted">
+              {msRemaining(f.deletedAt!) > 86_400_000
+                ? `${Math.ceil(msRemaining(f.deletedAt!) / 86_400_000)} days left`
+                : "Deleting soon"}
+            </span>
             <form action={purgeFile.bind(null, f.id)}>
               <button className="btn btn-sm btn-danger">Delete forever</button>
             </form>

@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { purgeExpiredFiles } from "@/lib/fileActions";
+import { purgeExpiredFiles } from "@/lib/filePurge";
 
 export const dynamic = "force-dynamic";
 
