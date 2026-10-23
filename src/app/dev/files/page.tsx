@@ -8,7 +8,7 @@ import { purgeExpiredFiles} from '@/lib/filePurge';
 export const dynamic = "force-dynamic"; // always read live data, never prerender
 
 export default async function DevFilesPage() {
-  //if (process.env.ENABLE_DEV_TOOLS !== "true") notFound();
+  if (process.env.ENABLE_DEV_TOOLS !== "true") notFound();
 
   after(() => purgeExpiredFiles()); // runs after the response is sent, temporary
 
