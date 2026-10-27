@@ -13,15 +13,7 @@ const NavBar: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const hero = document.getElementById('hero');
-
-      if (hero) {
-        const heroBottom = hero.getBoundingClientRect().bottom;
-
-        setScrolled(heroBottom <= 0);
-      } else {
-        setScrolled(true);
-      }
+      setScrolled(window.scrollY > 0);
     };
 
     window.addEventListener('scroll', handleScroll);
