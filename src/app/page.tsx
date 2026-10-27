@@ -338,14 +338,14 @@ const Home = () => (
           </Col>
 
           <Col lg={5}>
-            <div className="d-flex align-items-center gap-4 mb-4">
+            <div className="d-flex align-items-center gap-4 mb-5">
               <FaClock size={60} className="deep-sea-text flex-shrink-0"/>
               <div>
                 <h3 className="h5 deep-sea-title fw-bold">
                   What are the hours?
                 </h3>
                 <p>
-                  Hours are flexible to fit around your school schedules! 
+                  During the school year, hours are flexible to fit around your school schedules! 
                 </p>
               </div>
             </div>
@@ -355,7 +355,7 @@ const Home = () => (
 
         <Row className="align-items-center gx-5 deep-sea-title justify-content-center">
           <Col lg={5}>
-            <div className="d-flex align-items-center gap-4 mb-4">
+            <div className="d-flex align-items-center gap-4 mb-5">
               <FaMapMarkerAlt size={60} className="deep-sea-text flex-shrink-0"/>
               <div>
                 <h3 className="h5 fw-bold">
@@ -369,7 +369,7 @@ const Home = () => (
           </Col>
 
           <Col lg={5}>
-            <div className="d-flex align-items-center gap-4 mb-4">
+            <div className="d-flex align-items-center gap-4 mb-5">
               <FaSearch size={60} className="deep-sea-text flex-shrink-0"/>
               <div>
                 <h3 className="h5 deep-sea-title fw-bold">
@@ -396,8 +396,8 @@ const Home = () => (
     </div>
 
     <Row className="justify-content-center g-3">
-      <Col lg={8}>
-        <div className="d-flex align-items-center gap-3 fw-bold p-4 bg-light rounded shadow-sm">
+      <Col lg={7}>
+        <div className="d-flex justify-content-left align-items-center gap-3 fw-bold p-4 bg-light rounded shadow-sm">
           <span className="fs-4">✓</span>
           <p className="mb-0 deep-sea-text fs-5">
             High School Diploma or equivalent.
@@ -405,8 +405,8 @@ const Home = () => (
         </div>
       </Col>
 
-      <Col lg={8}>
-        <div className="d-flex align-items-center gap-3 fw-bold p-4 bg-light rounded shadow-sm">
+      <Col lg={7}>
+        <div className="d-flex justify-content-left align-items-center gap-3 fw-bold p-4 bg-light rounded shadow-sm">
           <span className="fs-4">✓</span>
           <p className="mb-0 deep-sea-text fs-5">
             Actively pursuing a bachelor&apos;s degree.
@@ -414,8 +414,8 @@ const Home = () => (
         </div>
       </Col>
 
-      <Col lg={8}>
-        <div className="d-flex align-items-center gap-3 fw-bold p-4 bg-light rounded shadow-sm">
+      <Col lg={7}>
+        <div className="d-flex justify-content-left align-items-center gap-3 fw-bold p-4 bg-light rounded shadow-sm">
           <span className="fs-4">✓</span>
           <p className="mb-0 deep-sea-text fs-5">
             Must be a U.S. Citizen.
@@ -423,10 +423,10 @@ const Home = () => (
         </div>
       </Col>
 
-      <Col lg={8}>
-        <div className="d-flex align-items-center gap-3 fw-bold p-4 bg-light rounded shadow-sm">
+      <Col lg={7}>
+        <div className="d-flex justify-content-left text-center align-items-center gap-3 fw-bold p-4 bg-light rounded shadow-sm">
           <span className="fs-4">✓</span>
-          <p className="mb-0 deep-sea-text fs-5">
+          <p className="mb-0 text-center deep-sea-text fs-5">
             Must have the ability to obtain and maintain a security clearance.
           </p>
         </div>
@@ -440,14 +440,14 @@ const Home = () => (
       <Container>
         <div className="text-center mb-5">
           <h2 className="display-5 fw-bold deep-sea-text">
-            OUR MISSION PARTNERS
+            MISSION PARTNER NETWORK
           </h2>
         </div>
         <Row className="align-items-center gx-5 deep-sea-title justify-content-center">
 
           <Col className="text-center" md={6}>
             <div className="d-flex flex-column align-items-center gap-4 mb-5">
-              <img src="/kapu-black.png" alt="Kapu Solutions Logo" className="img-fluid" style={{width: "100%", height: "150px", objectFit: "contain",}}/>
+              <img src="/kapu-black.png" alt="Kapu Solutions Logo" className="img-fluid" style={{width: "100%", height: "100px", objectFit: "contain",}}/>
               <h3 className="h5 fw-bold">
                 <a href="https://kapusolutions.com/" target="_blank" rel="noopener noreferrer" className="deep-sea-title">
                   Kapu Solutions
@@ -460,7 +460,7 @@ const Home = () => (
 
           <Col className="text-center" md={6}>
             <div className="d-flex flex-column align-items-center gap-4 mb-4" >
-              <img src="/mc3-tech.png" alt="MC3 Technologies Logo" className="img-fluid" style={{width: "100%", height: "150px", objectFit: "contain",}}/>
+              <img src="/mc3-tech.png" alt="MC3 Technologies Logo" className="img-fluid" style={{width: "100%", height: "100px", objectFit: "contain",}}/>
                 <h3 className="h5 deep-sea-title fw-bold">
                   <a href="https://michael-cardenas-5pp8.squarespace.com/team" target="_blank" rel="noopener noreferrer" className="deep-sea-title">
                     MC3 Technologies
@@ -477,7 +477,7 @@ const Home = () => (
         <Row className="align-items-center gx-5 deep-sea-title justify-content-center">
           <Col className="text-center" lg={6}>
             <div className="d-flex flex-column align-items-center gap-4 mb-4">
-              <img src="/pacific-economics.png" alt="PacEcon Logo" className="img-fluid" style={{width: "100%", height: "150px", objectFit: "contain",}}/>
+              <img src="/pacific-economics.png" alt="PacEcon Logo" className="img-fluid" style={{width: "100%", height: "100px", objectFit: "contain",}}/>
                 <h3 className="h5 fw-bold">
                   <a href="https://pac-econ.com/" target="_blank" rel="noopener noreferrer" className="deep-sea-title">
                   PacEcon
@@ -491,7 +491,7 @@ const Home = () => (
 
           <Col className="text-center" lg={6}>
             <div className="d-flex flex-column align-items-center gap-4 mb-4">
-              <img src="/HawaiiP3I-logo.png" alt="P3I Logo" className="img-fluid" style={{width: "100%", height: "150px", objectFit: "contain",}}/>
+              <img src="/HawaiiP3I-logo.png" alt="P3I Logo" className="img-fluid" style={{width: "100%", height: "100px", objectFit: "contain",}}/>
                 <h3 className="h5 deep-sea-title fw-bold">
                   <a href="https://hawaiip3i.org/" target="_blank" rel="noopener noreferrer" className="deep-sea-title">
                     P3I
@@ -505,6 +505,7 @@ const Home = () => (
         </Row>
       </Container>
     </section>
+
     
 {/* Mailing List */}
 <section className="section-spacing">
@@ -536,6 +537,7 @@ const Home = () => (
     </Row>
   </Container>
 </section>
+
 
 {/* Media Highlights */}
 <section className="section-spacing">

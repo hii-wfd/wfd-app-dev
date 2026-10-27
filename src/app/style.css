@@ -18,7 +18,20 @@
     color: var(--changing-sea);
 }
 
+.charcoal-gray {
+    background-color: var(--charcoal-gray);
+}
+
+.white-text {
+    color: #ffffff;
+}
+
 .section-spacing {
   padding-top: 100px;
   padding-bottom: 100px;
+}
+
+.section-spacing-small {
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
