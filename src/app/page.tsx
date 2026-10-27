@@ -15,6 +15,7 @@ const Home = () => (
   <main>
     {/* 1. Welcome Banner */}
     <section
+      id="hero"
       className="welcome-banner d-flex align-items-center text-left deep-sea-title"
       style={{
         minHeight: '500px',

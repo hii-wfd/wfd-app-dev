@@ -4,18 +4,41 @@ import { useSession } from 'next-auth/react'; // v5 compatible
 import { usePathname } from 'next/navigation';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { BoxArrowRight, Lock, PersonFill, PersonPlusFill } from 'react-bootstrap-icons';
+import { useState, useEffect } from 'react';
 
 const NavBar: React.FC = () => {
   const { data: session, status } = useSession();
   const pathName = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const hero = document.getElementById('hero');
+
+      if (hero) {
+        const heroBottom = hero.getBoundingClientRect().bottom;
+
+        setScrolled(heroBottom <= 0);
+      } else {
+        setScrolled(true);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   if (status === 'loading') return null;
   const currentUser = session?.user?.email;
   const role = session?.user?.role;
+  
   return (
-    <Navbar expand="lg" className="hii-navbar">
+    <Navbar expand="lg" fixed="top" className={scrolled ? 'bg-white' : 'bg-transparent' + ' hii-navbar'}>
       <Container>
         <Navbar.Brand href="/" aria-label="HII">
-          <img src="/hii-basic-logo.svg" alt="HII" height={54} />
+          <img src="/hii-basic-logo.svg" alt="HII" height={40} />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
