@@ -45,8 +45,8 @@ export default async function RecoverableFilesPage({searchParams}: {
         {files.map((f) => (
           <tr key={f.id}>
             <td>{f.name}</td>
-            <td>{f.addedBy?.name ?? "Unknown"}</td>
-            <td>{f.deletedBy?.name ?? "Unknown"}</td>
+            <td>{f.addedBy?.email ?? "Unknown"}</td>
+            <td>{f.deletedBy?.email ?? "Unknown"}</td>
             <td>{formatRemaining(f.deletedAt!)}</td>
             {devMode && (
               <td>
