@@ -31,6 +31,8 @@ export default async function RecoverableFilesPage({searchParams}: {
 
   return (
     <main className="container py-5">
+      <br></br>
+      <br></br>
       <h1>Recoverable Files ({files.length})</h1>
       <SearchBox />
 
