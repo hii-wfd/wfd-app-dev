@@ -1,7 +1,7 @@
 import { after } from "next/server";
 import { notFound } from "next/navigation";
 import FileUploader from "@/components/FileUploader";
-import { listActiveFiles, listDeletedFiles, msRemaining } from "@/lib/fileQueries";
+import { listActiveFiles, listDeletedFiles, formatRemaining } from "@/lib/fileQueries";
 import { softDeleteFile, restoreFile, purgeFile } from "@/lib/fileActions";
 import { purgeExpiredFiles} from '@/lib/filePurge';
 
@@ -43,9 +43,7 @@ export default async function DevFilesPage() {
               <button className="btn btn-sm btn-outline-success">Restore</button>
             </form>
             <span className="text-muted">
-              {msRemaining(f.deletedAt!) > 86_400_000
-                ? `${Math.ceil(msRemaining(f.deletedAt!) / 86_400_000)} days left`
-                : "Deleting soon"}
+              {formatRemaining(f.deletedAt!)}
             </span>
             <form action={purgeFile.bind(null, f.id)}>
               <button className="btn btn-sm btn-danger">Delete forever</button>

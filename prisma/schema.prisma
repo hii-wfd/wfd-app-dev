@@ -32,6 +32,9 @@ model User {
 
   sessions      Session[]
   loginAttempts LoginAttempt[]
+
+  filesAdded   StoredFile[] @relation("FileAdder")
+  filesDeleted StoredFile[] @relation("FileDeleter")
 }
 
 enum Condition {
@@ -76,15 +79,25 @@ model LoginAttempt {
   @@index([ipAddress, attemptedAt])
 }
 
-model storedFile {
-  id          Int       @id @default(autoincrement())
-  //owner_id  Int?  //which user created the file
+model StoredFile {
+  id          Int     @id @default(autoincrement())
   name        String
-  url         String    @unique
+  url         String  @unique
   pathname    String
   contentType String?
-  //access    List?  //which user(s) can access the file
-  size        Int
-  createdAt   DateTime  @default(now())
+  size        Int // -> BigInt
+
+  //access Int? //which user(s) can access the file
+
+  addedByID Int? //which user created the file
+  addedBy   User?    @relation("FileAdder", fields: [addedByID], references: [id], onDelete: SetNull)
+  createdAt DateTime @default(now())
+
+  deletedById Int? //which user deleted the file
+  deletedBy   User?     @relation("FileDeleter", fields: [deletedById], references: [id], onDelete: SetNull)
   deletedAt   DateTime?
+
+  @@index([deletedAt])
+  @@index([addedByID])
+  @@index([deletedById])
 }
