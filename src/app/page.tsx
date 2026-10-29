@@ -9,6 +9,7 @@ import {
   FaSearch,
   FaClock,
 } from "react-icons/fa";
+import { ArrowRight } from 'react-bootstrap-icons';
 
 /** The Home page. */
 const Home = () => (
@@ -16,7 +17,7 @@ const Home = () => (
     {/* 1. Welcome Banner */}
     <section
       id="hero"
-      className="welcome-banner d-flex align-items-center text-left deep-sea-title"
+      className="welcome-banner d-flex align-items-center text-left deep-sea-title section-spacing"
       style={{
         minHeight: '500px',
         backgroundImage: "url('/landing-page-background.jpg')",
@@ -26,8 +27,8 @@ const Home = () => (
     >
       <Container>
         <Row className="justify-content-center">
-          <Col md={10} lg={8}>
-            <h1 className="display-1 fw-bold mb-5">
+          <Col lg={10}>
+            <h1 className="display-1 fw-bold mb-5 mt-5">
               JOIN OUR TEAM!
             </h1>
             <p className="lead fs-4">
@@ -42,7 +43,7 @@ const Home = () => (
     <section className="section-spacing">
       <Container>
         <Row className="deep-sea-title justify-content-center">
-          <Col md={10} lg={10}>
+          <Col lg={12}>
             <div className="d-flex justify-content-between text-center">
 
               <div className="d-flex flex-column align-items-center">
@@ -75,9 +76,9 @@ const Home = () => (
     <section className="section-spacing">
       <Container>
         <Row className="align-items-center gx-5 deep-sea-title justify-content-center">
-          <Col md={8}>
-            <h2 className="display-5 fw-bold deep-sea-text mb-5">
-              OUR PROGRAM
+          <Col lg={10}>
+            <h2 className="display-6 deep-sea-text mb-4">
+              Our Program
             </h2>
 
             <p className="lead">
@@ -110,8 +111,8 @@ const Home = () => (
             />
           </Col>
           <Col md={6}>
-            <h2 className="display-6 fw-bold deep-sea-text mb-5">
-              SUMMER OPPORTUNITIES AT HOME!
+            <h2 className="display-7 deep-sea-text mb-4">
+              Summer opportunities at home!
             </h2>
 
             <p className="lead">
@@ -134,19 +135,24 @@ const Home = () => (
       <Container>
         <Row className="align-items-center g-5">
           <Col lg={6}>
-            <h2 className="display-6 fw-bold deep-sea-text mb-5">
-              HII MISSION TECHNOLOGIES
+            <h2 className="display-7 deep-sea-text mb-4">
+              HII Mission Technologies
             </h2>
 
             <p className="lead deep-sea-text">
               HII Mission Technologies Division provides innovative solutions for national security and defense, 
-              specializing in AI, cybersecurity, unmanned systems, and advanced technologies. Their cutting-edge capabilities help 
+              specializing in AI, cybersecurity, unmanned systems, and advanced technologies. 
+            </p>
+            <p className="lead deep-sea-text">
+              Their cutting-edge capabilities help 
               government and military clients tackle evolving global threats. Focused on collaboration and innovation, HII transforms 
               complex challenges into mission-ready solutions.
             </p>
 
             <p className="sky-blue-color">
-              To learn more about HII Mission Technologies, visit our website <a className="sky-blue-color" href="https://www.hii.com/mission-technologies" target="_blank" rel="noopener noreferrer">here</a>.
+              <a className="sky-blue-color text-decoration-none" href="https://www.hii.com/mission-technologies" target="_blank" rel="noopener noreferrer">
+                To learn more about HII Mission Technologies, visit our website <ArrowRight className="ms-2" />
+              </a>
             </p>
           </Col>
 
@@ -167,14 +173,14 @@ const Home = () => (
 <section className="section-spacing">
   <Container>
     {/* Section Title */}
-    <div className="text-center mb-5">
-      <h2 className="display-5 fw-bold deep-sea-text">INTERN TESTIMONIES</h2>
+    <div className="text-left mb-5">
+      <h2 className="display-5 deep-sea-text">Intern Testimonies</h2>
     </div>
 
     {/* Team Members */}
     <Row className="g-4">
       {/* Team Member 1 */}
-      <Col md={6} lg={3}>
+      <Col lg={3}>
         <div className="text-center">
           <Image
             src="/images/team-1.jpg"
@@ -191,7 +197,7 @@ const Home = () => (
       </Col>
 
       {/* Team Member 2 */}
-      <Col md={6} lg={3}>
+      <Col lg={3}>
         <div className="text-center">
           <Image
             src="/images/team-2.jpg"
@@ -208,7 +214,7 @@ const Home = () => (
       </Col>
 
       {/* Team Member 3 */}
-      <Col md={6} lg={3}>
+      <Col lg={3}>
         <div className="text-center">
           <Image
             src="/images/team-3.jpg"
@@ -225,7 +231,7 @@ const Home = () => (
       </Col>
 
       {/* Team Member 4 */}
-      <Col md={6} lg={3}>
+      <Col lg={3}>
         <div className="text-center">
           <Image
             src="/images/team-4.jpg"
@@ -242,7 +248,7 @@ const Home = () => (
       </Col>
 
       {/* Team Member 5 */}
-      <Col md={6} lg={3}>
+      <Col lg={3}>
         <div className="text-center">
           <Image
             src="/images/team-5.jpg"
@@ -259,7 +265,7 @@ const Home = () => (
       </Col>
 
       {/* Team Member 6 */}
-      <Col md={6} lg={3}>
+      <Col lg={3}>
         <div className="text-center">
           <Image
             src="/images/team-6.jpg"
@@ -276,7 +282,7 @@ const Home = () => (
       </Col>
 
       {/* Team Member 7 */}
-      <Col md={6} lg={3}>
+      <Col lg={3}>
         <div className="text-center">
           <Image
             src="/images/team-7.jpg"
@@ -293,7 +299,7 @@ const Home = () => (
       </Col>
 
       {/* Team Member 8 */}
-      <Col md={6} lg={3}>
+      <Col lg={3}>
         <div className="text-center">
           <Image
             src="/images/team-8.jpg"
@@ -315,15 +321,15 @@ const Home = () => (
     {/* FAQs */}
     <section className="section-spacing">
       <Container>
-        <div className="text-center mb-5">
-          <h2 className="display-5 fw-bold deep-sea-text">FAQs</h2>
+        <div className="text-left mb-5">
+          <h2 className="display-6 deep-sea-text">FAQs</h2>
           <p className="lead deep-sea-text">
             Frequently Asked Questions about the Program
           </p>
         </div>
         <Row className="align-items-center gx-5 deep-sea-title justify-content-center">
 
-          <Col lg={5}>
+          <Col lg={6}>
             <div className="d-flex align-items-center gap-4 mb-5">
               <FaDollarSign size={60} className="deep-sea-text flex-shrink-0"/>
               <div>
@@ -337,7 +343,7 @@ const Home = () => (
             </div>
           </Col>
 
-          <Col lg={5}>
+          <Col lg={6}>
             <div className="d-flex align-items-center gap-4 mb-5">
               <FaClock size={60} className="deep-sea-text flex-shrink-0"/>
               <div>
@@ -354,8 +360,8 @@ const Home = () => (
         </Row>
 
         <Row className="align-items-center gx-5 deep-sea-title justify-content-center">
-          <Col lg={5}>
-            <div className="d-flex align-items-center gap-4 mb-5">
+          <Col lg={6}>
+            <div className="d-flex align-items-center gap-4">
               <FaMapMarkerAlt size={60} className="deep-sea-text flex-shrink-0"/>
               <div>
                 <h3 className="h5 fw-bold">
@@ -368,8 +374,8 @@ const Home = () => (
             </div>
           </Col>
 
-          <Col lg={5}>
-            <div className="d-flex align-items-center gap-4 mb-5">
+          <Col lg={6}>
+            <div className="d-flex align-items-center gap-4">
               <FaSearch size={60} className="deep-sea-text flex-shrink-0"/>
               <div>
                 <h3 className="h5 deep-sea-title fw-bold">
@@ -390,7 +396,7 @@ const Home = () => (
 <section className="section-spacing">
   <Container>
     <div className="text-center mb-5">
-      <h2 className="display-5 fw-bold deep-sea-text">
+      <h2 className="display-6 fw-bold deep-sea-text">
         Requirements to Apply:
       </h2>
     </div>
@@ -438,44 +444,13 @@ const Home = () => (
     {/* Our Partners */}
     <section className="section-spacing">
       <Container>
-        <div className="text-center mb-5">
-          <h2 className="display-5 fw-bold deep-sea-text">
-            MISSION PARTNER NETWORK
+        <div className="text-left mb-5">
+          <h2 className="display-6 deep-sea-text">
+            Mission Partner Network
           </h2>
         </div>
         <Row className="align-items-center gx-5 deep-sea-title justify-content-center">
-
-          <Col className="text-center" md={6}>
-            <div className="d-flex flex-column align-items-center gap-4 mb-5">
-              <img src="/kapu-black.png" alt="Kapu Solutions Logo" className="img-fluid" style={{width: "100%", height: "100px", objectFit: "contain",}}/>
-              <h3 className="h5 fw-bold">
-                <a href="https://kapusolutions.com/" target="_blank" rel="noopener noreferrer" className="deep-sea-title">
-                  Kapu Solutions
-                </a>
-              </h3>
-                <p className="deep-sea-text">
-                </p>
-            </div>
-          </Col>
-
-          <Col className="text-center" md={6}>
-            <div className="d-flex flex-column align-items-center gap-4 mb-4" >
-              <img src="/mc3-tech.png" alt="MC3 Technologies Logo" className="img-fluid" style={{width: "100%", height: "100px", objectFit: "contain",}}/>
-                <h3 className="h5 deep-sea-title fw-bold">
-                  <a href="https://michael-cardenas-5pp8.squarespace.com/team" target="_blank" rel="noopener noreferrer" className="deep-sea-title">
-                    MC3 Technologies
-                  </a>
-                </h3>
-                <p>
-
-                </p>
-            </div>
-
-          </Col>
-        </Row>
-
-        <Row className="align-items-center gx-5 deep-sea-title justify-content-center">
-          <Col className="text-center" lg={6}>
+          <Col className="text-center" lg={3}>
             <div className="d-flex flex-column align-items-center gap-4 mb-4">
               <img src="/pacific-economics.png" alt="PacEcon Logo" className="img-fluid" style={{width: "100%", height: "100px", objectFit: "contain",}}/>
                 <h3 className="h5 fw-bold">
@@ -483,13 +458,21 @@ const Home = () => (
                   PacEcon
                   </a>
                 </h3>
-                <p>
-
-                </p>
             </div>
           </Col>
 
-          <Col className="text-center" lg={6}>
+          <Col className="text-center" lg={3}>
+            <div className="d-flex flex-column align-items-center gap-4 mb-5">
+              <img src="/kapu-black.png" alt="Kapu Solutions Logo" className="img-fluid" style={{width: "100%", height: "100px", objectFit: "contain",}}/>
+              <h3 className="h5 fw-bold">
+                <a href="https://kapusolutions.com/" target="_blank" rel="noopener noreferrer" className="deep-sea-title">
+                  Kapu Solutions
+                </a>
+              </h3>
+            </div>
+          </Col>
+
+          <Col className="text-center" lg={3}>
             <div className="d-flex flex-column align-items-center gap-4 mb-4">
               <img src="/HawaiiP3I-logo.png" alt="P3I Logo" className="img-fluid" style={{width: "100%", height: "100px", objectFit: "contain",}}/>
                 <h3 className="h5 deep-sea-title fw-bold">
@@ -497,11 +480,27 @@ const Home = () => (
                     P3I
                   </a>
                 </h3>
-                <p>
-
-                </p>
             </div>
           </Col>
+
+          <Col className="text-center" lg={3}>
+            <div className="d-flex flex-column align-items-center gap-4 mb-4" >
+              <img src="/mc3-tech.png" alt="MC3 Technologies Logo" className="img-fluid" style={{width: "100%", height: "100px", objectFit: "contain",}}/>
+                <h3 className="h5 deep-sea-title fw-bold">
+                  <a href="https://michael-cardenas-5pp8.squarespace.com/team" target="_blank" rel="noopener noreferrer" className="deep-sea-title">
+                    MC3 Technologies
+                  </a>
+                </h3>
+            </div>
+          </Col>
+        </Row>
+
+        <Row className="align-items-center gx-5 justify-content-center">
+          <p className="lead sky-blue-color mt-3">
+            <a href="https://forms.gle/SLFgcvE68BNfZzV5A" target="_blank" rel="noopener noreferrer" className="sky-blue-color text-decoration-none">
+              Join our Mission Partner Network <ArrowRight className="ms-2" />
+            </a>
+          </p>
         </Row>
       </Container>
     </section>
@@ -511,7 +510,7 @@ const Home = () => (
 <section className="section-spacing">
   <Container>
     <Row className="justify-content-center">
-      <Col md={8} lg={6} className="text-center">
+      <Col lg={6} className="text-center">
         <h2 className="display-5 fw-bold deep-sea-text mb-4">
           JOIN OUR MAILING LIST!
         </h2>
@@ -543,9 +542,9 @@ const Home = () => (
 <section className="section-spacing">
   <Container>
     <Row className="justify-content-left">
-      <Col md={12} lg={12} className="text-left">
-        <h2 className="display-5 fw-bold deep-sea-text mb-4">
-          MEDIA HIGHLIGHTS
+      <Col lg={12} className="text-left">
+        <h2 className="display-6 deep-sea-text mb-4">
+          Media Highlights
         </h2>
         <p className="lead deep-sea-text mb-4">
           Check out the latest news and media coverage involving participants in our programs!
