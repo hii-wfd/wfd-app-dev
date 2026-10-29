@@ -13,7 +13,7 @@ test('test access to admin page', async ({ getUserPage }) => {
 
   // Check for navigation elements
   await expect(
-    adminPage.getByRole('link', { name: 'HII' })
+    adminPage.getByRole('link',  { name: 'HII', exact: true })
   ).toBeVisible({ timeout: 5000 });
   await expect(
     adminPage.getByRole('link', { name: 'Add Stuff' })
