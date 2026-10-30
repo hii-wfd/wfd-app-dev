@@ -169,12 +169,74 @@ const Home = () => (
       </Container>
     </section>
 
+{/* Meet Our Leadership */}
+<section className="section-spacing">
+  <Container>
+    {/* Section Title */}
+    <div className="text-left mb-5">
+      <h2 className="display-6 deep-sea-text">Our Leadership</h2>
+    </div>
+
+    {/* Team Members */}
+    <Row className="g-4">
+      {/* Team Member 1 */}
+      <Col lg={3}>
+        <div className="text-center">
+          <Image
+            src="/images/team-1.jpg"
+            alt="Team Member 1"
+            fluid
+            rounded
+          />
+        </div>
+      </Col>
+      <Col lg={9}>
+        <div className="text-left">
+          <h4 className="mt-3 deep-sea-text">Team Member Name</h4>
+          <p className="light-gray">
+            Title or role of this team member in the program.
+          </p>
+          <p className="deep-sea-text mt-4">
+            A short description about this team member and their role in
+            the program.
+          </p>
+        </div>
+      </Col>
+    </Row>
+
+    <Row className="g-4 mt-4">
+      <Col lg={3}>
+        <div className="text-center">
+          <Image
+            src="/images/team-2.jpg"
+            alt="Team Member 2"
+            fluid
+            rounded
+          />
+        </div>
+      </Col>
+      <Col lg={9}>
+        <div className="text-left">
+          <h4 className="mt-3 deep-sea-text">Team Member Name</h4>
+          <p className="light-gray">
+            Title or role of the team member in the program.
+          </p>
+          <p className="deep-sea-text mt-4">
+            A short description about this team member and their role in
+            the program.
+          </p>
+        </div>
+      </Col>
+    </Row>
+  </Container>
+</section>
+
 {/* Intern Testimonies */}
 <section className="section-spacing">
   <Container>
     {/* Section Title */}
     <div className="text-left mb-5">
-      <h2 className="display-5 deep-sea-text">Intern Testimonies</h2>
+      <h2 className="display-6 deep-sea-text">Intern Testimonies</h2>
     </div>
 
     {/* Team Members */}
@@ -451,7 +513,7 @@ const Home = () => (
         </div>
         <Row className="align-items-center gx-5 deep-sea-title justify-content-center">
           <Col className="text-center" lg={3}>
-            <div className="d-flex flex-column align-items-center gap-4 mb-4">
+            <div className="d-flex flex-column align-items-center gap-4 mb-5">
               <img src="/pacific-economics.png" alt="PacEcon Logo" className="img-fluid" style={{width: "100%", height: "100px", objectFit: "contain",}}/>
                 <h3 className="h5 fw-bold">
                   <a href="https://pac-econ.com/" target="_blank" rel="noopener noreferrer" className="deep-sea-title">
@@ -473,7 +535,7 @@ const Home = () => (
           </Col>
 
           <Col className="text-center" lg={3}>
-            <div className="d-flex flex-column align-items-center gap-4 mb-4">
+            <div className="d-flex flex-column align-items-center gap-4 mb-5">
               <img src="/HawaiiP3I-logo.png" alt="P3I Logo" className="img-fluid" style={{width: "100%", height: "100px", objectFit: "contain",}}/>
                 <h3 className="h5 deep-sea-title fw-bold">
                   <a href="https://hawaiip3i.org/" target="_blank" rel="noopener noreferrer" className="deep-sea-title">
@@ -484,7 +546,7 @@ const Home = () => (
           </Col>
 
           <Col className="text-center" lg={3}>
-            <div className="d-flex flex-column align-items-center gap-4 mb-4" >
+            <div className="d-flex flex-column align-items-center gap-4 mb-5" >
               <img src="/mc3-tech.png" alt="MC3 Technologies Logo" className="img-fluid" style={{width: "100%", height: "100px", objectFit: "contain",}}/>
                 <h3 className="h5 deep-sea-title fw-bold">
                   <a href="https://michael-cardenas-5pp8.squarespace.com/team" target="_blank" rel="noopener noreferrer" className="deep-sea-title">
