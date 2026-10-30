@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "WFD App Prototype",
+  title: "Workforce Development Portal",
   description: "Created by the WFD team to test out new ideas and concepts for the WFD app.",
 };
 

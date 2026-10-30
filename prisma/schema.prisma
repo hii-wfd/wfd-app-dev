@@ -21,11 +21,13 @@ enum Role {
 }
 
 model User {
-  id             Int     @id @default(autoincrement())
-  email          String  @unique
-  password       String?
-  role           Role    @default(USER)
-  entraSubjectId String? @unique
+  id                    Int                    @id @default(autoincrement())
+  email                 String                 @unique
+  password              String?
+  role                  Role                   @default(USER)
+  entraSubjectId        String?                @unique
+  internProfile         InternProfile?
+  missionPartnerProfile MissionPartnerProfile?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now()) @updatedAt

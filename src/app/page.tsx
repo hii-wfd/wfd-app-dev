@@ -74,12 +74,12 @@ const Home = () => (
     <section className="section-spacing">
       <Container>
         <Row className="align-items-center gx-5 deep-sea-title justify-content-center">
-          <Col md={10}>
-            <h2 className="display-5 fw-bold deep-sea-text mb-4">
+          <Col md={8}>
+            <h2 className="display-5 fw-bold deep-sea-text mb-5">
               OUR PROGRAM
             </h2>
 
-            <p className="lead ">
+            <p className="lead">
               The HII internship program features specializations in the fields of IT, Data Science, Intelligence, and Cyber.
             </p>
 
@@ -109,13 +109,18 @@ const Home = () => (
             />
           </Col>
           <Col md={6}>
-            <h2 className="display-5 fw-bold deep-sea-text mb-4">
+            <h2 className="display-6 fw-bold deep-sea-text mb-5">
               SUMMER OPPORTUNITIES AT HOME!
             </h2>
 
             <p className="lead">
               Step into the world of intelligence and make a real impact supporting the Department of Defense in the Indo-Pacific region. 
+              
+            </p>
+            <p className="lead">
               Over eight exciting weeks, you&apos;ll dive into expert-led briefings, sharpen essential skills, and tackle hands-on projects that put you at the center of the action. 
+            </p>
+            <p className="lead">
               The experience culminates in a dynamic capstone project where you and your team will apply everything you&apos;ve learned.
             </p>
           </Col>
@@ -128,7 +133,7 @@ const Home = () => (
       <Container>
         <Row className="align-items-center g-5">
           <Col lg={6}>
-            <h2 className="display-5 fw-bold deep-sea-text mb-4">
+            <h2 className="display-6 fw-bold deep-sea-text mb-5">
               HII MISSION TECHNOLOGIES
             </h2>
 
@@ -139,8 +144,8 @@ const Home = () => (
               complex challenges into mission-ready solutions.
             </p>
 
-            <p className="deep-sea-text">
-              To learn more about HII Mission Technologies, visit our website <a href="https://www.hii.com/mission-technologies" target="_blank" rel="noopener noreferrer">here</a>.
+            <p className="sky-blue-color">
+              To learn more about HII Mission Technologies, visit our website <a className="sky-blue-color" href="https://www.hii.com/mission-technologies" target="_blank" rel="noopener noreferrer">here</a>.
             </p>
           </Col>
 
@@ -162,7 +167,7 @@ const Home = () => (
   <Container>
     {/* Section Title */}
     <div className="text-center mb-5">
-      <h2 className="display-5 fw-bold deep-sea-text">MEET THE TEAM</h2>
+      <h2 className="display-5 fw-bold deep-sea-text">INTERN TESTIMONIES</h2>
     </div>
 
     {/* Team Members */}
@@ -317,8 +322,8 @@ const Home = () => (
         </div>
         <Row className="align-items-center gx-5 deep-sea-title justify-content-center">
 
-          <Col md={6}>
-            <div className="d-flex align-items-center gap-4 mb-4">
+          <Col lg={5}>
+            <div className="d-flex align-items-center gap-4 mb-5">
               <FaDollarSign size={60} className="deep-sea-text flex-shrink-0"/>
               <div>
                 <h3 className="h5 fw-bold">
@@ -331,7 +336,7 @@ const Home = () => (
             </div>
           </Col>
 
-          <Col md={6}>
+          <Col lg={5}>
             <div className="d-flex align-items-center gap-4 mb-4">
               <FaClock size={60} className="deep-sea-text flex-shrink-0"/>
               <div>
@@ -348,7 +353,7 @@ const Home = () => (
         </Row>
 
         <Row className="align-items-center gx-5 deep-sea-title justify-content-center">
-          <Col lg={6}>
+          <Col lg={5}>
             <div className="d-flex align-items-center gap-4 mb-4">
               <FaMapMarkerAlt size={60} className="deep-sea-text flex-shrink-0"/>
               <div>
@@ -362,7 +367,7 @@ const Home = () => (
             </div>
           </Col>
 
-          <Col lg={6}>
+          <Col lg={5}>
             <div className="d-flex align-items-center gap-4 mb-4">
               <FaSearch size={60} className="deep-sea-text flex-shrink-0"/>
               <div>
@@ -440,7 +445,7 @@ const Home = () => (
         <Row className="align-items-center gx-5 deep-sea-title justify-content-center">
 
           <Col className="text-center" md={6}>
-            <div className="d-flex flex-column align-items-center gap-4 mb-4">
+            <div className="d-flex flex-column align-items-center gap-4 mb-5">
               <img src="/kapu-black.png" alt="Kapu Solutions Logo" className="img-fluid" style={{width: "100%", height: "150px", objectFit: "contain",}}/>
               <h3 className="h5 fw-bold">
                 <a href="https://kapusolutions.com/" target="_blank" rel="noopener noreferrer" className="deep-sea-title">
@@ -523,23 +528,53 @@ const Home = () => (
             target="_blank"
             rel="noopener noreferrer"
           >
-            INTERN
-          </a>
-
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSeoPsT4NDqSX_ywhbw-R-kbwmORkwoOVO3WHNucIc4JGd4iiQ/viewform"
-            className="btn btn-lg text-white"
-            style={{
-              backgroundColor: "var(--sky-blue)",
-              borderColor: "var(--sky-blue)",
-            }}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            PARTNER
+            CLICK HERE TO SIGN UP
           </a>
         </div>
       </Col>
+    </Row>
+  </Container>
+</section>
+
+{/* Media Highlights */}
+<section className="section-spacing">
+  <Container>
+    <Row className="justify-content-left">
+      <Col md={12} lg={12} className="text-left">
+        <h2 className="display-5 fw-bold deep-sea-text mb-4">
+          MEDIA HIGHLIGHTS
+        </h2>
+        <p className="lead deep-sea-text mb-4">
+          Check out the latest news and media coverage involving participants in our programs!
+        </p>
+      </Col>
+    </Row>
+
+    <Row className="justify-content-left">
+      <Col md={4} className="text-left mt-4 mb-5">
+        <div className="ratio ratio-16x9">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/bRKZa-vPEnI?si=GHdjD9nYUW-8Qzdw" title="YouTube video player" 
+          frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+        </div>
+      </Col>
+
+      <Col md={4} className="text-left mt-4">
+        <div className="ratio ratio-16x9">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/Ghm13nyvuAU?si=QlnqH6BbzjjoorsQ" title="YouTube video player" 
+          frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+        </div>
+      </Col>
+
+      <Col md={4} className="text-left mt-4">
+        <div className="ratio ratio-16x9">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/uF7CGGpu75I?si=itdW5ljHBywy6Lhl" title="YouTube video player" 
+          frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+        </div>
+      </Col>
+
     </Row>
   </Container>
 </section>

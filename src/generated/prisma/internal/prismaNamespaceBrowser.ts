@@ -55,6 +55,8 @@ export const ModelName = {
   Stuff: 'Stuff',
   Session: 'Session',
   LoginAttempt: 'LoginAttempt',
+  InternProfile: 'InternProfile',
+  MissionPartnerProfile: 'MissionPartnerProfile',
   storedFile: 'storedFile'
 } as const
 
@@ -119,6 +121,40 @@ export const LoginAttemptScalarFieldEnum = {
 } as const
 
 export type LoginAttemptScalarFieldEnum = (typeof LoginAttemptScalarFieldEnum)[keyof typeof LoginAttemptScalarFieldEnum]
+
+
+export const InternProfileScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  firstName: 'firstName',
+  lastName: 'lastName',
+  school: 'school',
+  major: 'major',
+  graduationDate: 'graduationDate',
+  skills: 'skills',
+  interests: 'interests',
+  status: 'status',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type InternProfileScalarFieldEnum = (typeof InternProfileScalarFieldEnum)[keyof typeof InternProfileScalarFieldEnum]
+
+
+export const MissionPartnerProfileScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  organizationName: 'organizationName',
+  contactName: 'contactName',
+  contactEmail: 'contactEmail',
+  missionArea: 'missionArea',
+  description: 'description',
+  skillsNeeded: 'skillsNeeded',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type MissionPartnerProfileScalarFieldEnum = (typeof MissionPartnerProfileScalarFieldEnum)[keyof typeof MissionPartnerProfileScalarFieldEnum]
 
 
 export const StoredFileScalarFieldEnum = {

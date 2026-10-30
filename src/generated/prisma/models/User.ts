@@ -232,6 +232,8 @@ export type UserWhereInput = {
   entraSubjectId?: Prisma.StringNullableFilter<"User"> | string | null
   createdAt?: Prisma.DateTimeFilter<"User"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"User"> | Date | string
+  internProfile?: Prisma.XOR<Prisma.InternProfileNullableScalarRelationFilter, Prisma.InternProfileWhereInput> | null
+  missionPartnerProfile?: Prisma.XOR<Prisma.MissionPartnerProfileNullableScalarRelationFilter, Prisma.MissionPartnerProfileWhereInput> | null
   sessions?: Prisma.SessionListRelationFilter
   loginAttempts?: Prisma.LoginAttemptListRelationFilter
 }
@@ -244,6 +246,8 @@ export type UserOrderByWithRelationInput = {
   entraSubjectId?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  internProfile?: Prisma.InternProfileOrderByWithRelationInput
+  missionPartnerProfile?: Prisma.MissionPartnerProfileOrderByWithRelationInput
   sessions?: Prisma.SessionOrderByRelationAggregateInput
   loginAttempts?: Prisma.LoginAttemptOrderByRelationAggregateInput
 }
@@ -259,6 +263,8 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   role?: Prisma.EnumRoleFilter<"User"> | $Enums.Role
   createdAt?: Prisma.DateTimeFilter<"User"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"User"> | Date | string
+  internProfile?: Prisma.XOR<Prisma.InternProfileNullableScalarRelationFilter, Prisma.InternProfileWhereInput> | null
+  missionPartnerProfile?: Prisma.XOR<Prisma.MissionPartnerProfileNullableScalarRelationFilter, Prisma.MissionPartnerProfileWhereInput> | null
   sessions?: Prisma.SessionListRelationFilter
   loginAttempts?: Prisma.LoginAttemptListRelationFilter
 }, "id" | "email" | "entraSubjectId">
@@ -298,6 +304,8 @@ export type UserCreateInput = {
   entraSubjectId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  internProfile?: Prisma.InternProfileCreateNestedOneWithoutUserInput
+  missionPartnerProfile?: Prisma.MissionPartnerProfileCreateNestedOneWithoutUserInput
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
   loginAttempts?: Prisma.LoginAttemptCreateNestedManyWithoutUserInput
 }
@@ -310,6 +318,8 @@ export type UserUncheckedCreateInput = {
   entraSubjectId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  internProfile?: Prisma.InternProfileUncheckedCreateNestedOneWithoutUserInput
+  missionPartnerProfile?: Prisma.MissionPartnerProfileUncheckedCreateNestedOneWithoutUserInput
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
   loginAttempts?: Prisma.LoginAttemptUncheckedCreateNestedManyWithoutUserInput
 }
@@ -321,6 +331,8 @@ export type UserUpdateInput = {
   entraSubjectId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  internProfile?: Prisma.InternProfileUpdateOneWithoutUserNestedInput
+  missionPartnerProfile?: Prisma.MissionPartnerProfileUpdateOneWithoutUserNestedInput
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
   loginAttempts?: Prisma.LoginAttemptUpdateManyWithoutUserNestedInput
 }
@@ -333,6 +345,8 @@ export type UserUncheckedUpdateInput = {
   entraSubjectId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  internProfile?: Prisma.InternProfileUncheckedUpdateOneWithoutUserNestedInput
+  missionPartnerProfile?: Prisma.MissionPartnerProfileUncheckedUpdateOneWithoutUserNestedInput
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
   loginAttempts?: Prisma.LoginAttemptUncheckedUpdateManyWithoutUserNestedInput
 }
@@ -468,6 +482,34 @@ export type UserUpdateOneWithoutLoginAttemptsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutLoginAttemptsInput, Prisma.UserUpdateWithoutLoginAttemptsInput>, Prisma.UserUncheckedUpdateWithoutLoginAttemptsInput>
 }
 
+export type UserCreateNestedOneWithoutInternProfileInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutInternProfileInput, Prisma.UserUncheckedCreateWithoutInternProfileInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutInternProfileInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutInternProfileNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutInternProfileInput, Prisma.UserUncheckedCreateWithoutInternProfileInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutInternProfileInput
+  upsert?: Prisma.UserUpsertWithoutInternProfileInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutInternProfileInput, Prisma.UserUpdateWithoutInternProfileInput>, Prisma.UserUncheckedUpdateWithoutInternProfileInput>
+}
+
+export type UserCreateNestedOneWithoutMissionPartnerProfileInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutMissionPartnerProfileInput, Prisma.UserUncheckedCreateWithoutMissionPartnerProfileInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutMissionPartnerProfileInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutMissionPartnerProfileNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutMissionPartnerProfileInput, Prisma.UserUncheckedCreateWithoutMissionPartnerProfileInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutMissionPartnerProfileInput
+  upsert?: Prisma.UserUpsertWithoutMissionPartnerProfileInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutMissionPartnerProfileInput, Prisma.UserUpdateWithoutMissionPartnerProfileInput>, Prisma.UserUncheckedUpdateWithoutMissionPartnerProfileInput>
+}
+
 export type UserCreateWithoutSessionsInput = {
   email: string
   password?: string | null
@@ -475,6 +517,8 @@ export type UserCreateWithoutSessionsInput = {
   entraSubjectId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  internProfile?: Prisma.InternProfileCreateNestedOneWithoutUserInput
+  missionPartnerProfile?: Prisma.MissionPartnerProfileCreateNestedOneWithoutUserInput
   loginAttempts?: Prisma.LoginAttemptCreateNestedManyWithoutUserInput
 }
 
@@ -486,6 +530,8 @@ export type UserUncheckedCreateWithoutSessionsInput = {
   entraSubjectId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  internProfile?: Prisma.InternProfileUncheckedCreateNestedOneWithoutUserInput
+  missionPartnerProfile?: Prisma.MissionPartnerProfileUncheckedCreateNestedOneWithoutUserInput
   loginAttempts?: Prisma.LoginAttemptUncheckedCreateNestedManyWithoutUserInput
 }
 
@@ -512,6 +558,8 @@ export type UserUpdateWithoutSessionsInput = {
   entraSubjectId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  internProfile?: Prisma.InternProfileUpdateOneWithoutUserNestedInput
+  missionPartnerProfile?: Prisma.MissionPartnerProfileUpdateOneWithoutUserNestedInput
   loginAttempts?: Prisma.LoginAttemptUpdateManyWithoutUserNestedInput
 }
 
@@ -523,6 +571,8 @@ export type UserUncheckedUpdateWithoutSessionsInput = {
   entraSubjectId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  internProfile?: Prisma.InternProfileUncheckedUpdateOneWithoutUserNestedInput
+  missionPartnerProfile?: Prisma.MissionPartnerProfileUncheckedUpdateOneWithoutUserNestedInput
   loginAttempts?: Prisma.LoginAttemptUncheckedUpdateManyWithoutUserNestedInput
 }
 
@@ -533,6 +583,8 @@ export type UserCreateWithoutLoginAttemptsInput = {
   entraSubjectId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  internProfile?: Prisma.InternProfileCreateNestedOneWithoutUserInput
+  missionPartnerProfile?: Prisma.MissionPartnerProfileCreateNestedOneWithoutUserInput
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
 }
 
@@ -544,6 +596,8 @@ export type UserUncheckedCreateWithoutLoginAttemptsInput = {
   entraSubjectId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  internProfile?: Prisma.InternProfileUncheckedCreateNestedOneWithoutUserInput
+  missionPartnerProfile?: Prisma.MissionPartnerProfileUncheckedCreateNestedOneWithoutUserInput
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
 }
 
@@ -570,6 +624,8 @@ export type UserUpdateWithoutLoginAttemptsInput = {
   entraSubjectId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  internProfile?: Prisma.InternProfileUpdateOneWithoutUserNestedInput
+  missionPartnerProfile?: Prisma.MissionPartnerProfileUpdateOneWithoutUserNestedInput
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
 }
 
@@ -581,7 +637,141 @@ export type UserUncheckedUpdateWithoutLoginAttemptsInput = {
   entraSubjectId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  internProfile?: Prisma.InternProfileUncheckedUpdateOneWithoutUserNestedInput
+  missionPartnerProfile?: Prisma.MissionPartnerProfileUncheckedUpdateOneWithoutUserNestedInput
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+}
+
+export type UserCreateWithoutInternProfileInput = {
+  email: string
+  password?: string | null
+  role?: $Enums.Role
+  entraSubjectId?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  missionPartnerProfile?: Prisma.MissionPartnerProfileCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  loginAttempts?: Prisma.LoginAttemptCreateNestedManyWithoutUserInput
+}
+
+export type UserUncheckedCreateWithoutInternProfileInput = {
+  id?: number
+  email: string
+  password?: string | null
+  role?: $Enums.Role
+  entraSubjectId?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  missionPartnerProfile?: Prisma.MissionPartnerProfileUncheckedCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  loginAttempts?: Prisma.LoginAttemptUncheckedCreateNestedManyWithoutUserInput
+}
+
+export type UserCreateOrConnectWithoutInternProfileInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutInternProfileInput, Prisma.UserUncheckedCreateWithoutInternProfileInput>
+}
+
+export type UserUpsertWithoutInternProfileInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutInternProfileInput, Prisma.UserUncheckedUpdateWithoutInternProfileInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutInternProfileInput, Prisma.UserUncheckedCreateWithoutInternProfileInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutInternProfileInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutInternProfileInput, Prisma.UserUncheckedUpdateWithoutInternProfileInput>
+}
+
+export type UserUpdateWithoutInternProfileInput = {
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  entraSubjectId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  missionPartnerProfile?: Prisma.MissionPartnerProfileUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  loginAttempts?: Prisma.LoginAttemptUpdateManyWithoutUserNestedInput
+}
+
+export type UserUncheckedUpdateWithoutInternProfileInput = {
+  id?: Prisma.IntFieldUpdateOperationsInput | number
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  entraSubjectId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  missionPartnerProfile?: Prisma.MissionPartnerProfileUncheckedUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  loginAttempts?: Prisma.LoginAttemptUncheckedUpdateManyWithoutUserNestedInput
+}
+
+export type UserCreateWithoutMissionPartnerProfileInput = {
+  email: string
+  password?: string | null
+  role?: $Enums.Role
+  entraSubjectId?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  internProfile?: Prisma.InternProfileCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  loginAttempts?: Prisma.LoginAttemptCreateNestedManyWithoutUserInput
+}
+
+export type UserUncheckedCreateWithoutMissionPartnerProfileInput = {
+  id?: number
+  email: string
+  password?: string | null
+  role?: $Enums.Role
+  entraSubjectId?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  internProfile?: Prisma.InternProfileUncheckedCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  loginAttempts?: Prisma.LoginAttemptUncheckedCreateNestedManyWithoutUserInput
+}
+
+export type UserCreateOrConnectWithoutMissionPartnerProfileInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutMissionPartnerProfileInput, Prisma.UserUncheckedCreateWithoutMissionPartnerProfileInput>
+}
+
+export type UserUpsertWithoutMissionPartnerProfileInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutMissionPartnerProfileInput, Prisma.UserUncheckedUpdateWithoutMissionPartnerProfileInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutMissionPartnerProfileInput, Prisma.UserUncheckedCreateWithoutMissionPartnerProfileInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutMissionPartnerProfileInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutMissionPartnerProfileInput, Prisma.UserUncheckedUpdateWithoutMissionPartnerProfileInput>
+}
+
+export type UserUpdateWithoutMissionPartnerProfileInput = {
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  entraSubjectId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  internProfile?: Prisma.InternProfileUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  loginAttempts?: Prisma.LoginAttemptUpdateManyWithoutUserNestedInput
+}
+
+export type UserUncheckedUpdateWithoutMissionPartnerProfileInput = {
+  id?: Prisma.IntFieldUpdateOperationsInput | number
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  entraSubjectId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  internProfile?: Prisma.InternProfileUncheckedUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  loginAttempts?: Prisma.LoginAttemptUncheckedUpdateManyWithoutUserNestedInput
 }
 
 
@@ -632,6 +822,8 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   entraSubjectId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  internProfile?: boolean | Prisma.User$internProfileArgs<ExtArgs>
+  missionPartnerProfile?: boolean | Prisma.User$missionPartnerProfileArgs<ExtArgs>
   sessions?: boolean | Prisma.User$sessionsArgs<ExtArgs>
   loginAttempts?: boolean | Prisma.User$loginAttemptsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
@@ -669,6 +861,8 @@ export type UserSelectScalar = {
 
 export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "email" | "password" | "role" | "entraSubjectId" | "createdAt" | "updatedAt", ExtArgs["result"]["user"]>
 export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  internProfile?: boolean | Prisma.User$internProfileArgs<ExtArgs>
+  missionPartnerProfile?: boolean | Prisma.User$missionPartnerProfileArgs<ExtArgs>
   sessions?: boolean | Prisma.User$sessionsArgs<ExtArgs>
   loginAttempts?: boolean | Prisma.User$loginAttemptsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
@@ -679,6 +873,8 @@ export type UserIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensi
 export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "User"
   objects: {
+    internProfile: Prisma.$InternProfilePayload<ExtArgs> | null
+    missionPartnerProfile: Prisma.$MissionPartnerProfilePayload<ExtArgs> | null
     sessions: Prisma.$SessionPayload<ExtArgs>[]
     loginAttempts: Prisma.$LoginAttemptPayload<ExtArgs>[]
   }
@@ -1084,6 +1280,8 @@ readonly fields: UserFieldRefs;
  */
 export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
+  internProfile<T extends Prisma.User$internProfileArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$internProfileArgs<ExtArgs>>): Prisma.Prisma__InternProfileClient<runtime.Types.Result.GetResult<Prisma.$InternProfilePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  missionPartnerProfile<T extends Prisma.User$missionPartnerProfileArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$missionPartnerProfileArgs<ExtArgs>>): Prisma.Prisma__MissionPartnerProfileClient<runtime.Types.Result.GetResult<Prisma.$MissionPartnerProfilePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   sessions<T extends Prisma.User$sessionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$sessionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SessionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   loginAttempts<T extends Prisma.User$loginAttemptsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$loginAttemptsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LoginAttemptPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
@@ -1512,6 +1710,44 @@ export type UserDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Internal
    * Limit how many Users to delete.
    */
   limit?: number
+}
+
+/**
+ * User.internProfile
+ */
+export type User$internProfileArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the InternProfile
+   */
+  select?: Prisma.InternProfileSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the InternProfile
+   */
+  omit?: Prisma.InternProfileOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.InternProfileInclude<ExtArgs> | null
+  where?: Prisma.InternProfileWhereInput
+}
+
+/**
+ * User.missionPartnerProfile
+ */
+export type User$missionPartnerProfileArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the MissionPartnerProfile
+   */
+  select?: Prisma.MissionPartnerProfileSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the MissionPartnerProfile
+   */
+  omit?: Prisma.MissionPartnerProfileOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.MissionPartnerProfileInclude<ExtArgs> | null
+  where?: Prisma.MissionPartnerProfileWhereInput
 }
 
 /**
