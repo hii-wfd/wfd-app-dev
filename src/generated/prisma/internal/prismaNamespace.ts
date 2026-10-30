@@ -403,7 +403,7 @@ export const ModelName = {
   LoginAttempt: 'LoginAttempt',
   InternProfile: 'InternProfile',
   MissionPartnerProfile: 'MissionPartnerProfile',
-  storedFile: 'storedFile'
+  StoredFile: 'StoredFile'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -867,76 +867,76 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
-    storedFile: {
-      payload: Prisma.$storedFilePayload<ExtArgs>
-      fields: Prisma.storedFileFieldRefs
+    StoredFile: {
+      payload: Prisma.$StoredFilePayload<ExtArgs>
+      fields: Prisma.StoredFileFieldRefs
       operations: {
         findUnique: {
-          args: Prisma.storedFileFindUniqueArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$storedFilePayload> | null
+          args: Prisma.StoredFileFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StoredFilePayload> | null
         }
         findUniqueOrThrow: {
-          args: Prisma.storedFileFindUniqueOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$storedFilePayload>
+          args: Prisma.StoredFileFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StoredFilePayload>
         }
         findFirst: {
-          args: Prisma.storedFileFindFirstArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$storedFilePayload> | null
+          args: Prisma.StoredFileFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StoredFilePayload> | null
         }
         findFirstOrThrow: {
-          args: Prisma.storedFileFindFirstOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$storedFilePayload>
+          args: Prisma.StoredFileFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StoredFilePayload>
         }
         findMany: {
-          args: Prisma.storedFileFindManyArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$storedFilePayload>[]
+          args: Prisma.StoredFileFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StoredFilePayload>[]
         }
         create: {
-          args: Prisma.storedFileCreateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$storedFilePayload>
+          args: Prisma.StoredFileCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StoredFilePayload>
         }
         createMany: {
-          args: Prisma.storedFileCreateManyArgs<ExtArgs>
+          args: Prisma.StoredFileCreateManyArgs<ExtArgs>
           result: BatchPayload
         }
         createManyAndReturn: {
-          args: Prisma.storedFileCreateManyAndReturnArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$storedFilePayload>[]
+          args: Prisma.StoredFileCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StoredFilePayload>[]
         }
         delete: {
-          args: Prisma.storedFileDeleteArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$storedFilePayload>
+          args: Prisma.StoredFileDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StoredFilePayload>
         }
         update: {
-          args: Prisma.storedFileUpdateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$storedFilePayload>
+          args: Prisma.StoredFileUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StoredFilePayload>
         }
         deleteMany: {
-          args: Prisma.storedFileDeleteManyArgs<ExtArgs>
+          args: Prisma.StoredFileDeleteManyArgs<ExtArgs>
           result: BatchPayload
         }
         updateMany: {
-          args: Prisma.storedFileUpdateManyArgs<ExtArgs>
+          args: Prisma.StoredFileUpdateManyArgs<ExtArgs>
           result: BatchPayload
         }
         updateManyAndReturn: {
-          args: Prisma.storedFileUpdateManyAndReturnArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$storedFilePayload>[]
+          args: Prisma.StoredFileUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StoredFilePayload>[]
         }
         upsert: {
-          args: Prisma.storedFileUpsertArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$storedFilePayload>
+          args: Prisma.StoredFileUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StoredFilePayload>
         }
         aggregate: {
           args: Prisma.StoredFileAggregateArgs<ExtArgs>
           result: runtime.Types.Utils.Optional<Prisma.AggregateStoredFile>
         }
         groupBy: {
-          args: Prisma.storedFileGroupByArgs<ExtArgs>
+          args: Prisma.StoredFileGroupByArgs<ExtArgs>
           result: runtime.Types.Utils.Optional<Prisma.StoredFileGroupByOutputType>[]
         }
         count: {
-          args: Prisma.storedFileCountArgs<ExtArgs>
+          args: Prisma.StoredFileCountArgs<ExtArgs>
           result: runtime.Types.Utils.Optional<Prisma.StoredFileCountAggregateOutputType> | number
         }
       }
@@ -1068,7 +1068,9 @@ export const StoredFileScalarFieldEnum = {
   pathname: 'pathname',
   contentType: 'contentType',
   size: 'size',
+  addedById: 'addedById',
   createdAt: 'createdAt',
+  deletedById: 'deletedById',
   deletedAt: 'deletedAt'
 } as const
 
@@ -1352,7 +1354,7 @@ export type GlobalOmitConfig = {
   loginAttempt?: Prisma.LoginAttemptOmit
   internProfile?: Prisma.InternProfileOmit
   missionPartnerProfile?: Prisma.MissionPartnerProfileOmit
-  storedFile?: Prisma.storedFileOmit
+  storedFile?: Prisma.StoredFileOmit
 }
 
 /* Types for Logging */

@@ -1,45 +1,67 @@
 import { prisma } from "@/lib/prisma";
+import type { Prisma } from "@/generated/prisma/client";
+import { adminProtectedPage } from "@/lib/page-protection"
 import { formatRemaining } from "@/lib/fileQueries";
-import { purgeFile } from "@/lib/fileActions";
+import { purgeFile, restoreFile } from "@/lib/fileActions";
 import SearchBox from "@/components/FileSearchBox";
+import { auth } from '@/lib/auth';
 
 export const dynamic = "force-dynamic";
 
 export default async function RecoverableFilesPage({searchParams}: {
   searchParams: Promise<{ q?: string }>;
 }) {
+  const session = await auth();
+  adminProtectedPage(
+    session as { user: { email: string; id: string; name: string } } | null,
+  );
+
   const { q = "" } = await searchParams;
   const term = q.trim();
   const devMode = process.env.ENABLE_DEV_TOOLS === "true";
 
-  const match = (field: string) => ({ [field]: { contains: term, mode: "insensitive" as const } });
+  const contains = (value: string): Prisma.StringFilter => ({
+    contains: value,
+    mode: "insensitive",
+  });
+
+  const where: Prisma.StoredFileWhereInput = {
+    deletedAt: { not: null },
+    ...(term
+      ? {
+        OR: [
+          { name: contains(term) },
+          { addedBy: { email: contains(term) } },
+          { deletedBy: { email: contains(term) } },
+        ],
+      }
+      : {}),
+  };
 
   const files = await prisma.storedFile.findMany({
-    where: {
-      deletedAt: { not: null },
-      ...(term && {
-        OR: [
-          match("name"),
-          { addedBy: match("name") },
-          { deletedBy: match("name") },
-        ],
-      }),
+    where,
+    include: {
+      addedBy: { select: { email: true } },
+      deletedBy: { select: { email: true } },
     },
-    include: { addedBy: true, deletedBy: true },
-    orderBy: { deletedAt: "asc" }, // soonest to be deleted first
+    orderBy: { deletedAt: "asc" },
   });
 
   return (
     <main className="container py-5">
-      <br></br>
-      <br></br>
+      <br />
+      <br />
       <h1>Recoverable Files ({files.length})</h1>
       <SearchBox />
 
       <table className="table align-middle">
         <thead>
         <tr>
-          <th>File</th><th>Added by</th><th>Deleted by</th><th>Time left</th>
+          <th>File</th>
+          <th>Added by</th>
+          <th>Deleted by</th>
+          <th>Time left</th>
+          <th>Recover</th>
           {devMode && <th />}
         </tr>
         </thead>
@@ -50,6 +72,11 @@ export default async function RecoverableFilesPage({searchParams}: {
             <td>{f.addedBy?.email ?? "Unknown"}</td>
             <td>{f.deletedBy?.email ?? "Unknown"}</td>
             <td>{formatRemaining(f.deletedAt!)}</td>
+            <td>
+              <form action={restoreFile.bind(null, f.id)}>
+                <button className="btn btn-sm btn-success">Recover</button>
+              </form>
+            </td>
             {devMode && (
               <td>
                 <form action={purgeFile.bind(null, f.id)}>
@@ -60,7 +87,11 @@ export default async function RecoverableFilesPage({searchParams}: {
           </tr>
         ))}
         {files.length === 0 && (
-          <tr><td colSpan={devMode ? 5 : 4} className="text-muted">No matching files.</td></tr>
+          <tr>
+            <td colSpan={devMode ? 6 : 5} className="text-muted">
+              No matching files.
+            </td>
+          </tr>
         )}
         </tbody>
       </table>
