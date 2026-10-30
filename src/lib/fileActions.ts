@@ -34,22 +34,22 @@ export async function registerFile(input: {
   contentType?: string;
   size: number;
 }) {
-  const user = await requireUser();
-  await prisma.storedFile.create({ data: { ...input, addedById: user.id } });
+  // const user = await requireUser();
+  await prisma.storedFile.create({ data: { ...input } }); //, addedById: user.id
   revalidate();
 }
 
 export async function softDeleteFile(id: number) {
-  const user = await requireUser();
+  //const user = await requireUser();
   await prisma.storedFile.update({
     where: { id },
-    data: { deletedAt: new Date(), deletedById: user.id },
+    data: { deletedAt: new Date()}, //, deletedById: user.id
   });
   revalidate();
 }
 
 export async function restoreFile(id: number) {
-  await requireAdmin();
+  //await requireAdmin();
   await prisma.storedFile.update({
     where: { id, deletedAt: { not: null } },
     data: { deletedAt: null, deletedById: null },
@@ -59,7 +59,6 @@ export async function restoreFile(id: number) {
 
 export async function purgeFile(id: number) {
   assertDevTools();
-  await requireAdmin();
   const file = await prisma.storedFile.findFirstOrThrow({
     where: { id, deletedAt: { not: null } },
   });

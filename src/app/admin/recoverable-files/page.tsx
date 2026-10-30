@@ -1,20 +1,18 @@
 import { prisma } from "@/lib/prisma";
 import type { Prisma } from "@/generated/prisma/client";
+import { auth } from '@/lib/auth';
 import { adminProtectedPage } from "@/lib/page-protection"
 import { formatRemaining } from "@/lib/fileQueries";
 import { purgeFile, restoreFile } from "@/lib/fileActions";
 import SearchBox from "@/components/FileSearchBox";
-import { auth } from '@/lib/auth';
 
 export const dynamic = "force-dynamic";
 
 export default async function RecoverableFilesPage({searchParams}: {
   searchParams: Promise<{ q?: string }>;
 }) {
-  const session = await auth();
-  adminProtectedPage(
-    session as { user: { email: string; id: string; name: string } } | null,
-  );
+  //const session = await auth();
+  //adminProtectedPage(session as { user: { email: string; id: string; name: string } } | null,);
 
   const { q = "" } = await searchParams;
   const term = q.trim();
