@@ -2,6 +2,10 @@
     color: var(--deep-sea);
 }
 
+.light-gray {
+    color: #878786;
+}
+
 .deep-sea-text {
     color: var(--deep-sea);
 }
