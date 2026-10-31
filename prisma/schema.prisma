@@ -34,6 +34,10 @@ model User {
 
   sessions      Session[]
   loginAttempts LoginAttempt[]
+
+  filesCreated StoredFile[] @relation("FileCreator")
+  filesDeleted StoredFile[] @relation("FileDeleter")
+  storedFiles  StoredFile[]
 }
 
 enum Condition {
@@ -112,13 +116,27 @@ model MissionPartnerProfile {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
-model storedFile {
-  id          Int       @id @default(autoincrement())
+model StoredFile {
+  id          Int     @id @default(autoincrement())
   name        String
-  url         String    @unique
+  url         String  @unique
   pathname    String
   contentType String?
-  size        Int
-  createdAt   DateTime  @default(now())
+  size        Int // -> BigInt
+
+  //accessibleBy User[] //which user(s) can access the file
+
+  createdById Int? //which user created the file
+  createdBy   User?    @relation("FileCreator", fields: [createdById], references: [id], onDelete: SetNull)
+  createdAt   DateTime @default(now())
+
+  deletedById Int? //which user deleted the file
+  deletedBy   User?     @relation("FileDeleter", fields: [deletedById], references: [id], onDelete: SetNull)
   deletedAt   DateTime?
+  user        User?     @relation(fields: [userId], references: [id])
+  userId      Int?
+
+  @@index([deletedAt])
+  @@index([createdById])
+  @@index([deletedById])
 }
