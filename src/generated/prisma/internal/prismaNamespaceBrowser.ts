@@ -164,10 +164,11 @@ export const StoredFileScalarFieldEnum = {
   pathname: 'pathname',
   contentType: 'contentType',
   size: 'size',
-  addedById: 'addedById',
+  createdById: 'createdById',
   createdAt: 'createdAt',
   deletedById: 'deletedById',
-  deletedAt: 'deletedAt'
+  deletedAt: 'deletedAt',
+  userId: 'userId'
 } as const
 
 export type StoredFileScalarFieldEnum = (typeof StoredFileScalarFieldEnum)[keyof typeof StoredFileScalarFieldEnum]

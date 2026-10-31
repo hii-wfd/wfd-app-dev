@@ -29,7 +29,7 @@ export default async function RecoverableFilesPage({searchParams}: {
       ? {
         OR: [
           { name: contains(term) },
-          { addedBy: { email: contains(term) } },
+          { createdBy: { email: contains(term) } },
           { deletedBy: { email: contains(term) } },
         ],
       }
@@ -39,7 +39,7 @@ export default async function RecoverableFilesPage({searchParams}: {
   const files = await prisma.storedFile.findMany({
     where,
     include: {
-      addedBy: { select: { email: true } },
+      createdBy: { select: { email: true } },
       deletedBy: { select: { email: true } },
     },
     orderBy: { deletedAt: "asc" },
@@ -67,7 +67,7 @@ export default async function RecoverableFilesPage({searchParams}: {
         {files.map((f) => (
           <tr key={f.id}>
             <td>{f.name}</td>
-            <td>{f.addedBy?.email ?? "Unknown"}</td>
+            <td>{f.createdBy?.email ?? "Unknown"}</td>
             <td>{f.deletedBy?.email ?? "Unknown"}</td>
             <td>{formatRemaining(f.deletedAt!)}</td>
             <td>

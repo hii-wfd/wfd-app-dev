@@ -236,8 +236,9 @@ export type UserWhereInput = {
   missionPartnerProfile?: Prisma.XOR<Prisma.MissionPartnerProfileNullableScalarRelationFilter, Prisma.MissionPartnerProfileWhereInput> | null
   sessions?: Prisma.SessionListRelationFilter
   loginAttempts?: Prisma.LoginAttemptListRelationFilter
-  filesAdded?: Prisma.StoredFileListRelationFilter
+  filesCreated?: Prisma.StoredFileListRelationFilter
   filesDeleted?: Prisma.StoredFileListRelationFilter
+  storedFiles?: Prisma.StoredFileListRelationFilter
 }
 
 export type UserOrderByWithRelationInput = {
@@ -252,8 +253,9 @@ export type UserOrderByWithRelationInput = {
   missionPartnerProfile?: Prisma.MissionPartnerProfileOrderByWithRelationInput
   sessions?: Prisma.SessionOrderByRelationAggregateInput
   loginAttempts?: Prisma.LoginAttemptOrderByRelationAggregateInput
-  filesAdded?: Prisma.StoredFileOrderByRelationAggregateInput
+  filesCreated?: Prisma.StoredFileOrderByRelationAggregateInput
   filesDeleted?: Prisma.StoredFileOrderByRelationAggregateInput
+  storedFiles?: Prisma.StoredFileOrderByRelationAggregateInput
 }
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -271,8 +273,9 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   missionPartnerProfile?: Prisma.XOR<Prisma.MissionPartnerProfileNullableScalarRelationFilter, Prisma.MissionPartnerProfileWhereInput> | null
   sessions?: Prisma.SessionListRelationFilter
   loginAttempts?: Prisma.LoginAttemptListRelationFilter
-  filesAdded?: Prisma.StoredFileListRelationFilter
+  filesCreated?: Prisma.StoredFileListRelationFilter
   filesDeleted?: Prisma.StoredFileListRelationFilter
+  storedFiles?: Prisma.StoredFileListRelationFilter
 }, "id" | "email" | "entraSubjectId">
 
 export type UserOrderByWithAggregationInput = {
@@ -314,8 +317,9 @@ export type UserCreateInput = {
   missionPartnerProfile?: Prisma.MissionPartnerProfileCreateNestedOneWithoutUserInput
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
   loginAttempts?: Prisma.LoginAttemptCreateNestedManyWithoutUserInput
-  filesAdded?: Prisma.StoredFileCreateNestedManyWithoutAddedByInput
+  filesCreated?: Prisma.StoredFileCreateNestedManyWithoutCreatedByInput
   filesDeleted?: Prisma.StoredFileCreateNestedManyWithoutDeletedByInput
+  storedFiles?: Prisma.StoredFileCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateInput = {
@@ -330,8 +334,9 @@ export type UserUncheckedCreateInput = {
   missionPartnerProfile?: Prisma.MissionPartnerProfileUncheckedCreateNestedOneWithoutUserInput
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
   loginAttempts?: Prisma.LoginAttemptUncheckedCreateNestedManyWithoutUserInput
-  filesAdded?: Prisma.StoredFileUncheckedCreateNestedManyWithoutAddedByInput
+  filesCreated?: Prisma.StoredFileUncheckedCreateNestedManyWithoutCreatedByInput
   filesDeleted?: Prisma.StoredFileUncheckedCreateNestedManyWithoutDeletedByInput
+  storedFiles?: Prisma.StoredFileUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserUpdateInput = {
@@ -345,8 +350,9 @@ export type UserUpdateInput = {
   missionPartnerProfile?: Prisma.MissionPartnerProfileUpdateOneWithoutUserNestedInput
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
   loginAttempts?: Prisma.LoginAttemptUpdateManyWithoutUserNestedInput
-  filesAdded?: Prisma.StoredFileUpdateManyWithoutAddedByNestedInput
+  filesCreated?: Prisma.StoredFileUpdateManyWithoutCreatedByNestedInput
   filesDeleted?: Prisma.StoredFileUpdateManyWithoutDeletedByNestedInput
+  storedFiles?: Prisma.StoredFileUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateInput = {
@@ -361,8 +367,9 @@ export type UserUncheckedUpdateInput = {
   missionPartnerProfile?: Prisma.MissionPartnerProfileUncheckedUpdateOneWithoutUserNestedInput
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
   loginAttempts?: Prisma.LoginAttemptUncheckedUpdateManyWithoutUserNestedInput
-  filesAdded?: Prisma.StoredFileUncheckedUpdateManyWithoutAddedByNestedInput
+  filesCreated?: Prisma.StoredFileUncheckedUpdateManyWithoutCreatedByNestedInput
   filesDeleted?: Prisma.StoredFileUncheckedUpdateManyWithoutDeletedByNestedInput
+  storedFiles?: Prisma.StoredFileUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateManyInput = {
@@ -524,9 +531,9 @@ export type UserUpdateOneRequiredWithoutMissionPartnerProfileNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutMissionPartnerProfileInput, Prisma.UserUpdateWithoutMissionPartnerProfileInput>, Prisma.UserUncheckedUpdateWithoutMissionPartnerProfileInput>
 }
 
-export type UserCreateNestedOneWithoutFilesAddedInput = {
-  create?: Prisma.XOR<Prisma.UserCreateWithoutFilesAddedInput, Prisma.UserUncheckedCreateWithoutFilesAddedInput>
-  connectOrCreate?: Prisma.UserCreateOrConnectWithoutFilesAddedInput
+export type UserCreateNestedOneWithoutFilesCreatedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutFilesCreatedInput, Prisma.UserUncheckedCreateWithoutFilesCreatedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutFilesCreatedInput
   connect?: Prisma.UserWhereUniqueInput
 }
 
@@ -536,14 +543,20 @@ export type UserCreateNestedOneWithoutFilesDeletedInput = {
   connect?: Prisma.UserWhereUniqueInput
 }
 
-export type UserUpdateOneWithoutFilesAddedNestedInput = {
-  create?: Prisma.XOR<Prisma.UserCreateWithoutFilesAddedInput, Prisma.UserUncheckedCreateWithoutFilesAddedInput>
-  connectOrCreate?: Prisma.UserCreateOrConnectWithoutFilesAddedInput
-  upsert?: Prisma.UserUpsertWithoutFilesAddedInput
+export type UserCreateNestedOneWithoutStoredFilesInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutStoredFilesInput, Prisma.UserUncheckedCreateWithoutStoredFilesInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutStoredFilesInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneWithoutFilesCreatedNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutFilesCreatedInput, Prisma.UserUncheckedCreateWithoutFilesCreatedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutFilesCreatedInput
+  upsert?: Prisma.UserUpsertWithoutFilesCreatedInput
   disconnect?: Prisma.UserWhereInput | boolean
   delete?: Prisma.UserWhereInput | boolean
   connect?: Prisma.UserWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutFilesAddedInput, Prisma.UserUpdateWithoutFilesAddedInput>, Prisma.UserUncheckedUpdateWithoutFilesAddedInput>
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutFilesCreatedInput, Prisma.UserUpdateWithoutFilesCreatedInput>, Prisma.UserUncheckedUpdateWithoutFilesCreatedInput>
 }
 
 export type UserUpdateOneWithoutFilesDeletedNestedInput = {
@@ -556,6 +569,16 @@ export type UserUpdateOneWithoutFilesDeletedNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutFilesDeletedInput, Prisma.UserUpdateWithoutFilesDeletedInput>, Prisma.UserUncheckedUpdateWithoutFilesDeletedInput>
 }
 
+export type UserUpdateOneWithoutStoredFilesNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutStoredFilesInput, Prisma.UserUncheckedCreateWithoutStoredFilesInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutStoredFilesInput
+  upsert?: Prisma.UserUpsertWithoutStoredFilesInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutStoredFilesInput, Prisma.UserUpdateWithoutStoredFilesInput>, Prisma.UserUncheckedUpdateWithoutStoredFilesInput>
+}
+
 export type UserCreateWithoutSessionsInput = {
   email: string
   password?: string | null
@@ -566,8 +589,9 @@ export type UserCreateWithoutSessionsInput = {
   internProfile?: Prisma.InternProfileCreateNestedOneWithoutUserInput
   missionPartnerProfile?: Prisma.MissionPartnerProfileCreateNestedOneWithoutUserInput
   loginAttempts?: Prisma.LoginAttemptCreateNestedManyWithoutUserInput
-  filesAdded?: Prisma.StoredFileCreateNestedManyWithoutAddedByInput
+  filesCreated?: Prisma.StoredFileCreateNestedManyWithoutCreatedByInput
   filesDeleted?: Prisma.StoredFileCreateNestedManyWithoutDeletedByInput
+  storedFiles?: Prisma.StoredFileCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutSessionsInput = {
@@ -581,8 +605,9 @@ export type UserUncheckedCreateWithoutSessionsInput = {
   internProfile?: Prisma.InternProfileUncheckedCreateNestedOneWithoutUserInput
   missionPartnerProfile?: Prisma.MissionPartnerProfileUncheckedCreateNestedOneWithoutUserInput
   loginAttempts?: Prisma.LoginAttemptUncheckedCreateNestedManyWithoutUserInput
-  filesAdded?: Prisma.StoredFileUncheckedCreateNestedManyWithoutAddedByInput
+  filesCreated?: Prisma.StoredFileUncheckedCreateNestedManyWithoutCreatedByInput
   filesDeleted?: Prisma.StoredFileUncheckedCreateNestedManyWithoutDeletedByInput
+  storedFiles?: Prisma.StoredFileUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutSessionsInput = {
@@ -611,8 +636,9 @@ export type UserUpdateWithoutSessionsInput = {
   internProfile?: Prisma.InternProfileUpdateOneWithoutUserNestedInput
   missionPartnerProfile?: Prisma.MissionPartnerProfileUpdateOneWithoutUserNestedInput
   loginAttempts?: Prisma.LoginAttemptUpdateManyWithoutUserNestedInput
-  filesAdded?: Prisma.StoredFileUpdateManyWithoutAddedByNestedInput
+  filesCreated?: Prisma.StoredFileUpdateManyWithoutCreatedByNestedInput
   filesDeleted?: Prisma.StoredFileUpdateManyWithoutDeletedByNestedInput
+  storedFiles?: Prisma.StoredFileUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutSessionsInput = {
@@ -626,8 +652,9 @@ export type UserUncheckedUpdateWithoutSessionsInput = {
   internProfile?: Prisma.InternProfileUncheckedUpdateOneWithoutUserNestedInput
   missionPartnerProfile?: Prisma.MissionPartnerProfileUncheckedUpdateOneWithoutUserNestedInput
   loginAttempts?: Prisma.LoginAttemptUncheckedUpdateManyWithoutUserNestedInput
-  filesAdded?: Prisma.StoredFileUncheckedUpdateManyWithoutAddedByNestedInput
+  filesCreated?: Prisma.StoredFileUncheckedUpdateManyWithoutCreatedByNestedInput
   filesDeleted?: Prisma.StoredFileUncheckedUpdateManyWithoutDeletedByNestedInput
+  storedFiles?: Prisma.StoredFileUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutLoginAttemptsInput = {
@@ -640,8 +667,9 @@ export type UserCreateWithoutLoginAttemptsInput = {
   internProfile?: Prisma.InternProfileCreateNestedOneWithoutUserInput
   missionPartnerProfile?: Prisma.MissionPartnerProfileCreateNestedOneWithoutUserInput
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
-  filesAdded?: Prisma.StoredFileCreateNestedManyWithoutAddedByInput
+  filesCreated?: Prisma.StoredFileCreateNestedManyWithoutCreatedByInput
   filesDeleted?: Prisma.StoredFileCreateNestedManyWithoutDeletedByInput
+  storedFiles?: Prisma.StoredFileCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutLoginAttemptsInput = {
@@ -655,8 +683,9 @@ export type UserUncheckedCreateWithoutLoginAttemptsInput = {
   internProfile?: Prisma.InternProfileUncheckedCreateNestedOneWithoutUserInput
   missionPartnerProfile?: Prisma.MissionPartnerProfileUncheckedCreateNestedOneWithoutUserInput
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
-  filesAdded?: Prisma.StoredFileUncheckedCreateNestedManyWithoutAddedByInput
+  filesCreated?: Prisma.StoredFileUncheckedCreateNestedManyWithoutCreatedByInput
   filesDeleted?: Prisma.StoredFileUncheckedCreateNestedManyWithoutDeletedByInput
+  storedFiles?: Prisma.StoredFileUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutLoginAttemptsInput = {
@@ -685,8 +714,9 @@ export type UserUpdateWithoutLoginAttemptsInput = {
   internProfile?: Prisma.InternProfileUpdateOneWithoutUserNestedInput
   missionPartnerProfile?: Prisma.MissionPartnerProfileUpdateOneWithoutUserNestedInput
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
-  filesAdded?: Prisma.StoredFileUpdateManyWithoutAddedByNestedInput
+  filesCreated?: Prisma.StoredFileUpdateManyWithoutCreatedByNestedInput
   filesDeleted?: Prisma.StoredFileUpdateManyWithoutDeletedByNestedInput
+  storedFiles?: Prisma.StoredFileUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutLoginAttemptsInput = {
@@ -700,8 +730,9 @@ export type UserUncheckedUpdateWithoutLoginAttemptsInput = {
   internProfile?: Prisma.InternProfileUncheckedUpdateOneWithoutUserNestedInput
   missionPartnerProfile?: Prisma.MissionPartnerProfileUncheckedUpdateOneWithoutUserNestedInput
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
-  filesAdded?: Prisma.StoredFileUncheckedUpdateManyWithoutAddedByNestedInput
+  filesCreated?: Prisma.StoredFileUncheckedUpdateManyWithoutCreatedByNestedInput
   filesDeleted?: Prisma.StoredFileUncheckedUpdateManyWithoutDeletedByNestedInput
+  storedFiles?: Prisma.StoredFileUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutInternProfileInput = {
@@ -714,8 +745,9 @@ export type UserCreateWithoutInternProfileInput = {
   missionPartnerProfile?: Prisma.MissionPartnerProfileCreateNestedOneWithoutUserInput
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
   loginAttempts?: Prisma.LoginAttemptCreateNestedManyWithoutUserInput
-  filesAdded?: Prisma.StoredFileCreateNestedManyWithoutAddedByInput
+  filesCreated?: Prisma.StoredFileCreateNestedManyWithoutCreatedByInput
   filesDeleted?: Prisma.StoredFileCreateNestedManyWithoutDeletedByInput
+  storedFiles?: Prisma.StoredFileCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutInternProfileInput = {
@@ -729,8 +761,9 @@ export type UserUncheckedCreateWithoutInternProfileInput = {
   missionPartnerProfile?: Prisma.MissionPartnerProfileUncheckedCreateNestedOneWithoutUserInput
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
   loginAttempts?: Prisma.LoginAttemptUncheckedCreateNestedManyWithoutUserInput
-  filesAdded?: Prisma.StoredFileUncheckedCreateNestedManyWithoutAddedByInput
+  filesCreated?: Prisma.StoredFileUncheckedCreateNestedManyWithoutCreatedByInput
   filesDeleted?: Prisma.StoredFileUncheckedCreateNestedManyWithoutDeletedByInput
+  storedFiles?: Prisma.StoredFileUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutInternProfileInput = {
@@ -759,8 +792,9 @@ export type UserUpdateWithoutInternProfileInput = {
   missionPartnerProfile?: Prisma.MissionPartnerProfileUpdateOneWithoutUserNestedInput
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
   loginAttempts?: Prisma.LoginAttemptUpdateManyWithoutUserNestedInput
-  filesAdded?: Prisma.StoredFileUpdateManyWithoutAddedByNestedInput
+  filesCreated?: Prisma.StoredFileUpdateManyWithoutCreatedByNestedInput
   filesDeleted?: Prisma.StoredFileUpdateManyWithoutDeletedByNestedInput
+  storedFiles?: Prisma.StoredFileUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutInternProfileInput = {
@@ -774,8 +808,9 @@ export type UserUncheckedUpdateWithoutInternProfileInput = {
   missionPartnerProfile?: Prisma.MissionPartnerProfileUncheckedUpdateOneWithoutUserNestedInput
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
   loginAttempts?: Prisma.LoginAttemptUncheckedUpdateManyWithoutUserNestedInput
-  filesAdded?: Prisma.StoredFileUncheckedUpdateManyWithoutAddedByNestedInput
+  filesCreated?: Prisma.StoredFileUncheckedUpdateManyWithoutCreatedByNestedInput
   filesDeleted?: Prisma.StoredFileUncheckedUpdateManyWithoutDeletedByNestedInput
+  storedFiles?: Prisma.StoredFileUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutMissionPartnerProfileInput = {
@@ -788,8 +823,9 @@ export type UserCreateWithoutMissionPartnerProfileInput = {
   internProfile?: Prisma.InternProfileCreateNestedOneWithoutUserInput
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
   loginAttempts?: Prisma.LoginAttemptCreateNestedManyWithoutUserInput
-  filesAdded?: Prisma.StoredFileCreateNestedManyWithoutAddedByInput
+  filesCreated?: Prisma.StoredFileCreateNestedManyWithoutCreatedByInput
   filesDeleted?: Prisma.StoredFileCreateNestedManyWithoutDeletedByInput
+  storedFiles?: Prisma.StoredFileCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutMissionPartnerProfileInput = {
@@ -803,8 +839,9 @@ export type UserUncheckedCreateWithoutMissionPartnerProfileInput = {
   internProfile?: Prisma.InternProfileUncheckedCreateNestedOneWithoutUserInput
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
   loginAttempts?: Prisma.LoginAttemptUncheckedCreateNestedManyWithoutUserInput
-  filesAdded?: Prisma.StoredFileUncheckedCreateNestedManyWithoutAddedByInput
+  filesCreated?: Prisma.StoredFileUncheckedCreateNestedManyWithoutCreatedByInput
   filesDeleted?: Prisma.StoredFileUncheckedCreateNestedManyWithoutDeletedByInput
+  storedFiles?: Prisma.StoredFileUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutMissionPartnerProfileInput = {
@@ -833,8 +870,9 @@ export type UserUpdateWithoutMissionPartnerProfileInput = {
   internProfile?: Prisma.InternProfileUpdateOneWithoutUserNestedInput
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
   loginAttempts?: Prisma.LoginAttemptUpdateManyWithoutUserNestedInput
-  filesAdded?: Prisma.StoredFileUpdateManyWithoutAddedByNestedInput
+  filesCreated?: Prisma.StoredFileUpdateManyWithoutCreatedByNestedInput
   filesDeleted?: Prisma.StoredFileUpdateManyWithoutDeletedByNestedInput
+  storedFiles?: Prisma.StoredFileUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutMissionPartnerProfileInput = {
@@ -848,11 +886,12 @@ export type UserUncheckedUpdateWithoutMissionPartnerProfileInput = {
   internProfile?: Prisma.InternProfileUncheckedUpdateOneWithoutUserNestedInput
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
   loginAttempts?: Prisma.LoginAttemptUncheckedUpdateManyWithoutUserNestedInput
-  filesAdded?: Prisma.StoredFileUncheckedUpdateManyWithoutAddedByNestedInput
+  filesCreated?: Prisma.StoredFileUncheckedUpdateManyWithoutCreatedByNestedInput
   filesDeleted?: Prisma.StoredFileUncheckedUpdateManyWithoutDeletedByNestedInput
+  storedFiles?: Prisma.StoredFileUncheckedUpdateManyWithoutUserNestedInput
 }
 
-export type UserCreateWithoutFilesAddedInput = {
+export type UserCreateWithoutFilesCreatedInput = {
   email: string
   password?: string | null
   role?: $Enums.Role
@@ -864,9 +903,10 @@ export type UserCreateWithoutFilesAddedInput = {
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
   loginAttempts?: Prisma.LoginAttemptCreateNestedManyWithoutUserInput
   filesDeleted?: Prisma.StoredFileCreateNestedManyWithoutDeletedByInput
+  storedFiles?: Prisma.StoredFileCreateNestedManyWithoutUserInput
 }
 
-export type UserUncheckedCreateWithoutFilesAddedInput = {
+export type UserUncheckedCreateWithoutFilesCreatedInput = {
   id?: number
   email: string
   password?: string | null
@@ -879,11 +919,12 @@ export type UserUncheckedCreateWithoutFilesAddedInput = {
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
   loginAttempts?: Prisma.LoginAttemptUncheckedCreateNestedManyWithoutUserInput
   filesDeleted?: Prisma.StoredFileUncheckedCreateNestedManyWithoutDeletedByInput
+  storedFiles?: Prisma.StoredFileUncheckedCreateNestedManyWithoutUserInput
 }
 
-export type UserCreateOrConnectWithoutFilesAddedInput = {
+export type UserCreateOrConnectWithoutFilesCreatedInput = {
   where: Prisma.UserWhereUniqueInput
-  create: Prisma.XOR<Prisma.UserCreateWithoutFilesAddedInput, Prisma.UserUncheckedCreateWithoutFilesAddedInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutFilesCreatedInput, Prisma.UserUncheckedCreateWithoutFilesCreatedInput>
 }
 
 export type UserCreateWithoutFilesDeletedInput = {
@@ -897,7 +938,8 @@ export type UserCreateWithoutFilesDeletedInput = {
   missionPartnerProfile?: Prisma.MissionPartnerProfileCreateNestedOneWithoutUserInput
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
   loginAttempts?: Prisma.LoginAttemptCreateNestedManyWithoutUserInput
-  filesAdded?: Prisma.StoredFileCreateNestedManyWithoutAddedByInput
+  filesCreated?: Prisma.StoredFileCreateNestedManyWithoutCreatedByInput
+  storedFiles?: Prisma.StoredFileCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutFilesDeletedInput = {
@@ -912,7 +954,8 @@ export type UserUncheckedCreateWithoutFilesDeletedInput = {
   missionPartnerProfile?: Prisma.MissionPartnerProfileUncheckedCreateNestedOneWithoutUserInput
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
   loginAttempts?: Prisma.LoginAttemptUncheckedCreateNestedManyWithoutUserInput
-  filesAdded?: Prisma.StoredFileUncheckedCreateNestedManyWithoutAddedByInput
+  filesCreated?: Prisma.StoredFileUncheckedCreateNestedManyWithoutCreatedByInput
+  storedFiles?: Prisma.StoredFileUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutFilesDeletedInput = {
@@ -920,18 +963,54 @@ export type UserCreateOrConnectWithoutFilesDeletedInput = {
   create: Prisma.XOR<Prisma.UserCreateWithoutFilesDeletedInput, Prisma.UserUncheckedCreateWithoutFilesDeletedInput>
 }
 
-export type UserUpsertWithoutFilesAddedInput = {
-  update: Prisma.XOR<Prisma.UserUpdateWithoutFilesAddedInput, Prisma.UserUncheckedUpdateWithoutFilesAddedInput>
-  create: Prisma.XOR<Prisma.UserCreateWithoutFilesAddedInput, Prisma.UserUncheckedCreateWithoutFilesAddedInput>
+export type UserCreateWithoutStoredFilesInput = {
+  email: string
+  password?: string | null
+  role?: $Enums.Role
+  entraSubjectId?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  internProfile?: Prisma.InternProfileCreateNestedOneWithoutUserInput
+  missionPartnerProfile?: Prisma.MissionPartnerProfileCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  loginAttempts?: Prisma.LoginAttemptCreateNestedManyWithoutUserInput
+  filesCreated?: Prisma.StoredFileCreateNestedManyWithoutCreatedByInput
+  filesDeleted?: Prisma.StoredFileCreateNestedManyWithoutDeletedByInput
+}
+
+export type UserUncheckedCreateWithoutStoredFilesInput = {
+  id?: number
+  email: string
+  password?: string | null
+  role?: $Enums.Role
+  entraSubjectId?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  internProfile?: Prisma.InternProfileUncheckedCreateNestedOneWithoutUserInput
+  missionPartnerProfile?: Prisma.MissionPartnerProfileUncheckedCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  loginAttempts?: Prisma.LoginAttemptUncheckedCreateNestedManyWithoutUserInput
+  filesCreated?: Prisma.StoredFileUncheckedCreateNestedManyWithoutCreatedByInput
+  filesDeleted?: Prisma.StoredFileUncheckedCreateNestedManyWithoutDeletedByInput
+}
+
+export type UserCreateOrConnectWithoutStoredFilesInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutStoredFilesInput, Prisma.UserUncheckedCreateWithoutStoredFilesInput>
+}
+
+export type UserUpsertWithoutFilesCreatedInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutFilesCreatedInput, Prisma.UserUncheckedUpdateWithoutFilesCreatedInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutFilesCreatedInput, Prisma.UserUncheckedCreateWithoutFilesCreatedInput>
   where?: Prisma.UserWhereInput
 }
 
-export type UserUpdateToOneWithWhereWithoutFilesAddedInput = {
+export type UserUpdateToOneWithWhereWithoutFilesCreatedInput = {
   where?: Prisma.UserWhereInput
-  data: Prisma.XOR<Prisma.UserUpdateWithoutFilesAddedInput, Prisma.UserUncheckedUpdateWithoutFilesAddedInput>
+  data: Prisma.XOR<Prisma.UserUpdateWithoutFilesCreatedInput, Prisma.UserUncheckedUpdateWithoutFilesCreatedInput>
 }
 
-export type UserUpdateWithoutFilesAddedInput = {
+export type UserUpdateWithoutFilesCreatedInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
@@ -943,9 +1022,10 @@ export type UserUpdateWithoutFilesAddedInput = {
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
   loginAttempts?: Prisma.LoginAttemptUpdateManyWithoutUserNestedInput
   filesDeleted?: Prisma.StoredFileUpdateManyWithoutDeletedByNestedInput
+  storedFiles?: Prisma.StoredFileUpdateManyWithoutUserNestedInput
 }
 
-export type UserUncheckedUpdateWithoutFilesAddedInput = {
+export type UserUncheckedUpdateWithoutFilesCreatedInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   email?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -958,6 +1038,7 @@ export type UserUncheckedUpdateWithoutFilesAddedInput = {
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
   loginAttempts?: Prisma.LoginAttemptUncheckedUpdateManyWithoutUserNestedInput
   filesDeleted?: Prisma.StoredFileUncheckedUpdateManyWithoutDeletedByNestedInput
+  storedFiles?: Prisma.StoredFileUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserUpsertWithoutFilesDeletedInput = {
@@ -982,7 +1063,8 @@ export type UserUpdateWithoutFilesDeletedInput = {
   missionPartnerProfile?: Prisma.MissionPartnerProfileUpdateOneWithoutUserNestedInput
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
   loginAttempts?: Prisma.LoginAttemptUpdateManyWithoutUserNestedInput
-  filesAdded?: Prisma.StoredFileUpdateManyWithoutAddedByNestedInput
+  filesCreated?: Prisma.StoredFileUpdateManyWithoutCreatedByNestedInput
+  storedFiles?: Prisma.StoredFileUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutFilesDeletedInput = {
@@ -997,7 +1079,50 @@ export type UserUncheckedUpdateWithoutFilesDeletedInput = {
   missionPartnerProfile?: Prisma.MissionPartnerProfileUncheckedUpdateOneWithoutUserNestedInput
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
   loginAttempts?: Prisma.LoginAttemptUncheckedUpdateManyWithoutUserNestedInput
-  filesAdded?: Prisma.StoredFileUncheckedUpdateManyWithoutAddedByNestedInput
+  filesCreated?: Prisma.StoredFileUncheckedUpdateManyWithoutCreatedByNestedInput
+  storedFiles?: Prisma.StoredFileUncheckedUpdateManyWithoutUserNestedInput
+}
+
+export type UserUpsertWithoutStoredFilesInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutStoredFilesInput, Prisma.UserUncheckedUpdateWithoutStoredFilesInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutStoredFilesInput, Prisma.UserUncheckedCreateWithoutStoredFilesInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutStoredFilesInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutStoredFilesInput, Prisma.UserUncheckedUpdateWithoutStoredFilesInput>
+}
+
+export type UserUpdateWithoutStoredFilesInput = {
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  entraSubjectId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  internProfile?: Prisma.InternProfileUpdateOneWithoutUserNestedInput
+  missionPartnerProfile?: Prisma.MissionPartnerProfileUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  loginAttempts?: Prisma.LoginAttemptUpdateManyWithoutUserNestedInput
+  filesCreated?: Prisma.StoredFileUpdateManyWithoutCreatedByNestedInput
+  filesDeleted?: Prisma.StoredFileUpdateManyWithoutDeletedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutStoredFilesInput = {
+  id?: Prisma.IntFieldUpdateOperationsInput | number
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  entraSubjectId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  internProfile?: Prisma.InternProfileUncheckedUpdateOneWithoutUserNestedInput
+  missionPartnerProfile?: Prisma.MissionPartnerProfileUncheckedUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  loginAttempts?: Prisma.LoginAttemptUncheckedUpdateManyWithoutUserNestedInput
+  filesCreated?: Prisma.StoredFileUncheckedUpdateManyWithoutCreatedByNestedInput
+  filesDeleted?: Prisma.StoredFileUncheckedUpdateManyWithoutDeletedByNestedInput
 }
 
 
@@ -1008,15 +1133,17 @@ export type UserUncheckedUpdateWithoutFilesDeletedInput = {
 export type UserCountOutputType = {
   sessions: number
   loginAttempts: number
-  filesAdded: number
+  filesCreated: number
   filesDeleted: number
+  storedFiles: number
 }
 
 export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   sessions?: boolean | UserCountOutputTypeCountSessionsArgs
   loginAttempts?: boolean | UserCountOutputTypeCountLoginAttemptsArgs
-  filesAdded?: boolean | UserCountOutputTypeCountFilesAddedArgs
+  filesCreated?: boolean | UserCountOutputTypeCountFilesCreatedArgs
   filesDeleted?: boolean | UserCountOutputTypeCountFilesDeletedArgs
+  storedFiles?: boolean | UserCountOutputTypeCountStoredFilesArgs
 }
 
 /**
@@ -1046,7 +1173,7 @@ export type UserCountOutputTypeCountLoginAttemptsArgs<ExtArgs extends runtime.Ty
 /**
  * UserCountOutputType without action
  */
-export type UserCountOutputTypeCountFilesAddedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type UserCountOutputTypeCountFilesCreatedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   where?: Prisma.StoredFileWhereInput
 }
 
@@ -1054,6 +1181,13 @@ export type UserCountOutputTypeCountFilesAddedArgs<ExtArgs extends runtime.Types
  * UserCountOutputType without action
  */
 export type UserCountOutputTypeCountFilesDeletedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.StoredFileWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountStoredFilesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   where?: Prisma.StoredFileWhereInput
 }
 
@@ -1070,8 +1204,9 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   missionPartnerProfile?: boolean | Prisma.User$missionPartnerProfileArgs<ExtArgs>
   sessions?: boolean | Prisma.User$sessionsArgs<ExtArgs>
   loginAttempts?: boolean | Prisma.User$loginAttemptsArgs<ExtArgs>
-  filesAdded?: boolean | Prisma.User$filesAddedArgs<ExtArgs>
+  filesCreated?: boolean | Prisma.User$filesCreatedArgs<ExtArgs>
   filesDeleted?: boolean | Prisma.User$filesDeletedArgs<ExtArgs>
+  storedFiles?: boolean | Prisma.User$storedFilesArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
@@ -1111,8 +1246,9 @@ export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   missionPartnerProfile?: boolean | Prisma.User$missionPartnerProfileArgs<ExtArgs>
   sessions?: boolean | Prisma.User$sessionsArgs<ExtArgs>
   loginAttempts?: boolean | Prisma.User$loginAttemptsArgs<ExtArgs>
-  filesAdded?: boolean | Prisma.User$filesAddedArgs<ExtArgs>
+  filesCreated?: boolean | Prisma.User$filesCreatedArgs<ExtArgs>
   filesDeleted?: boolean | Prisma.User$filesDeletedArgs<ExtArgs>
+  storedFiles?: boolean | Prisma.User$storedFilesArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type UserIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -1125,8 +1261,9 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     missionPartnerProfile: Prisma.$MissionPartnerProfilePayload<ExtArgs> | null
     sessions: Prisma.$SessionPayload<ExtArgs>[]
     loginAttempts: Prisma.$LoginAttemptPayload<ExtArgs>[]
-    filesAdded: Prisma.$StoredFilePayload<ExtArgs>[]
+    filesCreated: Prisma.$StoredFilePayload<ExtArgs>[]
     filesDeleted: Prisma.$StoredFilePayload<ExtArgs>[]
+    storedFiles: Prisma.$StoredFilePayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
@@ -1534,8 +1671,9 @@ export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Typ
   missionPartnerProfile<T extends Prisma.User$missionPartnerProfileArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$missionPartnerProfileArgs<ExtArgs>>): Prisma.Prisma__MissionPartnerProfileClient<runtime.Types.Result.GetResult<Prisma.$MissionPartnerProfilePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   sessions<T extends Prisma.User$sessionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$sessionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SessionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   loginAttempts<T extends Prisma.User$loginAttemptsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$loginAttemptsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LoginAttemptPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  filesAdded<T extends Prisma.User$filesAddedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$filesAddedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StoredFilePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  filesCreated<T extends Prisma.User$filesCreatedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$filesCreatedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StoredFilePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   filesDeleted<T extends Prisma.User$filesDeletedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$filesDeletedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StoredFilePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  storedFiles<T extends Prisma.User$storedFilesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$storedFilesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StoredFilePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2051,9 +2189,9 @@ export type User$loginAttemptsArgs<ExtArgs extends runtime.Types.Extensions.Inte
 }
 
 /**
- * User.filesAdded
+ * User.filesCreated
  */
-export type User$filesAddedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type User$filesCreatedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
    * Select specific fields to fetch from the StoredFile
    */
@@ -2078,6 +2216,30 @@ export type User$filesAddedArgs<ExtArgs extends runtime.Types.Extensions.Interna
  * User.filesDeleted
  */
 export type User$filesDeletedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the StoredFile
+   */
+  select?: Prisma.StoredFileSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the StoredFile
+   */
+  omit?: Prisma.StoredFileOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.StoredFileInclude<ExtArgs> | null
+  where?: Prisma.StoredFileWhereInput
+  orderBy?: Prisma.StoredFileOrderByWithRelationInput | Prisma.StoredFileOrderByWithRelationInput[]
+  cursor?: Prisma.StoredFileWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.StoredFileScalarFieldEnum | Prisma.StoredFileScalarFieldEnum[]
+}
+
+/**
+ * User.storedFiles
+ */
+export type User$storedFilesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
    * Select specific fields to fetch from the StoredFile
    */

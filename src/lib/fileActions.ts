@@ -35,7 +35,7 @@ export async function registerFile(input: {
   size: number;
 }) {
   // const user = await requireUser();
-  await prisma.storedFile.create({ data: { ...input } }); //, addedById: user.id
+  await prisma.storedFile.create({ data: { ...input } }); //, createdById: user.id
   revalidate();
 }
 
