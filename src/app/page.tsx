@@ -194,7 +194,7 @@ const Home = () => (
         <div className="text-left">
           <h4 className="mt-3 deep-sea-text">Team Member Name</h4>
           <p className="light-gray">
-            Title or role of this team member in the program.
+            Title or role of this team member in the program. Edit me!
           </p>
           <p className="deep-sea-text mt-4">
             A short description about this team member and their role in
@@ -219,7 +219,7 @@ const Home = () => (
         <div className="text-left">
           <h4 className="mt-3 deep-sea-text">Team Member Name</h4>
           <p className="light-gray">
-            Title or role of the team member in the program.
+            Title or role of the team member in the program. Edit me!
           </p>
           <p className="deep-sea-text mt-4">
             A short description about this team member and their role in
