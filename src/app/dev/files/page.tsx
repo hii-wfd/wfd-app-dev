@@ -25,7 +25,7 @@ export default async function DevFilesPage() {
       <ul className="list-group mb-4">
         {active.map((f) => (
           <li key={f.id} className="list-group-item d-flex justify-content-between">
-            <a href={f.url} target="_blank">{f.name}</a>
+            <a href={`/api/files/${f.id}/download`}>{f.name}</a>
             <span>{(f.size / 1024).toFixed(1)} KB</span>
             <form action={softDeleteFile.bind(null, f.id)}>
               <button className="btn btn-sm btn-outline-danger">Delete</button>
