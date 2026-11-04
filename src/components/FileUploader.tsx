@@ -19,6 +19,7 @@ export default function FileUploader() {
         access: "private",  // public if private doesn't work
         handleUploadUrl: "/api/files/upload",
       });
+      setStatus("Saving record...")
       await registerFile({
         name: file.name,
         url: blob.url,
