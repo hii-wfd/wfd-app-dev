@@ -39,3 +39,55 @@
     padding-top: 50px;
     padding-bottom: 50px;
 }
+
+
+/* FAQ Accordion */
+.accordion {
+  --bs-accordion-border-color: #dee2e6;
+  --bs-accordion-btn-focus-box-shadow: none;
+  --bs-accordion-active-bg: transparent;
+  --bs-accordion-active-color: #003b4d;
+}
+
+/* Horizontal borders between questions */
+.accordion-item {
+  border-left: none;
+  border-right: none;
+  border-radius: 0 !important;
+}
+
+/* Question headers */
+.accordion-button {
+  font-size: 1.3rem;
+  font-weight: 400; /* Removes bold */
+  color: #003b4d;
+  background-color: transparent;
+  padding: 1.5rem 0;
+}
+
+/* Expanded question */
+.accordion-button:not(.collapsed) {
+  background-color: transparent;
+  color: #003b4d;
+  box-shadow: none;
+  font-weight: 400;
+}
+
+/* Answer text */
+.accordion-body {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #52616b;
+  padding: 0 2rem 1.5rem 0;
+}
+
+/* Remove focus outline/shadow */
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+.pfp {
+  width: 200px;
+  height: 250px;
+  object-fit: cover; /* Prevents the image from stretching or distorting */
+}

@@ -10,6 +10,10 @@ import {
   FaClock,
 } from "react-icons/fa";
 import { ArrowRight } from 'react-bootstrap-icons';
+import Accordion from "react-bootstrap/Accordion";
+import AccordionItem from "react-bootstrap/AccordionItem";
+import AccordionHeader from "react-bootstrap/AccordionHeader";
+import AccordionBody from "react-bootstrap/AccordionBody";
 
 /** The Home page. */
 const Home = () => (
@@ -77,7 +81,7 @@ const Home = () => (
       <Container>
         <Row className="align-items-center gx-5 deep-sea-title justify-content-center">
           <Col lg={10}>
-            <h2 className="display-6 deep-sea-text mb-4">
+            <h2 className="display-7 deep-sea-text mb-4">
               Our Program
             </h2>
 
@@ -174,7 +178,7 @@ const Home = () => (
   <Container>
     {/* Section Title */}
     <div className="text-left mb-5">
-      <h2 className="display-6 deep-sea-text">Our Leadership</h2>
+      <h2 className="display-7 deep-sea-text">Our Leadership</h2>
     </div>
 
     {/* Team Members */}
@@ -236,89 +240,153 @@ const Home = () => (
   <Container>
     {/* Section Title */}
     <div className="text-left mb-5">
-      <h2 className="display-6 deep-sea-text">Intern Testimonies</h2>
+      <h2 className="display-7 deep-sea-text">Intern Testimonies</h2>
     </div>
 
-    {/* Team Members */}
+    {/* Team Member 1 */}
     <Row className="g-4">
-      {/* Team Member 1 */}
       <Col lg={3}>
         <div className="text-center">
           <Image
-            src="/images/team-1.jpg"
+            className="pfp mb-3"
+            src="/c-hisamoto.png"
             alt="Team Member 1"
             fluid
-            rounded
           />
-          <h4 className="mt-3 deep-sea-text">Team Member Name</h4>
+        </div>
+      </Col>
+      <Col lg={9}>
+        <div className="text-left">
+          <h4 className="mt-3 deep-sea-text">Courtney Hisamoto</h4>
           <p className="deep-sea-text">
-            A short description about this team member and their role in
-            the program.
+            Summer Intern 2026
+          </p>
+          <p className="deep-sea-text">
+            University of Hawaii at Mānoa
+          </p>
+          <p className="deep-sea-text">
+            BS Computer Science
+          </p>
+          <p className="deep-sea-text">
+            Description
           </p>
         </div>
       </Col>
+    </Row>
 
-      {/* Team Member 2 */}
+    {/* Team Member 2 */}
+    <Row className="g-4">
       <Col lg={3}>
         <div className="text-center">
           <Image
-            src="/images/team-2.jpg"
+            className="pfp mb-3"
+            src="/t-d-devore.JPG"
             alt="Team Member 2"
             fluid
-            rounded
           />
-          <h4 className="mt-3 deep-sea-text">Team Member Name</h4>
+        </div>
+      </Col>
+      <Col lg={9}>
+        <div className="text-left">
+          <h4 className="mt-3 deep-sea-text">Tai Demura-Devore</h4>
+          <p className="deep-sea-text">
+            Summer Intern 2026
+          </p>
+          <p className="deep-sea-text">
+            University of Michigan
+          </p>
+          <p className="deep-sea-text">
+            BSE Data Science
+          </p>
           <p className="deep-sea-text">
             A short description about this team member and their role in
             the program.
           </p>
         </div>
       </Col>
+    </Row>
+      
+      
 
       {/* Team Member 3 */}
+    <Row className="g-4">
       <Col lg={3}>
         <div className="text-center">
           <Image
-            src="/images/team-3.jpg"
+            className="pfp mb-3"
+            src="n-espiritu.jpg"
             alt="Team Member 3"
             fluid
-            rounded
           />
-          <h4 className="mt-3 deep-sea-text">Team Member Name</h4>
-          <p>
+        </div>
+      </Col>
+      <Col lg={9}>
+        <h4 className="mt-3 deep-sea-text">Naydel Espiritu</h4>
+          <p className="deep-sea-text">
+            Summer Intern 2026
+          </p>
+          <p className="deep-sea-text">
+            University of Hawaii at Mānoa
+          </p>
+          <p className="deep-sea-text">
+            BS Computer Science
+          </p>
+          <p className="deep-sea-text">
             A short description about this team member and their role in
             the program.
           </p>
-        </div>
-      </Col>
+        </Col>
+    </Row>
 
       {/* Team Member 4 */}
+    <Row className="g-4">
       <Col lg={3}>
         <div className="text-center">
           <Image
+            className="pfp mb-3"
             src="/images/team-4.jpg"
             alt="Team Member 4"
             fluid
             rounded
           />
           <h4 className="mt-3 deep-sea-text">Team Member Name</h4>
+          <p className="deep-sea-text">
+            Cohort Year
+          </p>
+          <p className="deep-sea-text">
+            School
+          </p>
+          <p className="deep-sea-text">
+            Major
+          </p>
           <p>
             A short description about this team member and their role in
             the program.
           </p>
         </div>
       </Col>
+    </Row>
 
       {/* Team Member 5 */}
       <Col lg={3}>
         <div className="text-center">
           <Image
+            className="pfp mb-3"
             src="/images/team-5.jpg"
             alt="Team Member 5"
             fluid
             rounded
           />
           <h4 className="mt-3 deep-sea-text">Team Member Name</h4>
+          <p className="deep-sea-text">
+            Cohort Year
+          </p>
+          <p className="deep-sea-text">
+            School
+          </p>
+          <p className="deep-sea-text">
+            Major
+          </p>
           <p className="deep-sea-text">
             A short description about this team member and their role in
             the program.
@@ -330,12 +398,22 @@ const Home = () => (
       <Col lg={3}>
         <div className="text-center">
           <Image
+            className="pfp mb-3"
             src="/images/team-6.jpg"
             alt="Team Member 6"
             fluid
             rounded
           />
           <h4 className="mt-3 deep-sea-text">Team Member Name</h4>
+          <p className="deep-sea-text">
+            Cohort Year
+          </p>
+          <p className="deep-sea-text">
+            School
+          </p>
+          <p className="deep-sea-text">
+            Major
+          </p>
           <p className="deep-sea-text">
             A short description about this team member and their role in
             the program.
@@ -347,12 +425,22 @@ const Home = () => (
       <Col lg={3}>
         <div className="text-center">
           <Image
+            className="pfp mb-3"
             src="/images/team-7.jpg"
             alt="Team Member 7"
             fluid
             rounded
           />
           <h4 className="mt-3 deep-sea-text">Team Member Name</h4>
+          <p className="deep-sea-text">
+            Cohort Year
+          </p>
+          <p className="deep-sea-text">
+            School
+          </p>
+          <p className="deep-sea-text">
+            Major
+          </p>
           <p className="deep-sea-text">
             A short description about this team member and their role in
             the program.
@@ -364,6 +452,7 @@ const Home = () => (
       <Col lg={3}>
         <div className="text-center">
           <Image
+            className="pfp mb-3"
             src="/images/team-8.jpg"
             alt="Team Member 8"
             fluid
@@ -371,153 +460,143 @@ const Home = () => (
           />
           <h4 className="mt-3 deep-sea-text">Team Member Name</h4>
           <p className="deep-sea-text">
+            Cohort Year
+          </p>
+          <p className="deep-sea-text">
+            School
+          </p>
+          <p className="deep-sea-text">
+            Major
+          </p>
+          <p className="deep-sea-text">
             A short description about this team member and their role in
             the program.
           </p>
         </div>
       </Col>
+  </Container>
+</section>
+
+{/* FAQs */}
+<section className="section-spacing">
+  <Container>
+    <div className="mb-3">
+      <h2 className="display-7 deep-sea-text">
+        FAQs
+      </h2>
+      <p className="lead text-secondary">
+        Frequently asked questions about the program
+      </p>
+    </div>
+
+    <Row className="justify-content-center">
+      <Col lg={12}>
+<Accordion flush alwaysOpen>
+  <AccordionItem eventKey="0">
+    <AccordionHeader>Is the internship paid?</AccordionHeader>
+    <AccordionBody>
+      Yes! Interns are paid on a competitive pay scale based on their experience and education.
+    </AccordionBody>
+  </AccordionItem>
+
+  <AccordionItem eventKey="1">
+    <AccordionHeader>What are the working hours?</AccordionHeader>
+    <AccordionBody>
+      During the school year, hours are flexible to accommodate your school schedule!
+    </AccordionBody>
+  </AccordionItem>
+
+  <AccordionItem eventKey="2">
+    <AccordionHeader>Where are we located?</AccordionHeader>
+    <AccordionBody>
+      The primary location of work is our corporate office in the heart of Downtown Honolulu. There
+      may also be opportunities to work at various onsite client locations.
+    </AccordionBody>
+  </AccordionItem>
+
+  <AccordionItem eventKey="3">
+    <AccordionHeader>Do I need a security clearance to start?</AccordionHeader>
+    <AccordionBody>
+      No! Government security clearances are not required to start. However, you must be eligible
+      to obtain and maintain one.
+    </AccordionBody>
+  </AccordionItem>
+</Accordion>
+      </Col>
     </Row>
   </Container>
 </section>
 
-    {/* FAQs */}
-    <section className="section-spacing">
-      <Container>
-        <div className="text-left mb-5">
-          <h2 className="display-6 deep-sea-text">FAQs</h2>
-          <p className="lead deep-sea-text">
-            Frequently Asked Questions about the Program
-          </p>
-        </div>
-        <Row className="align-items-center gx-5 deep-sea-title justify-content-center">
-
-          <Col lg={6}>
-            <div className="d-flex align-items-center gap-4 mb-5">
-              <FaDollarSign size={60} className="deep-sea-text flex-shrink-0"/>
-              <div>
-                <h3 className="h5 fw-bold">
-                  Is it paid?
-                </h3>
-                <p className="deep-sea-text">
-                  Yes! Interns are paid on a competitive pay scale based on their experience and education.
-                </p>
-              </div>
-            </div>
-          </Col>
-
-          <Col lg={6}>
-            <div className="d-flex align-items-center gap-4 mb-5">
-              <FaClock size={60} className="deep-sea-text flex-shrink-0"/>
-              <div>
-                <h3 className="h5 deep-sea-title fw-bold">
-                  What are the hours?
-                </h3>
-                <p>
-                  During the school year, hours are flexible to fit around your school schedules! 
-                </p>
-              </div>
-            </div>
-
-          </Col>
-        </Row>
-
-        <Row className="align-items-center gx-5 deep-sea-title justify-content-center">
-          <Col lg={6}>
-            <div className="d-flex align-items-center gap-4">
-              <FaMapMarkerAlt size={60} className="deep-sea-text flex-shrink-0"/>
-              <div>
-                <h3 className="h5 fw-bold">
-                  Where are we located?
-                </h3>
-                <p>
-                  The primary location of work takes place at our corporate office in the heart of Downtown Honolulu. There may be opportunities to work at various onsite client locations. 
-                </p>
-              </div>
-            </div>
-          </Col>
-
-          <Col lg={6}>
-            <div className="d-flex align-items-center gap-4">
-              <FaSearch size={60} className="deep-sea-text flex-shrink-0"/>
-              <div>
-                <h3 className="h5 deep-sea-title fw-bold">
-                  Do I need a clearance to start?
-                </h3>
-                <p>
-                  No! Government security clearances are not required to start. However, you must be eligible to obtain and maintain one.  
-                </p>
-              </div>
-            </div>
-          </Col>
-        </Row>
-      </Container>
-    </section>
   
 
 {/* Requirements */}
 <section className="section-spacing">
   <Container>
     <div className="text-center mb-5">
-      <h2 className="display-6 fw-bold deep-sea-text">
-        Requirements to Apply:
+      <h2 className="display-7 deep-sea-text">
+        Requirements to Apply
       </h2>
     </div>
 
-    <Row className="justify-content-center g-3">
-      <Col lg={7}>
-        <div className="d-flex justify-content-left align-items-center gap-3 fw-bold p-4 bg-light rounded shadow-sm">
-          <span className="fs-4">✓</span>
-          <p className="mb-0 deep-sea-text fs-5">
-            High School Diploma or equivalent.
-          </p>
-        </div>
-      </Col>
+    <Row className="g-3">
+      {[
+        {
+          title: "High School Diploma",
+          description: "Must have a high school diploma or equivalent."
+        },
+        {
+          title: "Currently Enrolled",
+          description: "Must be actively pursuing a bachelor's degree."
+        },
+        {
+          title: "U.S. Citizenship",
+          description: "Must be a United States citizen."
+        },
+        {
+          title: "Security Clearance Potential",
+          description:
+            "Must have the ability to obtain and maintain a security clearance."
+        }
+      ].map((requirement, index) => (
+        <Col md={6} key={index}>
+          <div className="bg-white border rounded-0 p-4 h-100">
+            <div className="d-flex justify-content-between align-items-center mb-3">
+              <span className="fs-4 fw-bold deep-sea-text">
+                0{index + 1}
+              </span>
+              <i className="bi bi-check-circle-fill fs-4 text-info"></i>
+            </div>
 
-      <Col lg={7}>
-        <div className="d-flex justify-content-left align-items-center gap-3 fw-bold p-4 bg-light rounded shadow-sm">
-          <span className="fs-4">✓</span>
-          <p className="mb-0 deep-sea-text fs-5">
-            Actively pursuing a bachelor&apos;s degree.
-          </p>
-        </div>
-      </Col>
+            <h5 className="fw-bold deep-sea-text">
+              {requirement.title}
+            </h5>
 
-      <Col lg={7}>
-        <div className="d-flex justify-content-left align-items-center gap-3 fw-bold p-4 bg-light rounded shadow-sm">
-          <span className="fs-4">✓</span>
-          <p className="mb-0 deep-sea-text fs-5">
-            Must be a U.S. Citizen.
-          </p>
-        </div>
-      </Col>
-
-      <Col lg={7}>
-        <div className="d-flex justify-content-left text-center align-items-center gap-3 fw-bold p-4 bg-light rounded shadow-sm">
-          <span className="fs-4">✓</span>
-          <p className="mb-0 text-center deep-sea-text fs-5">
-            Must have the ability to obtain and maintain a security clearance.
-          </p>
-        </div>
-      </Col>
+            <p className="text-secondary mb-0">
+              {requirement.description}
+            </p>
+          </div>
+        </Col>
+      ))}
     </Row>
   </Container>
 </section>
+
 
     {/* Our Partners */}
     <section className="section-spacing">
       <Container>
         <div className="text-left mb-5">
-          <h2 className="display-6 deep-sea-text">
+          <h2 className="display-7 deep-sea-text">
             Mission Partner Network
           </h2>
         </div>
         <Row className="align-items-center gx-5 deep-sea-title justify-content-center">
           <Col className="text-center" lg={3}>
             <div className="d-flex flex-column align-items-center gap-4 mb-5">
-              <img src="/pacific-economics.png" alt="PacEcon Logo" className="img-fluid" style={{width: "100%", height: "100px", objectFit: "contain",}}/>
+              
                 <h3 className="h5 fw-bold">
                   <a href="https://pac-econ.com/" target="_blank" rel="noopener noreferrer" className="deep-sea-title">
-                  PacEcon
+                  <img src="/pacific-economics.png" alt="PacEcon Logo" className="img-fluid" style={{width: "100%", height: "100px", objectFit: "contain",}}/>
                   </a>
                 </h3>
             </div>
@@ -525,10 +604,10 @@ const Home = () => (
 
           <Col className="text-center" lg={3}>
             <div className="d-flex flex-column align-items-center gap-4 mb-5">
-              <img src="/kapu-black.png" alt="Kapu Solutions Logo" className="img-fluid" style={{width: "100%", height: "100px", objectFit: "contain",}}/>
+            
               <h3 className="h5 fw-bold">
                 <a href="https://kapusolutions.com/" target="_blank" rel="noopener noreferrer" className="deep-sea-title">
-                  Kapu Solutions
+                  <img src="/kapu-black.png" alt="Kapu Solutions Logo" className="img-fluid" style={{width: "100%", height: "100px", objectFit: "contain",}}/>
                 </a>
               </h3>
             </div>
@@ -536,10 +615,10 @@ const Home = () => (
 
           <Col className="text-center" lg={3}>
             <div className="d-flex flex-column align-items-center gap-4 mb-5">
-              <img src="/HawaiiP3I-logo.png" alt="P3I Logo" className="img-fluid" style={{width: "100%", height: "100px", objectFit: "contain",}}/>
+              
                 <h3 className="h5 deep-sea-title fw-bold">
                   <a href="https://hawaiip3i.org/" target="_blank" rel="noopener noreferrer" className="deep-sea-title">
-                    P3I
+                    <img src="/HawaiiP3I-logo.png" alt="P3I Logo" className="img-fluid" style={{width: "100%", height: "100px", objectFit: "contain",}}/>
                   </a>
                 </h3>
             </div>
@@ -547,10 +626,10 @@ const Home = () => (
 
           <Col className="text-center" lg={3}>
             <div className="d-flex flex-column align-items-center gap-4 mb-5" >
-              <img src="/mc3-tech.png" alt="MC3 Technologies Logo" className="img-fluid" style={{width: "100%", height: "100px", objectFit: "contain",}}/>
+              
                 <h3 className="h5 deep-sea-title fw-bold">
                   <a href="https://michael-cardenas-5pp8.squarespace.com/team" target="_blank" rel="noopener noreferrer" className="deep-sea-title">
-                    MC3 Technologies
+                    <img src="/mc3-tech.png" alt="MC3 Technologies Logo" className="img-fluid" style={{width: "100%", height: "100px", objectFit: "contain",}}/>
                   </a>
                 </h3>
             </div>
@@ -569,7 +648,7 @@ const Home = () => (
 
     
 {/* Mailing List */}
-<section className="section-spacing">
+<section className="section-spacing-small">
   <Container>
     <Row className="justify-content-center">
       <Col lg={6} className="text-center">
@@ -605,7 +684,7 @@ const Home = () => (
   <Container>
     <Row className="justify-content-left">
       <Col lg={12} className="text-left">
-        <h2 className="display-6 deep-sea-text mb-4">
+        <h2 className="display-7 deep-sea-text mt-4 mb-4">
           Media Highlights
         </h2>
         <p className="lead deep-sea-text mb-4">
