@@ -52,3 +52,8 @@ export type MissionPartnerProfile = Prisma.MissionPartnerProfileModel
  * 
  */
 export type StoredFile = Prisma.StoredFileModel
+/**
+ * Model AuditLog
+ * 
+ */
+export type AuditLog = Prisma.AuditLogModel

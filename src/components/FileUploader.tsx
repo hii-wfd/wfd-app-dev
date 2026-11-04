@@ -7,6 +7,7 @@ import { registerFile } from "@/lib/fileActions";
 export default function FileUploader() {
   const inputRef = useRef<HTMLInputElement>(null);
   const [status, setStatus] = useState("");
+  const [classification, setClassification] = useState<"NONE" | "PII" | "CUI">("NONE");
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -15,7 +16,7 @@ export default function FileUploader() {
     try {
       setStatus("Uploading...");
       const blob = await upload(`dev-uploads/${file.name}`, file, {
-        access: "public",
+        access: "private",  // public if private doesn't work
         handleUploadUrl: "/api/files/upload",
       });
       await registerFile({
@@ -24,6 +25,7 @@ export default function FileUploader() {
         pathname: blob.pathname,
         contentType: blob.contentType,
         size: file.size,
+        classification
       });
       setStatus("Done!");
     } catch (err) {
@@ -34,6 +36,15 @@ export default function FileUploader() {
   return (
     <form onSubmit={handleSubmit} className="mb-4">
       <input type="file" ref={inputRef} className="form-control mb-2" required />
+      <select
+        className="form-select mb-2"
+        value={classification}
+        onChange={(e) => setClassification(e.target.value as "NONE" | "PII" | "CUI")}
+      >
+        <option value="NONE">Unclassified</option>
+        <option value="PII">PII (test)</option>
+        <option value="CUI">CUI (test)</option>
+      </select>
       <button className="btn btn-primary">Upload</button> <span>{status}</span>
     </form>
   );

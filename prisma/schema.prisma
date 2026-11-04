@@ -116,13 +116,20 @@ model MissionPartnerProfile {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
+enum DataClassification {
+  NONE
+  PII
+  CUI
+}
+
 model StoredFile {
-  id          Int     @id @default(autoincrement())
-  name        String
-  url         String  @unique
-  pathname    String
-  contentType String?
-  size        Int // -> BigInt
+  id             Int                @id @default(autoincrement())
+  name           String
+  url            String             @unique
+  pathname       String
+  contentType    String?
+  size           Int // -> BigInt
+  classification DataClassification @default(NONE)
 
   //accessibleBy User[] //which user(s) can access the file
 
@@ -139,4 +146,40 @@ model StoredFile {
   @@index([deletedAt])
   @@index([createdById])
   @@index([deletedById])
+}
+
+enum AuditAction {
+  CREATE
+  READ
+  UPDATE
+  DELETE
+  RESTORE
+  PURGE
+  EXPORT
+}
+
+enum AuditOutcome {
+  SUCCESS
+  FAILURE
+  DENIED
+}
+
+model AuditLog {
+  id             String             @id @default(cuid())
+  at             DateTime           @default(now())
+  userId         Int?
+  userEmail      String?
+  userRole       String?
+  action         AuditAction
+  resourceType   String
+  resourceId     String?
+  classification DataClassification @default(NONE)
+  outcome        AuditOutcome       @default(SUCCESS)
+  ipAddress      String?
+  details        Json? // metadata only
+
+  @@index([at])
+  @@index([userId, at])
+  @@index([classification, at])
+  @@index([resourceType, resourceId])
 }

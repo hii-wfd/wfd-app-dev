@@ -49,6 +49,7 @@ export type StoredFileMinAggregateOutputType = {
   pathname: string | null
   contentType: string | null
   size: number | null
+  classification: $Enums.DataClassification | null
   createdById: number | null
   createdAt: Date | null
   deletedById: number | null
@@ -63,6 +64,7 @@ export type StoredFileMaxAggregateOutputType = {
   pathname: string | null
   contentType: string | null
   size: number | null
+  classification: $Enums.DataClassification | null
   createdById: number | null
   createdAt: Date | null
   deletedById: number | null
@@ -77,6 +79,7 @@ export type StoredFileCountAggregateOutputType = {
   pathname: number
   contentType: number
   size: number
+  classification: number
   createdById: number
   createdAt: number
   deletedById: number
@@ -109,6 +112,7 @@ export type StoredFileMinAggregateInputType = {
   pathname?: true
   contentType?: true
   size?: true
+  classification?: true
   createdById?: true
   createdAt?: true
   deletedById?: true
@@ -123,6 +127,7 @@ export type StoredFileMaxAggregateInputType = {
   pathname?: true
   contentType?: true
   size?: true
+  classification?: true
   createdById?: true
   createdAt?: true
   deletedById?: true
@@ -137,6 +142,7 @@ export type StoredFileCountAggregateInputType = {
   pathname?: true
   contentType?: true
   size?: true
+  classification?: true
   createdById?: true
   createdAt?: true
   deletedById?: true
@@ -238,6 +244,7 @@ export type StoredFileGroupByOutputType = {
   pathname: string
   contentType: string | null
   size: number
+  classification: $Enums.DataClassification
   createdById: number | null
   createdAt: Date
   deletedById: number | null
@@ -275,6 +282,7 @@ export type StoredFileWhereInput = {
   pathname?: Prisma.StringFilter<"StoredFile"> | string
   contentType?: Prisma.StringNullableFilter<"StoredFile"> | string | null
   size?: Prisma.IntFilter<"StoredFile"> | number
+  classification?: Prisma.EnumDataClassificationFilter<"StoredFile"> | $Enums.DataClassification
   createdById?: Prisma.IntNullableFilter<"StoredFile"> | number | null
   createdAt?: Prisma.DateTimeFilter<"StoredFile"> | Date | string
   deletedById?: Prisma.IntNullableFilter<"StoredFile"> | number | null
@@ -292,6 +300,7 @@ export type StoredFileOrderByWithRelationInput = {
   pathname?: Prisma.SortOrder
   contentType?: Prisma.SortOrderInput | Prisma.SortOrder
   size?: Prisma.SortOrder
+  classification?: Prisma.SortOrder
   createdById?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   deletedById?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -312,6 +321,7 @@ export type StoredFileWhereUniqueInput = Prisma.AtLeast<{
   pathname?: Prisma.StringFilter<"StoredFile"> | string
   contentType?: Prisma.StringNullableFilter<"StoredFile"> | string | null
   size?: Prisma.IntFilter<"StoredFile"> | number
+  classification?: Prisma.EnumDataClassificationFilter<"StoredFile"> | $Enums.DataClassification
   createdById?: Prisma.IntNullableFilter<"StoredFile"> | number | null
   createdAt?: Prisma.DateTimeFilter<"StoredFile"> | Date | string
   deletedById?: Prisma.IntNullableFilter<"StoredFile"> | number | null
@@ -329,6 +339,7 @@ export type StoredFileOrderByWithAggregationInput = {
   pathname?: Prisma.SortOrder
   contentType?: Prisma.SortOrderInput | Prisma.SortOrder
   size?: Prisma.SortOrder
+  classification?: Prisma.SortOrder
   createdById?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   deletedById?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -351,6 +362,7 @@ export type StoredFileScalarWhereWithAggregatesInput = {
   pathname?: Prisma.StringWithAggregatesFilter<"StoredFile"> | string
   contentType?: Prisma.StringNullableWithAggregatesFilter<"StoredFile"> | string | null
   size?: Prisma.IntWithAggregatesFilter<"StoredFile"> | number
+  classification?: Prisma.EnumDataClassificationWithAggregatesFilter<"StoredFile"> | $Enums.DataClassification
   createdById?: Prisma.IntNullableWithAggregatesFilter<"StoredFile"> | number | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"StoredFile"> | Date | string
   deletedById?: Prisma.IntNullableWithAggregatesFilter<"StoredFile"> | number | null
@@ -364,6 +376,7 @@ export type StoredFileCreateInput = {
   pathname: string
   contentType?: string | null
   size: number
+  classification?: $Enums.DataClassification
   createdAt?: Date | string
   deletedAt?: Date | string | null
   createdBy?: Prisma.UserCreateNestedOneWithoutFilesCreatedInput
@@ -378,6 +391,7 @@ export type StoredFileUncheckedCreateInput = {
   pathname: string
   contentType?: string | null
   size: number
+  classification?: $Enums.DataClassification
   createdById?: number | null
   createdAt?: Date | string
   deletedById?: number | null
@@ -391,6 +405,7 @@ export type StoredFileUpdateInput = {
   pathname?: Prisma.StringFieldUpdateOperationsInput | string
   contentType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   size?: Prisma.IntFieldUpdateOperationsInput | number
+  classification?: Prisma.EnumDataClassificationFieldUpdateOperationsInput | $Enums.DataClassification
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdBy?: Prisma.UserUpdateOneWithoutFilesCreatedNestedInput
@@ -405,6 +420,7 @@ export type StoredFileUncheckedUpdateInput = {
   pathname?: Prisma.StringFieldUpdateOperationsInput | string
   contentType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   size?: Prisma.IntFieldUpdateOperationsInput | number
+  classification?: Prisma.EnumDataClassificationFieldUpdateOperationsInput | $Enums.DataClassification
   createdById?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedById?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
@@ -419,6 +435,7 @@ export type StoredFileCreateManyInput = {
   pathname: string
   contentType?: string | null
   size: number
+  classification?: $Enums.DataClassification
   createdById?: number | null
   createdAt?: Date | string
   deletedById?: number | null
@@ -432,6 +449,7 @@ export type StoredFileUpdateManyMutationInput = {
   pathname?: Prisma.StringFieldUpdateOperationsInput | string
   contentType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   size?: Prisma.IntFieldUpdateOperationsInput | number
+  classification?: Prisma.EnumDataClassificationFieldUpdateOperationsInput | $Enums.DataClassification
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
@@ -443,6 +461,7 @@ export type StoredFileUncheckedUpdateManyInput = {
   pathname?: Prisma.StringFieldUpdateOperationsInput | string
   contentType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   size?: Prisma.IntFieldUpdateOperationsInput | number
+  classification?: Prisma.EnumDataClassificationFieldUpdateOperationsInput | $Enums.DataClassification
   createdById?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedById?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
@@ -467,6 +486,7 @@ export type StoredFileCountOrderByAggregateInput = {
   pathname?: Prisma.SortOrder
   contentType?: Prisma.SortOrder
   size?: Prisma.SortOrder
+  classification?: Prisma.SortOrder
   createdById?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   deletedById?: Prisma.SortOrder
@@ -489,6 +509,7 @@ export type StoredFileMaxOrderByAggregateInput = {
   pathname?: Prisma.SortOrder
   contentType?: Prisma.SortOrder
   size?: Prisma.SortOrder
+  classification?: Prisma.SortOrder
   createdById?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   deletedById?: Prisma.SortOrder
@@ -503,6 +524,7 @@ export type StoredFileMinOrderByAggregateInput = {
   pathname?: Prisma.SortOrder
   contentType?: Prisma.SortOrder
   size?: Prisma.SortOrder
+  classification?: Prisma.SortOrder
   createdById?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   deletedById?: Prisma.SortOrder
@@ -644,12 +666,17 @@ export type StoredFileUncheckedUpdateManyWithoutUserNestedInput = {
   deleteMany?: Prisma.StoredFileScalarWhereInput | Prisma.StoredFileScalarWhereInput[]
 }
 
+export type EnumDataClassificationFieldUpdateOperationsInput = {
+  set?: $Enums.DataClassification
+}
+
 export type StoredFileCreateWithoutCreatedByInput = {
   name: string
   url: string
   pathname: string
   contentType?: string | null
   size: number
+  classification?: $Enums.DataClassification
   createdAt?: Date | string
   deletedAt?: Date | string | null
   deletedBy?: Prisma.UserCreateNestedOneWithoutFilesDeletedInput
@@ -663,6 +690,7 @@ export type StoredFileUncheckedCreateWithoutCreatedByInput = {
   pathname: string
   contentType?: string | null
   size: number
+  classification?: $Enums.DataClassification
   createdAt?: Date | string
   deletedById?: number | null
   deletedAt?: Date | string | null
@@ -685,6 +713,7 @@ export type StoredFileCreateWithoutDeletedByInput = {
   pathname: string
   contentType?: string | null
   size: number
+  classification?: $Enums.DataClassification
   createdAt?: Date | string
   deletedAt?: Date | string | null
   createdBy?: Prisma.UserCreateNestedOneWithoutFilesCreatedInput
@@ -698,6 +727,7 @@ export type StoredFileUncheckedCreateWithoutDeletedByInput = {
   pathname: string
   contentType?: string | null
   size: number
+  classification?: $Enums.DataClassification
   createdById?: number | null
   createdAt?: Date | string
   deletedAt?: Date | string | null
@@ -720,6 +750,7 @@ export type StoredFileCreateWithoutUserInput = {
   pathname: string
   contentType?: string | null
   size: number
+  classification?: $Enums.DataClassification
   createdAt?: Date | string
   deletedAt?: Date | string | null
   createdBy?: Prisma.UserCreateNestedOneWithoutFilesCreatedInput
@@ -733,6 +764,7 @@ export type StoredFileUncheckedCreateWithoutUserInput = {
   pathname: string
   contentType?: string | null
   size: number
+  classification?: $Enums.DataClassification
   createdById?: number | null
   createdAt?: Date | string
   deletedById?: number | null
@@ -775,6 +807,7 @@ export type StoredFileScalarWhereInput = {
   pathname?: Prisma.StringFilter<"StoredFile"> | string
   contentType?: Prisma.StringNullableFilter<"StoredFile"> | string | null
   size?: Prisma.IntFilter<"StoredFile"> | number
+  classification?: Prisma.EnumDataClassificationFilter<"StoredFile"> | $Enums.DataClassification
   createdById?: Prisma.IntNullableFilter<"StoredFile"> | number | null
   createdAt?: Prisma.DateTimeFilter<"StoredFile"> | Date | string
   deletedById?: Prisma.IntNullableFilter<"StoredFile"> | number | null
@@ -821,6 +854,7 @@ export type StoredFileCreateManyCreatedByInput = {
   pathname: string
   contentType?: string | null
   size: number
+  classification?: $Enums.DataClassification
   createdAt?: Date | string
   deletedById?: number | null
   deletedAt?: Date | string | null
@@ -834,6 +868,7 @@ export type StoredFileCreateManyDeletedByInput = {
   pathname: string
   contentType?: string | null
   size: number
+  classification?: $Enums.DataClassification
   createdById?: number | null
   createdAt?: Date | string
   deletedAt?: Date | string | null
@@ -847,6 +882,7 @@ export type StoredFileCreateManyUserInput = {
   pathname: string
   contentType?: string | null
   size: number
+  classification?: $Enums.DataClassification
   createdById?: number | null
   createdAt?: Date | string
   deletedById?: number | null
@@ -859,6 +895,7 @@ export type StoredFileUpdateWithoutCreatedByInput = {
   pathname?: Prisma.StringFieldUpdateOperationsInput | string
   contentType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   size?: Prisma.IntFieldUpdateOperationsInput | number
+  classification?: Prisma.EnumDataClassificationFieldUpdateOperationsInput | $Enums.DataClassification
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   deletedBy?: Prisma.UserUpdateOneWithoutFilesDeletedNestedInput
@@ -872,6 +909,7 @@ export type StoredFileUncheckedUpdateWithoutCreatedByInput = {
   pathname?: Prisma.StringFieldUpdateOperationsInput | string
   contentType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   size?: Prisma.IntFieldUpdateOperationsInput | number
+  classification?: Prisma.EnumDataClassificationFieldUpdateOperationsInput | $Enums.DataClassification
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedById?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -885,6 +923,7 @@ export type StoredFileUncheckedUpdateManyWithoutCreatedByInput = {
   pathname?: Prisma.StringFieldUpdateOperationsInput | string
   contentType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   size?: Prisma.IntFieldUpdateOperationsInput | number
+  classification?: Prisma.EnumDataClassificationFieldUpdateOperationsInput | $Enums.DataClassification
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedById?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -897,6 +936,7 @@ export type StoredFileUpdateWithoutDeletedByInput = {
   pathname?: Prisma.StringFieldUpdateOperationsInput | string
   contentType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   size?: Prisma.IntFieldUpdateOperationsInput | number
+  classification?: Prisma.EnumDataClassificationFieldUpdateOperationsInput | $Enums.DataClassification
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdBy?: Prisma.UserUpdateOneWithoutFilesCreatedNestedInput
@@ -910,6 +950,7 @@ export type StoredFileUncheckedUpdateWithoutDeletedByInput = {
   pathname?: Prisma.StringFieldUpdateOperationsInput | string
   contentType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   size?: Prisma.IntFieldUpdateOperationsInput | number
+  classification?: Prisma.EnumDataClassificationFieldUpdateOperationsInput | $Enums.DataClassification
   createdById?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -923,6 +964,7 @@ export type StoredFileUncheckedUpdateManyWithoutDeletedByInput = {
   pathname?: Prisma.StringFieldUpdateOperationsInput | string
   contentType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   size?: Prisma.IntFieldUpdateOperationsInput | number
+  classification?: Prisma.EnumDataClassificationFieldUpdateOperationsInput | $Enums.DataClassification
   createdById?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -935,6 +977,7 @@ export type StoredFileUpdateWithoutUserInput = {
   pathname?: Prisma.StringFieldUpdateOperationsInput | string
   contentType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   size?: Prisma.IntFieldUpdateOperationsInput | number
+  classification?: Prisma.EnumDataClassificationFieldUpdateOperationsInput | $Enums.DataClassification
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdBy?: Prisma.UserUpdateOneWithoutFilesCreatedNestedInput
@@ -948,6 +991,7 @@ export type StoredFileUncheckedUpdateWithoutUserInput = {
   pathname?: Prisma.StringFieldUpdateOperationsInput | string
   contentType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   size?: Prisma.IntFieldUpdateOperationsInput | number
+  classification?: Prisma.EnumDataClassificationFieldUpdateOperationsInput | $Enums.DataClassification
   createdById?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedById?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
@@ -961,6 +1005,7 @@ export type StoredFileUncheckedUpdateManyWithoutUserInput = {
   pathname?: Prisma.StringFieldUpdateOperationsInput | string
   contentType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   size?: Prisma.IntFieldUpdateOperationsInput | number
+  classification?: Prisma.EnumDataClassificationFieldUpdateOperationsInput | $Enums.DataClassification
   createdById?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedById?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
@@ -976,6 +1021,7 @@ export type StoredFileSelect<ExtArgs extends runtime.Types.Extensions.InternalAr
   pathname?: boolean
   contentType?: boolean
   size?: boolean
+  classification?: boolean
   createdById?: boolean
   createdAt?: boolean
   deletedById?: boolean
@@ -993,6 +1039,7 @@ export type StoredFileSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Ex
   pathname?: boolean
   contentType?: boolean
   size?: boolean
+  classification?: boolean
   createdById?: boolean
   createdAt?: boolean
   deletedById?: boolean
@@ -1010,6 +1057,7 @@ export type StoredFileSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Ex
   pathname?: boolean
   contentType?: boolean
   size?: boolean
+  classification?: boolean
   createdById?: boolean
   createdAt?: boolean
   deletedById?: boolean
@@ -1027,6 +1075,7 @@ export type StoredFileSelectScalar = {
   pathname?: boolean
   contentType?: boolean
   size?: boolean
+  classification?: boolean
   createdById?: boolean
   createdAt?: boolean
   deletedById?: boolean
@@ -1034,7 +1083,7 @@ export type StoredFileSelectScalar = {
   userId?: boolean
 }
 
-export type StoredFileOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "url" | "pathname" | "contentType" | "size" | "createdById" | "createdAt" | "deletedById" | "deletedAt" | "userId", ExtArgs["result"]["storedFile"]>
+export type StoredFileOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "url" | "pathname" | "contentType" | "size" | "classification" | "createdById" | "createdAt" | "deletedById" | "deletedAt" | "userId", ExtArgs["result"]["storedFile"]>
 export type StoredFileInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   createdBy?: boolean | Prisma.StoredFile$createdByArgs<ExtArgs>
   deletedBy?: boolean | Prisma.StoredFile$deletedByArgs<ExtArgs>
@@ -1065,6 +1114,7 @@ export type $StoredFilePayload<ExtArgs extends runtime.Types.Extensions.Internal
     pathname: string
     contentType: string | null
     size: number
+    classification: $Enums.DataClassification
     createdById: number | null
     createdAt: Date
     deletedById: number | null
@@ -1502,6 +1552,7 @@ export interface StoredFileFieldRefs {
   readonly pathname: Prisma.FieldRef<"StoredFile", 'String'>
   readonly contentType: Prisma.FieldRef<"StoredFile", 'String'>
   readonly size: Prisma.FieldRef<"StoredFile", 'Int'>
+  readonly classification: Prisma.FieldRef<"StoredFile", 'DataClassification'>
   readonly createdById: Prisma.FieldRef<"StoredFile", 'Int'>
   readonly createdAt: Prisma.FieldRef<"StoredFile", 'DateTime'>
   readonly deletedById: Prisma.FieldRef<"StoredFile", 'Int'>

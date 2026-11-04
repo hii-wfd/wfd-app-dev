@@ -27,3 +27,34 @@ export const Condition = {
 } as const
 
 export type Condition = (typeof Condition)[keyof typeof Condition]
+
+
+export const DataClassification = {
+  NONE: 'NONE',
+  PII: 'PII',
+  CUI: 'CUI'
+} as const
+
+export type DataClassification = (typeof DataClassification)[keyof typeof DataClassification]
+
+
+export const AuditAction = {
+  CREATE: 'CREATE',
+  READ: 'READ',
+  UPDATE: 'UPDATE',
+  DELETE: 'DELETE',
+  RESTORE: 'RESTORE',
+  PURGE: 'PURGE',
+  EXPORT: 'EXPORT'
+} as const
+
+export type AuditAction = (typeof AuditAction)[keyof typeof AuditAction]
+
+
+export const AuditOutcome = {
+  SUCCESS: 'SUCCESS',
+  FAILURE: 'FAILURE',
+  DENIED: 'DENIED'
+} as const
+
+export type AuditOutcome = (typeof AuditOutcome)[keyof typeof AuditOutcome]

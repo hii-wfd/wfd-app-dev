@@ -57,7 +57,8 @@ export const ModelName = {
   LoginAttempt: 'LoginAttempt',
   InternProfile: 'InternProfile',
   MissionPartnerProfile: 'MissionPartnerProfile',
-  StoredFile: 'StoredFile'
+  StoredFile: 'StoredFile',
+  AuditLog: 'AuditLog'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -164,6 +165,7 @@ export const StoredFileScalarFieldEnum = {
   pathname: 'pathname',
   contentType: 'contentType',
   size: 'size',
+  classification: 'classification',
   createdById: 'createdById',
   createdAt: 'createdAt',
   deletedById: 'deletedById',
@@ -174,12 +176,38 @@ export const StoredFileScalarFieldEnum = {
 export type StoredFileScalarFieldEnum = (typeof StoredFileScalarFieldEnum)[keyof typeof StoredFileScalarFieldEnum]
 
 
+export const AuditLogScalarFieldEnum = {
+  id: 'id',
+  at: 'at',
+  userId: 'userId',
+  userEmail: 'userEmail',
+  userRole: 'userRole',
+  action: 'action',
+  resourceType: 'resourceType',
+  resourceId: 'resourceId',
+  classification: 'classification',
+  outcome: 'outcome',
+  ipAddress: 'ipAddress',
+  details: 'details'
+} as const
+
+export type AuditLogScalarFieldEnum = (typeof AuditLogScalarFieldEnum)[keyof typeof AuditLogScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
 } as const
 
 export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
+
+
+export const NullableJsonNullValueInput = {
+  DbNull: DbNull,
+  JsonNull: JsonNull
+} as const
+
+export type NullableJsonNullValueInput = (typeof NullableJsonNullValueInput)[keyof typeof NullableJsonNullValueInput]
 
 
 export const QueryMode = {
@@ -196,4 +224,13 @@ export const NullsOrder = {
 } as const
 
 export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
+
+
+export const JsonNullValueFilter = {
+  DbNull: DbNull,
+  JsonNull: JsonNull,
+  AnyNull: AnyNull
+} as const
+
+export type JsonNullValueFilter = (typeof JsonNullValueFilter)[keyof typeof JsonNullValueFilter]
 
