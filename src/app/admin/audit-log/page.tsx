@@ -5,12 +5,14 @@ import { AuditAction, AuditOutcome, DataClassification } from "@/generated/prism
 import { auth } from "@/lib/auth";
 import { adminProtectedPage } from "@/lib/page-protection";
 import { audit } from "@/lib/audit";
+import { clearAuditLog } from "@/lib/auditActions";
 
 export const dynamic = "force-dynamic";
 
 const PAGE_SIZE = 50;
 const CLASS_BADGE = { NONE: "secondary", PII: "warning text-dark", CUI: "danger" } as const;
 const OUTCOME_BADGE = { SUCCESS: "success", FAILURE: "danger", DENIED: "warning text-dark" } as const;
+const devMode = process.env.ENABLE_DEV_TOOLS === "true";
 
 const pick = <T extends string>(e: Record<string, T>, v?: string) =>
   Object.values(e).find((x) => x === v);
@@ -72,6 +74,15 @@ export default async function AuditLogPage({ searchParams }: { searchParams: Pro
       <br />
       <br />
       <h1>Audit Log ({total})</h1>
+
+      {devMode && (
+        <details className="mb-3">
+          <summary className="text-danger">Clear all logs…</summary>
+          <form action={clearAuditLog} className="mt-2">
+            <button className="btn btn-sm btn-danger">Permanently delete all {total} events</button>
+          </form>
+        </details>
+      )}
 
       <form className="row g-2 mb-4">
         <div className="col-md-3">
