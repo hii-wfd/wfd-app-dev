@@ -25,7 +25,7 @@ export async function purgeExpiredFiles() {
       await purgeStoredFiles(f);
       purged++;
     } catch (e) {
-      console.error("purge failed", f.id, e);
+      console.error("Purge Failed", f.id, e);
       failed.push(f.id); // row stays, next run retries
     }
   }
