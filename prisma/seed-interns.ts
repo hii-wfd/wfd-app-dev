@@ -43,6 +43,17 @@ const interns = [
     interests: ['Software Development', 'Full-Stack Development'],
     status: 'Pending',
   },
+  {
+    email: 'john@foo.com',
+    firstName: 'John',
+    lastName: 'Doe',
+    school: 'University of Hawaii',
+    major: 'Computer Science',
+    graduationDate: new Date('2027-05-15'),
+    skills: ['Python', 'SQL', 'React'],
+    interests: ['Software Development', 'Data Science'],
+    status: 'Active',
+  },
 ];
 
 async function main() {
