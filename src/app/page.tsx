@@ -188,27 +188,32 @@ const Home = () => (
         <div className="text-center">
           <Image
             src="/images/team-1.jpg"
-            alt="Team Member 1"
+            alt="Anson Ekau"
             fluid
-            rounded
           />
         </div>
       </Col>
       <Col lg={9}>
         <div className="text-left">
-          <h4 className="mt-3 deep-sea-text">Team Member Name</h4>
+          <h3 className="deep-sea-text">Anson Ekau</h3>
+          <p className="lead light-gray">
+            Workforce Development Coordinator and Program Management Analyst
+          </p>
           <p className="light-gray">
-            Title or role of this team member in the program. Edit me!
+            Subrole: Data Scientist
           </p>
           <p className="deep-sea-text mt-4">
-            A short description about this team member and their role in
-            the program.
+            Anson Ekau is the Workforce Development Coordinator at HII with a multidisciplinary background in data and engineering. 
+            He graduated from Chaminade University of Honolulu in May 2025 with a bachelor&apos;s degree in Data Science, specializing in analytics and visualization.
+            Anson has worked with the United States Space Force, MC3 Technologies, and HII, in addition to supporting nonprofit organizations and engaging in volunteer work. 
+            His experience spans data science, computer science, cybersecurity, machine learning, advanced manufacturing, and electrical engineering, with a strong focus 
+            on building workforce pathways and applying technology to real-world industrial needs.
           </p>
         </div>
       </Col>
     </Row>
 
-    <Row className="g-4 mt-4">
+    {/* <Row className="g-4 mt-4">
       <Col lg={3}>
         <div className="text-center">
           <Image
@@ -231,7 +236,7 @@ const Home = () => (
           </p>
         </div>
       </Col>
-    </Row>
+    </Row> */}
   </Container>
 </section>
 
@@ -766,7 +771,7 @@ const Home = () => (
   <Container>
     <Row className="justify-content-left">
       <Col lg={12} className="text-left">
-        <h2 className="display-7 deep-sea-text mt-4 mb-3">
+        <h2 className="display-7 deep-sea-text mt-4">
           Media Highlights
         </h2>
         <p className="lead text-secondary mb-4">
