@@ -185,11 +185,12 @@ const Home = () => (
     <Row className="g-4">
       {/* Team Member 1 */}
       <Col lg={3}>
-        <div className="text-center">
+        <div>
           <Image
-            src="/images/team-1.jpg"
+            src="/a-ekau.jpeg"
             alt="Anson Ekau"
             fluid
+            className="lead-pfp"
           />
         </div>
       </Col>

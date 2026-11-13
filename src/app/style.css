@@ -92,6 +92,12 @@
   object-fit: cover; /* Prevents the image from stretching or distorting */
 }
 
+.lead-pfp {
+  width: 250px;
+  height: 300px;
+  object-fit: cover; /* Prevents the image from stretching or distorting */
+}
+
 /* Sign in and sign up pages */
 .btn-custom {
   background-color: var(--deep-sea);
