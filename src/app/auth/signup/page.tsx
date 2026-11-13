@@ -45,6 +45,7 @@ const SignUp = () => {
 
   return (
     <main>
+      <section className="section-spacing">
       <Container>
         <Row className="justify-content-center">
           <Col xs={5}>
@@ -83,12 +84,12 @@ const SignUp = () => {
                   <Form.Group className="form-group py-3">
                     <Row>
                       <Col>
-                        <Button type="submit" className="btn btn-primary">
+                        <Button type="submit" className="btn-custom">
                           Register
                         </Button>
                       </Col>
                       <Col>
-                        <Button type="button" onClick={() => reset()} className="btn btn-warning float-right">
+                        <Button type="button" onClick={() => reset()} className="btn-secondary float-right">
                           Reset
                         </Button>
                       </Col>
@@ -97,13 +98,14 @@ const SignUp = () => {
                 </Form>
               </Card.Body>
               <Card.Footer>
-                Already have an account?
-                <a href="/auth/signin">Sign in</a>
+                
+                <a className="deep-sea-text" href="/auth/signin">Already have an account?</a>
               </Card.Footer>
             </Card>
           </Col>
         </Row>
       </Container>
+      </section>
     </main>
   );
 };

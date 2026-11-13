@@ -22,6 +22,7 @@ const ListPage = async () => {
   // console.log(stuff);
   return (
     <main>
+      <section className="section-spacing">
       <Container id="list" fluid className="py-3">
         <Row>
           <Col>
@@ -45,6 +46,7 @@ const ListPage = async () => {
           </Col>
         </Row>
       </Container>
+      </section>
     </main>
   );
 };

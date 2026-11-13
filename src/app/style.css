@@ -88,6 +88,36 @@
 
 .pfp {
   width: 200px;
-  height: 250px;
+  height: 300px;
   object-fit: cover; /* Prevents the image from stretching or distorting */
 }
+
+.lead-pfp {
+  width: 250px;
+  height: 300px;
+  object-fit: cover; /* Prevents the image from stretching or distorting */
+}
+
+/* Sign in and sign up pages */
+.btn-custom {
+  background-color: var(--deep-sea);
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-custom:hover {
+  background-color: var(--changing-sea);
+}
+
+.btn-secondary {
+  background-color: var(--sky-blue);
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: var(--changing-sea);
+}
+
