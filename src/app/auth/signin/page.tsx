@@ -22,11 +22,12 @@ const SignIn = () => {
 
   return (
     <main>
+      <section className="section-spacing">
       <Container>
         <Row className="justify-content-center">
           <Col xs={5}>
             <h1 className="text-center">Sign In</h1>
-            <Card>
+            <Card className="mt-3 mb-5">
               <Card.Body>
                 <Form method="post" onSubmit={handleSubmit}>
                   <Form.Group controlId="formBasicEmail">
@@ -37,19 +38,19 @@ const SignIn = () => {
                     <Form.Label>Password</Form.Label>
                     <input name="password" type="password" className="form-control" />
                   </Form.Group>
-                  <Button type="submit" className="mt-3">
-                    Signin
+                  <Button type="submit" className="btn-custom mt-3">
+                    Sign In
                   </Button>
                 </Form>
               </Card.Body>
               <Card.Footer>
-                Don&apos;t have an account?
-                <a href="/auth/signup">Sign up</a>
+                <a className="deep-sea-text" href="/auth/signup">Don&apos;t have an account?</a>
               </Card.Footer>
             </Card>
           </Col>
         </Row>
       </Container>
+      </section>
     </main>
   );
 };
