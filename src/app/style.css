@@ -104,6 +104,8 @@
   color: #ffffff;
   border: none;
   cursor: pointer;
+  width: 100%;
+  border-radius: 0;
 }
 
 .btn-custom:hover {
@@ -115,9 +117,35 @@
   color: #ffffff;
   border: none;
   cursor: pointer;
+  width: 100%;
+  border-radius: 0;
 }
 
 .btn-secondary:hover {
   background-color: var(--changing-sea);
 }
 
+.signin-card {
+  border-radius: 0;
+}
+
+.signin-input {
+  border-radius: 0;
+}
+
+.signin-footer {
+  border-radius: 0;
+}
+
+.btn-warn {
+  border-radius: 0;
+  background-color: var(--passion);
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn-warn:hover {
+  background-color: var(--changing-sea);
+}

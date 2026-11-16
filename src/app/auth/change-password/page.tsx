@@ -58,7 +58,8 @@ const ChangePassword = () => {
         <Row className="justify-content-center">
           <Col lg={5}>
             <h1 className="text-center deep-sea-text">Change Password</h1>
-            <Card>
+
+            <Card className="signin-card mt-3 mb-5">
               <Card.Body>
                 <Form onSubmit={handleSubmit(onSubmit)}>
                   <Form.Group className="form-group deep-sea-text">
@@ -66,26 +67,26 @@ const ChangePassword = () => {
                     <input
                       type="password"
                       {...register('oldpassword')}
-                      className={`form-control ${errors.oldpassword ? 'is-invalid' : ''}`}
+                      className={`form-control signin-input ${errors.oldpassword ? 'is-invalid' : ''}`}
                     />
                     <div className="invalid-feedback">{errors.oldpassword?.message}</div>
                   </Form.Group>
 
                   <Form.Group className="form-group deep-sea-text">
-                    <Form.Label>New Password</Form.Label>
+                    <Form.Label className="mt-3">New Password</Form.Label>
                     <input
                       type="password"
                       {...register('password')}
-                      className={`form-control ${errors.password ? 'is-invalid' : ''}`}
+                      className={`form-control signin-input ${errors.password ? 'is-invalid' : ''}`}
                     />
                     <div className="invalid-feedback">{errors.password?.message}</div>
                   </Form.Group>
                   <Form.Group className="form-group deep-sea-text">
-                    <Form.Label>Confirm Password</Form.Label>
+                    <Form.Label className="mt-3">Confirm Password</Form.Label>
                     <input
                       type="password"
                       {...register('confirmPassword')}
-                      className={`form-control ${errors.confirmPassword ? 'is-invalid' : ''}`}
+                      className={`form-control signin-input ${errors.confirmPassword ? 'is-invalid' : ''}`}
                     />
                     <div className="invalid-feedback">{errors.confirmPassword?.message}</div>
                   </Form.Group>

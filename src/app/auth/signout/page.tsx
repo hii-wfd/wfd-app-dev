@@ -11,12 +11,12 @@ const SignOut = () => (
     <Row>
       <Col xs={4} />
       <Col>
-        <Button variant="danger" onClick={() => signOut({ callbackUrl: '/', redirect: true })}>
+        <Button className="btn-warn" onClick={() => signOut({ callbackUrl: '/', redirect: true })}>
           Sign Out
         </Button>
       </Col>
       <Col>
-        <Button variant="secondary" href="/">
+        <Button className="btn-secondary" href="/">
           Cancel
         </Button>
       </Col>
