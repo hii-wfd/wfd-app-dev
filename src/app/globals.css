@@ -26,3 +26,117 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+
+/* Intern Dashboard */
+
+.intern-dashboard {
+  background-image: url('/landing-page-background.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+
+  min-height: 100vh;
+  padding-top: 50px;
+  padding-bottom: 80px;
+
+  color: #003b4c;
+}
+
+.intern-page-title {
+  font-family: var(--font-urbanist), sans-serif;
+  color: #003b4c;
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.intern-welcome {
+  color: #66747b;
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+.intern-section-title {
+  font-family: var(--font-urbanist), sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #003b4c;
+  margin-bottom: 22px;
+}
+
+/* Announcements and Events */
+
+.intern-info-card {
+  border: 1px solid #dce4e7;
+  border-radius: 6px;
+  box-shadow: none;
+  min-height: 180px;
+  background-color: #ffffff;
+}
+
+/* Resource Cards */
+
+.intern-resource-card {
+  border: 1px solid #dce4e7;
+  border-radius: 6px;
+  background-color: #ffffff;
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.intern-resource-clickable {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.intern-resource-clickable:hover {
+  background-color: #f2f7f8;
+  text-decoration: none;
+}
+
+.intern-resource-clickable:focus-visible {
+  outline: 3px solid #003b4c;
+  outline-offset: -3px;
+}
+
+.intern-resource-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 210px;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.intern-resource-logo {
+  width: 120px;
+  height: 90px;
+  object-fit: contain;
+  margin-bottom: 18px;
+}
+
+.intern-logo-placeholder {
+  width: 120px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed #dce4e7;
+  color: #87959b;
+  font-size: 15px;
+  margin-bottom: 18px;
+}
+
+.intern-resource-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: #003b4c;
+  margin-bottom: 0;
+}

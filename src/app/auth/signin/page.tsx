@@ -1,20 +1,33 @@
+
 'use client';
 
-import { signIn } from 'next-auth/react'; // v5 compatible
+import { signIn } from 'next-auth/react';
 import { Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
 
 /** The sign in page. */
 const SignIn = () => {
   const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     const target = e.target as typeof e.target & {
       email: { value: string };
       password: { value: string };
     };
-    const email = target.email.value;
+
+    const email = target.email.value.trim().toLowerCase();
     const password = target.password.value;
+
+    // Determine destination for test accounts
+    let callbackUrl = '/list';
+
+    if (email === 'john@foo.com') {
+      callbackUrl = '/intern-dashboard';
+    } else if (email === 'admin@foo.com') {
+      callbackUrl = '/dashboard';
+    }
+
     await signIn('credentials', {
-      callbackUrl: '/list',
+      callbackUrl,
       email,
       password,
     });
