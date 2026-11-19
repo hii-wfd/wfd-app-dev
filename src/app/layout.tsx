@@ -24,12 +24,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={urbanist.variable}>
-       <body className="d-flex flex-column min-vh-100">
+      <body className="wrapper">
         <Providers>
           <NavBar />
-          <div className="flex-grow-1">
-            {children}
-          </div>
+          {children}
           <Footer />
         </Providers>
       </body>
