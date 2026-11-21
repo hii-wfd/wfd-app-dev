@@ -57,7 +57,7 @@ export const ModelName = {
   LoginAttempt: 'LoginAttempt',
   InternProfile: 'InternProfile',
   MissionPartnerProfile: 'MissionPartnerProfile',
-  storedFile: 'storedFile'
+  StoredFile: 'StoredFile'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -164,7 +164,9 @@ export const StoredFileScalarFieldEnum = {
   pathname: 'pathname',
   contentType: 'contentType',
   size: 'size',
+  addedById: 'addedById',
   createdAt: 'createdAt',
+  deletedById: 'deletedById',
   deletedAt: 'deletedAt'
 } as const
 
