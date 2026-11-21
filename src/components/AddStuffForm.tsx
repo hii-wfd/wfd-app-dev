@@ -38,9 +38,10 @@ const AddStuffForm: React.FC = () => {
   }
 
   return (
+    <section className="section-spacing">
     <Container className="py-3">
       <Row className="justify-content-center">
-        <Col xs={5}>
+        <Col lg={5}>
           <Col className="text-center">
             <h2>Add Stuff</h2>
           </Col>
@@ -96,6 +97,7 @@ const AddStuffForm: React.FC = () => {
         </Col>
       </Row>
     </Container>
+    </section>
   );
 };
 

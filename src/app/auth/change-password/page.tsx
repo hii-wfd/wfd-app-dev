@@ -53,50 +53,52 @@ const ChangePassword = () => {
 
   return (
     <main>
+      <section className="section-spacing">
       <Container>
         <Row className="justify-content-center">
-          <Col xs={5}>
-            <h1 className="text-center">Change Password</h1>
-            <Card>
+          <Col lg={5}>
+            <h1 className="text-center deep-sea-text">Change Password</h1>
+
+            <Card className="signin-card mt-3 mb-5">
               <Card.Body>
                 <Form onSubmit={handleSubmit(onSubmit)}>
-                  <Form.Group className="form-group">
+                  <Form.Group className="form-group deep-sea-text">
                     <Form.Label>Old Passord</Form.Label>
                     <input
                       type="password"
                       {...register('oldpassword')}
-                      className={`form-control ${errors.oldpassword ? 'is-invalid' : ''}`}
+                      className={`form-control signin-input ${errors.oldpassword ? 'is-invalid' : ''}`}
                     />
                     <div className="invalid-feedback">{errors.oldpassword?.message}</div>
                   </Form.Group>
 
-                  <Form.Group className="form-group">
-                    <Form.Label>New Password</Form.Label>
+                  <Form.Group className="form-group deep-sea-text">
+                    <Form.Label className="mt-3">New Password</Form.Label>
                     <input
                       type="password"
                       {...register('password')}
-                      className={`form-control ${errors.password ? 'is-invalid' : ''}`}
+                      className={`form-control signin-input ${errors.password ? 'is-invalid' : ''}`}
                     />
                     <div className="invalid-feedback">{errors.password?.message}</div>
                   </Form.Group>
-                  <Form.Group className="form-group">
-                    <Form.Label>Confirm Password</Form.Label>
+                  <Form.Group className="form-group deep-sea-text">
+                    <Form.Label className="mt-3">Confirm Password</Form.Label>
                     <input
                       type="password"
                       {...register('confirmPassword')}
-                      className={`form-control ${errors.confirmPassword ? 'is-invalid' : ''}`}
+                      className={`form-control signin-input ${errors.confirmPassword ? 'is-invalid' : ''}`}
                     />
                     <div className="invalid-feedback">{errors.confirmPassword?.message}</div>
                   </Form.Group>
-                  <Form.Group className="form-group py-3">
+                  <Form.Group className="form-group deep-sea-text py-3">
                     <Row>
                       <Col>
-                        <Button type="submit" className="btn btn-primary">
+                        <Button type="submit" className="btn-custom">
                           Change
                         </Button>
                       </Col>
                       <Col>
-                        <Button type="button" onClick={() => reset()} className="btn btn-warning float-right">
+                        <Button type="button" onClick={() => reset()} className="btn-secondary float-right">
                           Reset
                         </Button>
                       </Col>
@@ -108,6 +110,7 @@ const ChangePassword = () => {
           </Col>
         </Row>
       </Container>
+      </section>
     </main>
   );
 };

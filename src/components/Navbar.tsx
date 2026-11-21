@@ -27,14 +27,14 @@ const NavBar: React.FC = () => {
   const role = session?.user?.role;
   
   return (
-    <Navbar expand="lg" fixed="top" className={scrolled ? 'bg-white' : 'bg-transparent' + ' hii-navbar'}>
+    <Navbar expand="lg" fixed="top" className={'custom-navbar' + (scrolled ? ' bg-white' : ' bg-transparent') + ' custom-navbar'}>
       <Container>
         <Navbar.Brand href="/" aria-label="HII">
           <img src="/hii-basic-logo.svg" alt="HII" height={40} />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto justify-content-start">
+          <Nav className="ms-auto gap-4 justify-content-start">
             {currentUser && (
               <>
                 <Nav.Link id="add-stuff-nav" href="/add" active={pathName === '/add'}>

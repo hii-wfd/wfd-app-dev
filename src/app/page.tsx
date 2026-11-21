@@ -47,7 +47,7 @@ const Home = () => (
     <section className="section-spacing">
       <Container>
         <Row className="deep-sea-title justify-content-center">
-          <Col lg={12}>
+          <Col lg={10}>
             <div className="d-flex justify-content-between text-center">
 
               <div className="d-flex flex-column align-items-center">
@@ -185,30 +185,36 @@ const Home = () => (
     <Row className="g-4">
       {/* Team Member 1 */}
       <Col lg={3}>
-        <div className="text-center">
+        <div>
           <Image
-            src="/images/team-1.jpg"
-            alt="Team Member 1"
+            src="/a-ekau.jpeg"
+            alt="Anson Ekau"
             fluid
-            rounded
+            className="lead-pfp"
           />
         </div>
       </Col>
       <Col lg={9}>
         <div className="text-left">
-          <h4 className="mt-3 deep-sea-text">Team Member Name</h4>
+          <h3 className="deep-sea-text">Anson Ekau</h3>
+          <p className="lead light-gray">
+            Workforce Development Coordinator and Program Management Analyst
+          </p>
           <p className="light-gray">
-            Title or role of this team member in the program. Edit me!
+            Subrole: Data Scientist
           </p>
           <p className="deep-sea-text mt-4">
-            A short description about this team member and their role in
-            the program.
+            Anson Ekau is the Workforce Development Coordinator at HII with a multidisciplinary background in data and engineering. 
+            He graduated from Chaminade University of Honolulu in May 2025 with a bachelor&apos;s degree in Data Science, specializing in analytics and visualization.
+            Anson has worked with the United States Space Force, MC3 Technologies, and HII, in addition to supporting nonprofit organizations and engaging in volunteer work. 
+            His experience spans data science, computer science, cybersecurity, machine learning, advanced manufacturing, and electrical engineering, with a strong focus 
+            on building workforce pathways and applying technology to real-world industrial needs.
           </p>
         </div>
       </Col>
     </Row>
 
-    <Row className="g-4 mt-4">
+    {/* <Row className="g-4 mt-4">
       <Col lg={3}>
         <div className="text-center">
           <Image
@@ -231,249 +237,7 @@ const Home = () => (
           </p>
         </div>
       </Col>
-    </Row>
-  </Container>
-</section>
-
-{/* Intern Testimonies */}
-<section className="section-spacing">
-  <Container>
-    {/* Section Title */}
-    <div className="text-left mb-5">
-      <h2 className="display-7 deep-sea-text">Intern Testimonies</h2>
-    </div>
-
-    {/* Team Member 1 */}
-    <Row className="g-4">
-      <Col lg={3}>
-        <div className="text-center">
-          <Image
-            className="pfp mb-3"
-            src="/c-hisamoto.png"
-            alt="Team Member 1"
-            fluid
-          />
-        </div>
-      </Col>
-      <Col lg={9}>
-        <div className="text-left">
-          <h4 className="mt-3 deep-sea-text">Courtney Hisamoto</h4>
-          <p className="deep-sea-text">
-            Summer Intern 2026
-          </p>
-          <p className="deep-sea-text">
-            University of Hawaii at Mānoa
-          </p>
-          <p className="deep-sea-text">
-            BS Computer Science
-          </p>
-          <p className="deep-sea-text">
-            Description
-          </p>
-        </div>
-      </Col>
-    </Row>
-
-    {/* Team Member 2 */}
-    <Row className="g-4">
-      <Col lg={3}>
-        <div className="text-center">
-          <Image
-            className="pfp mb-3"
-            src="/t-d-devore.JPG"
-            alt="Team Member 2"
-            fluid
-          />
-        </div>
-      </Col>
-      <Col lg={9}>
-        <div className="text-left">
-          <h4 className="mt-3 deep-sea-text">Tai Demura-Devore</h4>
-          <p className="deep-sea-text">
-            Summer Intern 2026
-          </p>
-          <p className="deep-sea-text">
-            University of Michigan
-          </p>
-          <p className="deep-sea-text">
-            BSE Data Science
-          </p>
-          <p className="deep-sea-text">
-            A short description about this team member and their role in
-            the program.
-          </p>
-        </div>
-      </Col>
-    </Row>
-      
-      
-
-      {/* Team Member 3 */}
-    <Row className="g-4">
-      <Col lg={3}>
-        <div className="text-center">
-          <Image
-            className="pfp mb-3"
-            src="n-espiritu.jpg"
-            alt="Team Member 3"
-            fluid
-          />
-        </div>
-      </Col>
-      <Col lg={9}>
-        <h4 className="mt-3 deep-sea-text">Naydel Espiritu</h4>
-          <p className="deep-sea-text">
-            Summer Intern 2026
-          </p>
-          <p className="deep-sea-text">
-            University of Hawaii at Mānoa
-          </p>
-          <p className="deep-sea-text">
-            BS Computer Science
-          </p>
-          <p className="deep-sea-text">
-            A short description about this team member and their role in
-            the program.
-          </p>
-        </Col>
-    </Row>
-
-      {/* Team Member 4 */}
-    <Row className="g-4">
-      <Col lg={3}>
-        <div className="text-center">
-          <Image
-            className="pfp mb-3"
-            src="/images/team-4.jpg"
-            alt="Team Member 4"
-            fluid
-            rounded
-          />
-          <h4 className="mt-3 deep-sea-text">Team Member Name</h4>
-          <p className="deep-sea-text">
-            Cohort Year
-          </p>
-          <p className="deep-sea-text">
-            School
-          </p>
-          <p className="deep-sea-text">
-            Major
-          </p>
-          <p>
-            A short description about this team member and their role in
-            the program.
-          </p>
-        </div>
-      </Col>
-    </Row>
-
-      {/* Team Member 5 */}
-      <Col lg={3}>
-        <div className="text-center">
-          <Image
-            className="pfp mb-3"
-            src="/images/team-5.jpg"
-            alt="Team Member 5"
-            fluid
-            rounded
-          />
-          <h4 className="mt-3 deep-sea-text">Team Member Name</h4>
-          <p className="deep-sea-text">
-            Cohort Year
-          </p>
-          <p className="deep-sea-text">
-            School
-          </p>
-          <p className="deep-sea-text">
-            Major
-          </p>
-          <p className="deep-sea-text">
-            A short description about this team member and their role in
-            the program.
-          </p>
-        </div>
-      </Col>
-
-      {/* Team Member 6 */}
-      <Col lg={3}>
-        <div className="text-center">
-          <Image
-            className="pfp mb-3"
-            src="/images/team-6.jpg"
-            alt="Team Member 6"
-            fluid
-            rounded
-          />
-          <h4 className="mt-3 deep-sea-text">Team Member Name</h4>
-          <p className="deep-sea-text">
-            Cohort Year
-          </p>
-          <p className="deep-sea-text">
-            School
-          </p>
-          <p className="deep-sea-text">
-            Major
-          </p>
-          <p className="deep-sea-text">
-            A short description about this team member and their role in
-            the program.
-          </p>
-        </div>
-      </Col>
-
-      {/* Team Member 7 */}
-      <Col lg={3}>
-        <div className="text-center">
-          <Image
-            className="pfp mb-3"
-            src="/images/team-7.jpg"
-            alt="Team Member 7"
-            fluid
-            rounded
-          />
-          <h4 className="mt-3 deep-sea-text">Team Member Name</h4>
-          <p className="deep-sea-text">
-            Cohort Year
-          </p>
-          <p className="deep-sea-text">
-            School
-          </p>
-          <p className="deep-sea-text">
-            Major
-          </p>
-          <p className="deep-sea-text">
-            A short description about this team member and their role in
-            the program.
-          </p>
-        </div>
-      </Col>
-
-      {/* Team Member 8 */}
-      <Col lg={3}>
-        <div className="text-center">
-          <Image
-            className="pfp mb-3"
-            src="/images/team-8.jpg"
-            alt="Team Member 8"
-            fluid
-            rounded
-          />
-          <h4 className="mt-3 deep-sea-text">Team Member Name</h4>
-          <p className="deep-sea-text">
-            Cohort Year
-          </p>
-          <p className="deep-sea-text">
-            School
-          </p>
-          <p className="deep-sea-text">
-            Major
-          </p>
-          <p className="deep-sea-text">
-            A short description about this team member and their role in
-            the program.
-          </p>
-        </div>
-      </Col>
+    </Row> */}
   </Container>
 </section>
 
@@ -646,16 +410,340 @@ const Home = () => (
       </Container>
     </section>
 
+
+{/* Intern Testimonies */}
+<section className="section-spacing">
+  <Container>
+    {/* Section Title */}
+    <div className="text-left mb-2">
+      <h2 className="display-7 deep-sea-text">Intern Stories</h2>
+    </div>
+
+          {/* Team Member 4 */}
+    <Row className="mb-5 mt-3 g-4">
+      <Col lg={2}>
+        <div className="d-flex justify-content-left">
+          <Image
+            className="pfp mb-3"
+            src="k-villegas.jpg"
+            alt="Team Member 4"
+            fluid
+          />
+        </div>
+      </Col>
+      <Col lg={3}>
+        <div className="text-left">
+          <h4 className="mb-3 deep-sea-text">Kira Villegas</h4>
+          <p className="light-gray">
+            Summer Intern 2026
+          </p>
+          <p className="deep-sea-text">
+            Leeward Community College
+          </p>
+          <p className="deep-sea-text">
+            Information Security
+          </p>
+        </div>
+      </Col>
+      <Col lg={7}>
+        <div className="text-left">
+          <p className="deep-sea-text">
+            I have learned about the opportunities my degree has to offer as well as what it&apos;s like to work in a DoD/Intelligence environment. 
+            I&apos;ve also learned a lot about myself and the ways I navigate things such as taking initiative, being more analytical, and working under pressure.
+          </p>
+          <p className="deep-sea-text">
+            HII has created opportunities for me by connecting me with companies of my interest such as MC3. 
+            HII has a lot of networking events that are beneficial to those in the tech industry, and I&apos;ve found them useful to learn about adjacent programs to possibly apply for.
+          </p>
+          <p className="deep-sea-text">
+            My advice for future interns is to take in the experience as much as you can and be a sponge for knowledge. Engage with the people who come to teach and support you.
+          </p>
+          <p className="deep-sea-text">
+            One of my favorite memories was playing song games where you guess who added what song to the playlist.
+          </p>
+
+        </div>
+      </Col>
+    </Row>
+
+    {/* Team Member 1 */}
+    <Row className="mb-5 mt-3 g-4">
+      <Col lg={2}>
+        <div className="d-flex justify-content-left">
+          <Image
+            className="pfp mb-3"
+            src="/c-hisamoto.png"
+            alt="Team Member 1"
+            fluid
+          />
+        </div>
+      </Col>
+      <Col lg={3}>
+        <div className="text-left">
+          <h4 className="mb-3 deep-sea-text">Courtney Hisamoto</h4>
+          <p className="light-gray">
+            Summer Intern 2026
+          </p>
+          <p className="deep-sea-text">
+            University of Hawaii at Mānoa
+          </p>
+          <p className="deep-sea-text">
+            BS Computer Science
+          </p>
+        </div>
+      </Col>
+      <Col lg={7}>
+        <div className="text-left">
+          <p className="deep-sea-text">
+            I learned a lot about intelligence; taking raw data and numbers and turning them into actionable insights through analysis.
+          </p>
+          <p className="deep-sea-text">
+            HII helped has create further development opportunities for me by getting to work on problems that are currently being faced within the Pacific region.
+          </p>
+          <p className='deep-sea-text'>
+            Advice I would give future interns is that connections are your most important asset within industry, so take advantage of the opportunity to getting to know and speak to everyone that you can.
+          </p>
+          <p className="deep-sea-text">
+            One of my favorite memories from the summer is that there&apos;s a special bread bowl lunch sold only on Fridays, so for lunch a lot of the cohort would walk down together to get bread bowls.
+          </p>
+
+        </div>
+      </Col>
+    </Row>
+
+      {/* Team Member 3 */}
+    <Row className="mb-5 mt-3 g-4">
+      <Col lg={2}>
+        <div className="d-flex justify-content-left">
+          <Image
+            className="pfp mb-3"
+            src="n-espiritu.jpg"
+            alt="Team Member 3"
+            fluid
+          />
+        </div>
+      </Col>
+      <Col lg={3}>
+        <h4 className="mb-3 deep-sea-text">Naydel Espiritu</h4>
+          <p className="light-gray">
+            Summer Intern 2026
+          </p>
+          <p className="deep-sea-text">
+            University of Hawaii at Mānoa
+          </p>
+          <p className="deep-sea-text">
+            BS Computer Science
+          </p>
+      </Col>
+      <Col lg={7}>
+        <div className="text-left">
+          <p className="deep-sea-text">
+            HII has provided me with opportunities to step outside of my comfort zone and grow personally. 
+            {/* I have become more confident in collaborating with others, strengthened my public speaking skills, and solve problems effectively. */}  
+          </p>
+          <p className="deep-sea-text">
+            I have strengthened my research skills and learned how to prepare and deliver formal briefings. 
+            This has helped me learn ways to present information clearly, effectively communicating my findings, and working in a team.
+          
+          </p>
+          <p className="deep-sea-text">
+            My advice for future interns is to embrace new challenges and opportunities, and always be open to learning. 
+            Every experience offers something valuable to take away, whether it&apos;s developing a new skill, making connections, or just learning more about yourself.
+          </p>
+          <p className="deep-sea-text">
+            One of my favorite parts of this cohort year was getting to meet new people and learn from mentors, peers, and industry professionals. 
+            I enjoyed connecting with everyone and getting to know the people in my cohort!
+          </p>
+        </div>
+      </Col>
+    </Row>
+
+
+      {/* Team Member 5 */}
+    <Row className="mb-5 mt-3 g-4">
+      <Col lg={2}>
+        <div className="d-flex justify-content-left">
+          <Image
+            className="pfp mb-3"
+            src="m-han.jpg"
+            alt="Team Member 5"
+            fluid
+          />
+        </div>
+      </Col>
+      <Col lg={3}>
+        <div className="text-left">
+          <h4 className="mb-3 deep-sea-text">Min Jun Han</h4>
+          <p className="light-gray">
+            Summer Intern 2026
+          </p>
+          <p className="deep-sea-text">
+            University of Hawaii at Mānoa
+          </p>
+          <p className="deep-sea-text">
+            BS Computer Science
+          </p>
+        </div>
+      </Col>
+      <Col lg={7}>
+        <div className="text-left">
+          <p className="deep-sea-text">
+            Throughout my time with HII, I learned how to prepare, research, and present a military-style briefing on a relevant topic surrounding PACOM.
+          </p>
+          <p className="deep-sea-text">
+            HII has provided me with various skills that will help in furthering my development, 
+            especially in doing military-style intelligence gathering, and presenting my findings through briefings and presentations.
+          </p>
+          <p className="deep-sea-text">
+            My advice to future interns is don&apos;t be afraid to ask your mentors questions. Absorb everything you can throughout the internship, because all of it comes together in the final capstone project.
+          </p>
+          <p className="deep-sea-text">
+            One of my favorite memories from the cohort year was learning from leaders of various local businesses about the military, current events, and AI integration in the workforce.
+          </p>
+        </div>
+      </Col>
+    </Row>
+
+        {/* Team Member 2 */}
+    <Row className="mb-5 mt-3 g-4">
+      <Col lg={2}>
+        <div className="d-flex justify-content-left">
+          <Image
+            className="pfp mb-3"
+            src="/t-d-devore.JPG"
+            alt="Team Member 2"
+            fluid
+          />
+        </div>
+      </Col>
+      <Col lg={3}>
+        <div className="text-left">
+          <h4 className="mb-3 deep-sea-text">Tai Demura-Devore</h4>
+          <p className="light-gray">
+            Summer Intern 2026
+          </p>
+          <p className="deep-sea-text">
+            University of Michigan
+          </p>
+          <p className="deep-sea-text">
+            BSE Data Science
+          </p>
+        </div>
+      </Col>
+      <Col lg={7}>
+        <div className="text-left">
+          <p className="deep-sea-text">
+            During my time with HII, I learned a lot about the domain, opportunities that exist, and how to communicate more effectively.
+          </p>
+          <p className="deep-sea-text">
+            My current internship with Pac-Econ is through HII, and I&apos;ve really enjoyed working and learning with the team there. 
+            I&apos;ve become a better communicator by learning how to distill my ideas into what&apos;s most important others to know.
+          </p>
+          <p className="deep-sea-text">
+            My advice for future interns is to be excited to learn about various different things! 
+            The wide breadth of what you learn in this internship is one of the best parts about this internship.
+          </p>
+          <p className="deep-sea-text">
+            I really enjoyed hanging out with everyone after work hours. The program was great, in large part because of the people I was with.
+          </p>
+        </div>
+      </Col>
+    </Row> 
+      
+{/*
+      Team Member 6 
+      <Col lg={3}>
+        <div className="text-center">
+          <Image
+            className="pfp mb-3"
+            src="/images/team-6.jpg"
+            alt="Team Member 6"
+            fluid
+            rounded
+          />
+          <h4 className="mt-3 deep-sea-text">Team Member Name</h4>
+          <p className="deep-sea-text">
+            Cohort Year
+          </p>
+          <p className="deep-sea-text">
+            School
+          </p>
+          <p className="deep-sea-text">
+            Major
+          </p>
+          <p className="deep-sea-text">
+            A short description about this team member and their role in
+            the program.
+          </p>
+        </div>
+      </Col>
+
+      Team Member 7
+      <Col lg={3}>
+        <div className="text-center">
+          <Image
+            className="pfp mb-3"
+            src="/images/team-7.jpg"
+            alt="Team Member 7"
+            fluid
+            rounded
+          />
+          <h4 className="mt-3 deep-sea-text">Team Member Name</h4>
+          <p className="deep-sea-text">
+            Cohort Year
+          </p>
+          <p className="deep-sea-text">
+            School
+          </p>
+          <p className="deep-sea-text">
+            Major
+          </p>
+          <p className="deep-sea-text">
+            A short description about this team member and their role in
+            the program.
+          </p>
+        </div>
+      </Col>
+
+      Team Member 8
+      <Col lg={3}>
+        <div className="text-center">
+          <Image
+            className="pfp mb-3"
+            src="/images/team-8.jpg"
+            alt="Team Member 8"
+            fluid
+            rounded
+          />
+          <h4 className="mt-3 deep-sea-text">Team Member Name</h4>
+          <p className="deep-sea-text">
+            Cohort Year
+          </p>
+          <p className="deep-sea-text">
+            School
+          </p>
+          <p className="deep-sea-text">
+            Major
+          </p>
+          <p className="deep-sea-text">
+            A short description about this team member and their role in
+            the program.
+          </p>
+        </div>
+      </Col>
+*/}
+  </Container>
+</section>
     
 {/* Mailing List */}
-<section className="section-spacing-small">
+<section className="section-spacing">
   <Container>
     <Row className="justify-content-center">
       <Col lg={6} className="text-center">
         <h2 className="display-5 fw-bold deep-sea-text mb-4">
           JOIN OUR MAILING LIST!
         </h2>
-        <p className="lead deep-sea-text">
+        <p className="mb-5 lead deep-sea-text">
           Stay updated on the latest news, events, and opportunities!
         </p>
 
@@ -684,10 +772,10 @@ const Home = () => (
   <Container>
     <Row className="justify-content-left">
       <Col lg={12} className="text-left">
-        <h2 className="display-7 deep-sea-text mt-4 mb-4">
+        <h2 className="display-7 deep-sea-text mt-4">
           Media Highlights
         </h2>
-        <p className="lead deep-sea-text mb-4">
+        <p className="lead text-secondary mb-4">
           Check out the latest news and media coverage involving participants in our programs!
         </p>
       </Col>
