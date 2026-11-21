@@ -35,6 +35,25 @@ const NavBar: React.FC = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto gap-4 justify-content-start">
+           {currentUser && role === 'INTERN' && (
+            <>
+              <Nav.Link
+                id="intern-dashboard-nav"
+                href="/intern-dashboard"
+                active={pathName === '/intern-dashboard'}
+              >
+                Dashboard
+              </Nav.Link>
+
+              <Nav.Link
+                id="intern-profile-nav"
+                href="/intern-profile"
+                active={pathName === '/intern-profile'}
+              >
+                My Profile
+              </Nav.Link>
+            </>
+          )}
             {currentUser && (
               <>
                 <Nav.Link id="add-stuff-nav" href="/add" active={pathName === '/add'}>
