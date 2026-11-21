@@ -1,33 +1,20 @@
-
 'use client';
 
-import { signIn } from 'next-auth/react';
+import { signIn } from 'next-auth/react'; // v5 compatible
 import { Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
 
 /** The sign in page. */
 const SignIn = () => {
   const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     const target = e.target as typeof e.target & {
       email: { value: string };
       password: { value: string };
     };
-
-    const email = target.email.value.trim().toLowerCase();
+    const email = target.email.value;
     const password = target.password.value;
-
-    // Determine destination for test accounts
-    let callbackUrl = '/list';
-
-    if (email === 'john@foo.com') {
-      callbackUrl = '/intern-dashboard';
-    } else if (email === 'admin@foo.com') {
-      callbackUrl = '/dashboard';
-    }
-
     await signIn('credentials', {
-      callbackUrl,
+      callbackUrl: '/intern-dashboard',
       email,
       password,
     });
@@ -35,34 +22,36 @@ const SignIn = () => {
 
   return (
     <main>
+      <section className="section-spacing">
       <Container>
         <Row className="justify-content-center">
           <Col xs={5}>
             <h1 className="text-center">Sign In</h1>
-            <Card>
+
+            <Card className="signin-card mt-3 mb-5">
               <Card.Body>
                 <Form method="post" onSubmit={handleSubmit}>
                   <Form.Group controlId="formBasicEmail">
                     <Form.Label>Email</Form.Label>
-                    <input name="email" type="text" className="form-control" />
+                    <input name="email" type="text" className="signin-input form-control" />
                   </Form.Group>
                   <Form.Group>
-                    <Form.Label>Password</Form.Label>
-                    <input name="password" type="password" className="form-control" />
+                    <Form.Label className="mt-3">Password</Form.Label>
+                    <input name="password" type="password" className="signin-input form-control" />
                   </Form.Group>
-                  <Button type="submit" className="mt-3">
-                    Signin
+                  <Button type="submit" className="btn-custom mt-3">
+                    Sign In
                   </Button>
                 </Form>
               </Card.Body>
               <Card.Footer>
-                Don&apos;t have an account?
-                <a href="/auth/signup">Sign up</a>
+                <a className="signin-footer deep-sea-text" href="/auth/signup">Don&apos;t have an account?</a>
               </Card.Footer>
             </Card>
           </Col>
         </Row>
       </Container>
+      </section>
     </main>
   );
 };

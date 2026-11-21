@@ -45,11 +45,13 @@ const SignUp = () => {
 
   return (
     <main>
+      <section className="section-spacing">
       <Container>
         <Row className="justify-content-center">
           <Col xs={5}>
             <h1 className="text-center">Sign Up</h1>
-            <Card>
+
+            <Card className="signin-card mt-3 mb-5">
               <Card.Body>
                 <Form onSubmit={handleSubmit(onSubmit)}>
                   <Form.Group className="form-group">
@@ -57,38 +59,38 @@ const SignUp = () => {
                     <input
                       type="text"
                       {...register('email')}
-                      className={`form-control ${errors.email ? 'is-invalid' : ''}`}
+                      className={`form-control signin-input ${errors.email ? 'is-invalid' : ''}`}
                     />
                     <div className="invalid-feedback">{errors.email?.message}</div>
                   </Form.Group>
 
                   <Form.Group className="form-group">
-                    <Form.Label>Password</Form.Label>
+                    <Form.Label className="mt-3">Password</Form.Label>
                     <input
                       type="password"
                       {...register('password')}
-                      className={`form-control ${errors.password ? 'is-invalid' : ''}`}
+                      className={`form-control signin-input ${errors.password ? 'is-invalid' : ''}`}
                     />
                     <div className="invalid-feedback">{errors.password?.message}</div>
                   </Form.Group>
                   <Form.Group className="form-group">
-                    <Form.Label>Confirm Password</Form.Label>
+                    <Form.Label className="mt-3">Confirm Password</Form.Label>
                     <input
                       type="password"
                       {...register('confirmPassword')}
-                      className={`form-control ${errors.confirmPassword ? 'is-invalid' : ''}`}
+                      className={`form-control signin-input ${errors.confirmPassword ? 'is-invalid' : ''}`}
                     />
                     <div className="invalid-feedback">{errors.confirmPassword?.message}</div>
                   </Form.Group>
                   <Form.Group className="form-group py-3">
                     <Row>
                       <Col>
-                        <Button type="submit" className="btn btn-primary">
+                        <Button type="submit" className="btn-custom">
                           Register
                         </Button>
                       </Col>
                       <Col>
-                        <Button type="button" onClick={() => reset()} className="btn btn-warning float-right">
+                        <Button type="button" onClick={() => reset()} className="btn-secondary float-right">
                           Reset
                         </Button>
                       </Col>
@@ -97,13 +99,14 @@ const SignUp = () => {
                 </Form>
               </Card.Body>
               <Card.Footer>
-                Already have an account?
-                <a href="/auth/signin">Sign in</a>
+                
+                <a className="deep-sea-text" href="/auth/signin">Already have an account?</a>
               </Card.Footer>
             </Card>
           </Col>
         </Row>
       </Container>
+      </section>
     </main>
   );
 };

@@ -1,5 +1,6 @@
 
 import NextAuth, { type DefaultSession } from 'next-auth';
+import type { JWT } from 'next-auth/jwt';
 import Credentials from 'next-auth/providers/credentials';
 import { prisma } from './prisma';
 import bcrypt from 'bcrypt';
@@ -7,12 +8,18 @@ import bcrypt from 'bcrypt';
 declare module 'next-auth' {
   interface Session {
     user: {
+      id: string;
       role?: string;
     } & DefaultSession['user'];
   }
 }
 
-// Export v5 handlers and helpers
+declare module 'next-auth/jwt' {
+  interface JWT {
+    role?: string;
+  }
+}
+
 export const { auth, signIn, signOut, handlers } = NextAuth({
   providers: [
     Credentials({
@@ -21,7 +28,6 @@ export const { auth, signIn, signOut, handlers } = NextAuth({
         password: { label: 'Password', type: 'password' },
       },
       async authorize(credentials) {
-        // Type guard for credentials
         if (
           !credentials ||
           typeof credentials.email !== 'string' ||
@@ -29,11 +35,20 @@ export const { auth, signIn, signOut, handlers } = NextAuth({
         ) {
           return null;
         }
-        const user = await prisma.user.findUnique({ where: { email: credentials.email } });
+
+        const user = await prisma.user.findUnique({
+          where: { email: credentials.email },
+        });
+
         if (!user || typeof user.password !== 'string') return null;
-        const isValid = await bcrypt.compare(credentials.password, user.password);
+
+        const isValid = await bcrypt.compare(
+          credentials.password,
+          user.password
+        );
+
         if (!isValid) return null;
-        // Return user object for session
+
         return {
           id: user.id.toString(),
           email: user.email,
@@ -53,14 +68,18 @@ export const { auth, signIn, signOut, handlers } = NextAuth({
         ...session,
         user: {
           ...session.user,
-          role: (token as { role?: string }).role,
+          id: token.sub ?? '',
+          role: token.role,
         },
       };
     },
     jwt({ token, user }) {
-      // user is type: { id?: string; email?: string; name?: string; role?: string }
-      if (user && typeof (user as { role?: string }).role === 'string') {
-        token.role = (user as { role?: string }).role;
+      if (user) {
+        token.sub = user.id;
+        const userWithRole = user as typeof user & { role?: string };
+        if (typeof userWithRole.role === 'string') {
+          token.role = userWithRole.role;
+        }
       }
       return token;
     },

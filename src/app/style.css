@@ -88,6 +88,83 @@
 
 .pfp {
   width: 200px;
-  height: 250px;
+  height: 300px;
   object-fit: cover; /* Prevents the image from stretching or distorting */
+}
+
+.lead-pfp {
+  width: 250px;
+  height: 300px;
+  object-fit: cover; /* Prevents the image from stretching or distorting */
+}
+
+/* Sign in and sign up pages */
+.btn-custom {
+  background-color: var(--deep-sea);
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 0;
+}
+
+.btn-custom:hover {
+  background-color: var(--changing-sea);
+}
+
+.btn-secondary {
+  background-color: var(--sky-blue);
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 0;
+}
+
+.btn-secondary:hover {
+  background-color: var(--changing-sea);
+}
+
+.signin-card {
+  border-radius: 0;
+}
+
+.signin-input {
+  border-radius: 0;
+}
+
+.signin-footer {
+  border-radius: 0;
+}
+
+.btn-warn {
+  border-radius: 0;
+  background-color: var(--passion);
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn-warn:hover {
+  background-color: var(--changing-sea);
+}
+
+/* Custom Navbar Stuff */
+
+.custom-navbar {
+  background-color: var(--deep-sea);
+  padding: 12px 30px;
+  min-height: 75px;
+}
+
+.custom-navbar .nav-link {
+  font-weight: 500;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.custom-navbar .nav-link:hover {
+  color: whitesmoke;
+  opacity: 0.75;
 }
