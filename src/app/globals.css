@@ -140,3 +140,180 @@ body {
   color: #003b4c;
   margin-bottom: 0;
 }
+
+/* Navbar styling */
+.site-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+/* Profile sidebar */
+
+.profile-sidebar {
+  padding: 20px;
+}
+
+/* Large circular profile picture */
+
+.profile-picture-container {
+  position: relative;
+  width: 100%;
+  max-width: 260px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-color: #e4eff4;
+  border: 1px solid #d0dce2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Default profile icon */
+
+.profile-placeholder {
+  width: 85%;
+  height: 85%;
+  color: #8baab7;
+}
+
+/* Uploaded profile picture */
+
+.profile-picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Camera button */
+
+.profile-camera-button {
+  position: absolute;
+  bottom: 10px;
+  right: 5px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #003b4c;
+  color: white;
+  border: 3px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.profile-camera-button:hover {
+  background-color: #00566b;
+}
+
+/* User information */
+
+.profile-user-info {
+  margin-top: 25px;
+  text-align: left;
+}
+
+.profile-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #003b4c;
+  text-transform: capitalize;
+  margin-bottom: 4px;
+}
+
+.profile-email {
+  color: #6c757d;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  overflow-wrap: anywhere;
+}
+
+.profile-role {
+  display: inline-block;
+  background-color: #e4eff4;
+  color: #003b4c;
+  padding: 6px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* Upload button */
+
+.profile-upload-button {
+  color: #003b4c;
+  border-color: #003b4c;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.profile-upload-button:hover {
+  background-color: #003b4c;
+  border-color: #003b4c;
+  color: white;
+}
+
+/* Intern profile page layout */
+.intern-profile-page {
+  min-height: 100vh;
+  padding-top: 120px;
+  padding-bottom: 50px;
+  font-family: 'Urbanist', sans-serif;
+  color: #003b4c;
+}
+/* Interests multi-select dropdown */
+
+.interest-select__control {
+  min-height: 40px !important;
+  border: 1px solid #ced4da !important;
+  border-radius: 6px !important;
+  box-shadow: none !important;
+  font-family: 'Urbanist', sans-serif;
+}
+
+.interest-select__control--is-focused {
+  border-color: #003b4c !important;
+}
+
+/* Selected interest tags */
+.interest-select__multi-value {
+  background-color: #e4eff4 !important;
+  border-radius: 5px !important;
+}
+
+.interest-select__multi-value__label {
+  color: #003b4c !important;
+}
+
+/* Remove selected interest */
+.interest-select__multi-value__remove:hover {
+  background-color: #003b4c !important;
+  color: white !important;
+}
+
+/* Dropdown options */
+.interest-select__option--is-focused {
+  background-color: #e4eff4 !important;
+}
+
+.interest-select__menu {
+  z-index: 10 !important;
+}
+
+/* Remove profile picture button */
+.profile-remove-button {
+  border: 1px solid #dc3545;
+  border-radius: 8px;
+  color: #dc3545;
+  background-color: transparent;
+  font-weight: 600;
+}
+
+.profile-remove-button:hover {
+  background-color: #dc3545;
+  color: white;
+}
