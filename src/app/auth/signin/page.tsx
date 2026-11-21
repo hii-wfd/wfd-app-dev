@@ -14,7 +14,7 @@ const SignIn = () => {
     const email = target.email.value;
     const password = target.password.value;
     await signIn('credentials', {
-      callbackUrl: '/list',
+      callbackUrl: '/intern-dashboard',
       email,
       password,
     });
