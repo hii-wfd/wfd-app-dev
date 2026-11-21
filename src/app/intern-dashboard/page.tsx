@@ -52,7 +52,7 @@ const InternPage = () => {
         {/* Welcome Section */}
         <div className="mb-5">
           <h1 className="intern-page-title">
-            Intern Dashboard
+            Intern Dashboard 
           </h1>
 
           <p className="intern-welcome">
