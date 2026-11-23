@@ -2,6 +2,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 
 /* Render a Not Found page if the user enters a URL that doesn't match any route. */
 const NotFound = () => (
+  <section className='section-spacing'>
   <Container className="py-3">
     <Row className="justify-content-center">
       <Col xs={4} className="text-center">
@@ -11,6 +12,7 @@ const NotFound = () => (
       </Col>
     </Row>
   </Container>
+  </section>
 );
 
 export default NotFound;
