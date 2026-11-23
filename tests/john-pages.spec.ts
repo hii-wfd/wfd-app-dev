@@ -14,20 +14,20 @@ test('can authenticate a specific user', async ({ getUserPage }) => {
 
   // Now check for navigation links and headings
   await expect(
-    customUserPage.getByRole('link', { name: 'Add Stuff' })
+    customUserPage.getByRole('link', { name: 'Intern Check-In Form' })
   ).toBeVisible({ timeout: 5000 });
   await expect(
-    customUserPage.getByRole('link', { name: 'List Stuff' })
-  ).toBeVisible({ timeout: 5000 });
-
-  await customUserPage.getByRole('link', { name: 'Add Stuff' }).click();
-  await expect(
-    customUserPage.getByRole('heading', { name: 'Add Stuff' })
+    customUserPage.getByRole('link', { name: 'Intern Form Archive' })
   ).toBeVisible({ timeout: 5000 });
 
-  await customUserPage.getByRole('link', { name: 'List Stuff' }).click();
+  await customUserPage.getByRole('link', { name: 'Intern Check-In Form' }).click();
   await expect(
-    customUserPage.getByRole('heading', { name: 'Stuff' })
+    customUserPage.getByRole('heading', { name: 'Intern Check-In Form' })
+  ).toBeVisible({ timeout: 5000 });
+
+  await customUserPage.getByRole('link', { name: 'Intern Form Archive' }).click();
+  await expect(
+    customUserPage.getByRole('heading', { name: 'Intern Form Archive' })
   ).toBeVisible({ timeout: 5000 });
 
 });

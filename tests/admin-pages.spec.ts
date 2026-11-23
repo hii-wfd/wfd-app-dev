@@ -26,15 +26,15 @@ test('test access to admin page', async ({ getUserPage }) => {
   ).toBeVisible({ timeout: 5000 });
 
   // Test Add Stuff adminPage
-  await adminPage.getByRole('link', { name: 'Add Stuff' }).click();
+  await adminPage.getByRole('link', { name: 'Intern Check-In Form' }).click();
   await expect(
-    adminPage.getByRole('heading', { name: 'Add Stuff' })
+    adminPage.getByRole('heading', { name: 'Intern Check-In Form' })
   ).toBeVisible({ timeout: 5000 });
 
   // Test List Stuff adminPage
-  await adminPage.getByRole('link', { name: 'List Stuff' }).click();
+  await adminPage.getByRole('link', { name: 'Intern Form Archive' }).click();
   await expect(
-    adminPage.getByRole('heading', { name: 'Stuff' })
+    adminPage.getByRole('heading', { name: 'Intern Form Archive' })
   ).toBeVisible({ timeout: 5000 });
 
   // Test Admin adminPage
