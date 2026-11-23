@@ -43,7 +43,7 @@ const AddStuffForm: React.FC = () => {
       <Row className="justify-content-center">
         <Col lg={5}>
           <Col className="text-center">
-            <h2>Intern Check-In</h2>
+            <h2>Intern Check-In Form</h2>
           </Col>
           <Card>
             <Card.Body>
