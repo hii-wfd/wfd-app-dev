@@ -19,9 +19,9 @@ import {
 export const dynamic = "force-dynamic";
 
 export default async function DevFilesPage() {
-  if (process.env.ENABLE_DEV_TOOLS !== "true") {
-    notFound();
-  }
+  //if (process.env.ENABLE_DEV_TOOLS !== "true") {
+  //  notFound();
+  //}
 
   const session = await auth();
 
