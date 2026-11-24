@@ -37,7 +37,8 @@ const NavBar: React.FC = () => {
           <Nav className="ms-auto gap-4 justify-content-start">
            {currentUser && role === 'INTERN' && (
             <>
-              <Nav.Link
+              {/* I commented this out because it wasn't displayed on john@foo account */}
+              {/*<Nav.Link
                 id="intern-dashboard-nav"
                 href="/intern-dashboard"
                 active={pathName === '/intern-dashboard'}
@@ -51,16 +52,32 @@ const NavBar: React.FC = () => {
                 active={pathName === '/intern-profile'}
               >
                 My Profile
-              </Nav.Link>
+              </Nav.Link>*/}
             </>
           )}
             {currentUser && (
               <>
-                <Nav.Link id="add-stuff-nav" href="/add" active={pathName === '/add'}>
-                  Add Stuff
+                <Nav.Link id="intern-check-in-nav" href="/intern-check-in" active={pathName === '/intern-check-in'}>
+                  Intern Check-In Form
                 </Nav.Link>
-                <Nav.Link id="list-stuff-nav" href="/list" active={pathName === '/list'}>
-                  List Stuff
+                <Nav.Link id="intern-form-archive-nav" href="/intern-form-archive" active={pathName === '/intern-form-archive'}>
+                  Intern Form Archive
+                </Nav.Link>
+
+                <Nav.Link
+                  id="intern-dashboard-nav"
+                  href="/intern-dashboard"
+                  active={pathName === '/intern-dashboard'}
+                >
+                  Dashboard
+                </Nav.Link>
+
+                <Nav.Link
+                  id="intern-profile-nav"
+                  href="/intern-profile"
+                  active={pathName === '/intern-profile'}
+                >
+                  My Profile
                 </Nav.Link>
               </>
             )}
