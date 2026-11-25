@@ -1,22 +1,17 @@
-
 "use server";
 
 import { del } from "@vercel/blob";
 import { revalidatePath } from "next/cache";
+import { purgeStoredFiles } from "@/lib/filePurge";
 import { auth } from "@/lib/auth";
 import { Role } from "@/generated/prisma/enums";
 import { prisma } from "@/lib/prisma";
 
 const REVALIDATE_PATHS = ["/dev/files", "/admin/recoverable-files"];
-
-function revalidate() {
-  REVALIDATE_PATHS.forEach((path) => revalidatePath(path));
-}
+const revalidate = () => REVALIDATE_PATHS.forEach((p) => revalidatePath(p));
 
 function assertDevTools() {
-  if (process.env.ENABLE_DEV_TOOLS !== "true") {
-    throw new Error("Not available");
-  }
+  if (process.env.ENABLE_DEV_TOOLS !== "true") throw new Error("Not available");
 }
 
 async function requireUser() {
@@ -116,10 +111,9 @@ export async function purgeFile(id: number) {
     },
   });
 
-  await del(file.url);
-  await prisma.storedFile.delete({
-    where: { id },
-  });
+  //await purgeStredFiles(file)
+  await del(file.url); //del
+  await prisma.storedFile.delete({ where: { id } }); //del
 
   revalidate();
 }

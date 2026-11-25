@@ -1,4 +1,3 @@
-
 import { prisma } from "@/lib/prisma";
 
 export const DEFAULT_RETENTION_SECONDS = 30 * 24 * 60 * 60; // 30 days
