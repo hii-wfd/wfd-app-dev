@@ -1,4 +1,3 @@
-
 import { Prisma } from "@/generated/prisma/client";
 import { auth } from "@/lib/auth";
 import { adminProtectedPage } from "@/lib/page-protection";
@@ -16,13 +15,9 @@ export const dynamic = "force-dynamic";
 export default async function RecoverableFilesPage({
   searchParams,
 }: RecoverableFilesPageProps) {
-  const session = await auth();
 
-  adminProtectedPage(
-    session as {
-      user: { email: string; id: string; name: string; role?: string };
-    } | null
-  );
+  const session = await auth();
+  adminProtectedPage(session as {user: { email: string; id: string; name: string; role?: string }; } | null);
 
   const { q } = await searchParams;
   const term = q?.trim() ?? "";

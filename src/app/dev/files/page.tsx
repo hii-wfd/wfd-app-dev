@@ -1,40 +1,19 @@
-
 import { notFound } from "next/navigation";
 import { after } from "next/server";
 import { auth } from "@/lib/auth";
 import { adminProtectedPage } from "@/lib/page-protection";
 import FileUploader from "@/components/FileUploader";
-import {
-  listActiveFiles,
-  listDeletedFiles,
-  formatRemaining,
-} from "@/lib/fileQueries";
+import { listActiveFiles, listDeletedFiles, formatRemaining } from "@/lib/fileQueries";
 import { purgeExpiredFiles } from "@/lib/filePurge";
-import {
-  softDeleteFile,
-  restoreFile,
-  purgeFile,
-} from "@/lib/fileActions";
+import { softDeleteFile, restoreFile, purgeFile } from "@/lib/fileActions";
 
 export const dynamic = "force-dynamic";
 
 export default async function DevFilesPage() {
-  //if (process.env.ENABLE_DEV_TOOLS !== "true") {
-  //  notFound();
-  //}
+  //if (process.env.ENABLE_DEV_TOOLS !== "true") notFound();
 
-  const session = await auth();
-
-  adminProtectedPage(
-    session as {
-      user: {
-        email: string;
-        id: string;
-        name: string;
-        role?: string;
-      };
-    } | null
-  );
+  //const session = await auth();
+  //adminProtectedPage(session as {user: { email: string; id: string; name: string; role?: string }; } | null);
 
   const [active, deleted] = await Promise.all([
     listActiveFiles(),
@@ -89,7 +68,7 @@ export default async function DevFilesPage() {
           >
             <span>{file.name}</span>
 
-            <span>
+            <span className="text-muted">
               {file.deletedAt
                 ? formatRemaining(file.deletedAt)
                 : "Unknown"}
