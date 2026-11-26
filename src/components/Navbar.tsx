@@ -35,7 +35,7 @@ const NavBar: React.FC = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto gap-4 justify-content-start">
-           {currentUser && role === 'INTERN' && (
+           {currentUser && role === 'USER' && (
             <>
               {/* I commented this out because it wasn't displayed on john@foo account */}
               {/*<Nav.Link
